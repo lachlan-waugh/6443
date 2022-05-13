@@ -3,14 +3,17 @@ const help = require('./helper');
 
 const server = net.createServer(conn => {
     conn.on('data', data => {
-        let name, method;
+        let name;
+        data = data.toString();
 
         for (let idx = 0, end = data.indexOf('\r\n', idx); end != -1 && idx != end; idx = end + 2, end = data.indexOf('\r\n', idx)) {
-            let line = data.slice(idx, end).toString();
+            let line = data.slice(idx, end);
 
-            if (idx == 0) {
-                method = line.toString().split(' ')
-                if (method === 'POST') break;
+            // If it's a post request, get the name from the body
+            if (idx == 0 && /\nname/.test(data)) {
+                name = data.match(/\nname=(.*)$/)[1];
+                break;
+            // If it's a get request, reuse the existing cookie
             } else {
                 let [key, val] = line.split(': ')
                 if (/^cookie$/i.test(key)) {
@@ -18,10 +21,6 @@ const server = net.createServer(conn => {
                 }
             }
         }
-
-        if (method === 'POST') {
-            
-        }        
 
         conn.end(help.header(name).map(s => s.trim()).join('\r\n') + '\r\n\r\n' + help.body(name))
     });
