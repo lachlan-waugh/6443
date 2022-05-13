@@ -3,11 +3,12 @@ exports.body = (type, content) => {
     const opt = {
         'reflect': [
             'REFLECTED',
-            (content) ? `<p>Hey there ${content ?? '?'}!</p>` : null
+            (content) ? `<p>Hey there ${content ?? '?'}!</p>` : ''
         ],
         'stored': [
             'STORED',
-            `<ul>${content.reverse().map(post => `<li>${post}</li>`)}</ul>`
+            // good programming practice, wtf is that l0l this is a demo
+            `<ul>${content && content.reverse && content.reverse().map(post => `<li>${post}</li>`)}</ul>`
         ],
         'dom': [
             'DOM-BASED',
