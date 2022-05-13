@@ -1,4 +1,4 @@
-exports.headers = (name) => 
+exports.header = (name) => 
     [
         'HTTP/1.1 200 OK',
         'Connection: Closed',
@@ -16,7 +16,7 @@ exports.body = (name) => `
         Hey there ${name ?? '?'}!
     </p>
     <form method="POST">
-        <textarea name='name' rows="3" placeholder="Wait a second, who are you?"></textarea>
+        <textarea name='my_name' rows="3" placeholder="Wait a second, who are you?"></textarea>
         <button type='submit'>submit?</button>
     </form>
 `.trim();

@@ -3,38 +3,29 @@ const help = require('./helper');
 
 const server = net.createServer(conn => {
     conn.on('data', data => {
-        let req = {
-            method:  null,
-            path:    null,
-            version: null,
-            headers: {},
-            cookies: {}
-        };
+        let name, method;
 
-        for (let idx = data.indexOf('\r\n', cur), cur = 0; idx != -1 && cur != idx; cur = idx + 2) {
-            let line = data.slice(cur, idx).toString();
-    
-            if (cur == 0) {
-                const [method, path, version] = line.toString().split(' ')
-                req = { ...req, method, path, version }
+        for (let idx = 0, end = data.indexOf('\r\n', idx); end != -1 && idx != end; idx = end + 2, end = data.indexOf('\r\n', idx)) {
+            let line = data.slice(idx, end).toString();
+
+            if (idx == 0) {
+                method = line.toString().split(' ')
+                if (method === 'POST') break;
             } else {
                 let [key, val] = line.split(': ')
                 if (/^cookie$/i.test(key)) {
-                    val
-                        .split(';')
-                        .map(v => v.split('='))
-                        .forEach(([k, v]) => {
-                            req.cookies[decodeURIComponent(k.trim())] = decodeURIComponent(v.trim())
-                        })
+                    name = val.match(/name=([^;]*)/i)[1]
                 }
-
-                req.headers[key] = val;
             }
         }
 
-        conn.end(help.headers.map(s => s.trim()).join('\r\n') + '\r\n\r\n' + help.body)
+        if (method === 'POST') {
+            
+        }        
+
+        conn.end(help.header(name).map(s => s.trim()).join('\r\n') + '\r\n\r\n' + help.body(name))
     });
-}).on('error', err => { throw err })
+}).on('error', err => { console.log(err); throw err })
 
 server.listen(process.env.PORT || 8000, process.env.HOST || '0.0.0.0', () => {
   console.log(`Listening on ${server.address().address}:${server.address().port}`)
