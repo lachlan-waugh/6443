@@ -1,21 +1,14 @@
-<style>
-    .footer {
-        display: none;
-    }
-</style>
+<style>#downloads { display: none !important; }</style>
 
-# TODO
-
-FIX THIS UP
+## slides
+<details>
+<summary>Slides</summary>
+<a href="/tut-template/week1">week 1</a>
+</details>
 
 <details>
 <summary>Resources</summary>
 <a href="/tut-template/resources/template">template</a>
-</details>
-
-<details>
-<summary>Slides</summary>
-<a href="/tut-template/week1">week 1</a>
 </details>
 
 <details>
