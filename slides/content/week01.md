@@ -83,9 +83,16 @@ We expect a high standard of professionalism from you at all times while you are
 ## Wargames
 * Don't leave them to the last minute, you'll be sad :(
 
-* You probably won't get all the flags
+* Cool to collaborate/work together, but your flags need to be different.
 
-* Cool to collaborate/work together, but your flags and scripts/explanations need to be different.
+* extended flags aren't required, but you should do them anyway (they're way cooler imo)
+
+--
+
+## Report
+* pentesting / vulnerability report
+    * groups of 4-5
+    * keep track of how you got found each of the flags
 
 {{% /section %}}
 
@@ -105,7 +112,7 @@ We expect a high standard of professionalism from you at all times while you are
 ## Activities
 * Form groups for the reports (4-5 people)
 * Signing up/logging into QuoccaBank
-* Installing burp suite
+* Installing burp suite/setting up certs
 * Try out some of the challenges!
     * Recon stuffs
     * HTTP as a service (optional)
