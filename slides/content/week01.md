@@ -4,14 +4,14 @@ layout: "bundle"
 outputs: ["Reveal"]
 ---
 
-## We'll get started at 12:05
+## We'll get started at 16:05
 People b late
 
 ---
 
 {{< slide class="center" >}}
 # week01
-### COMP6[84]43 F12A 
+### COMP6[84]43 H16A 
 
 ---
 
@@ -19,7 +19,7 @@ People b late
 
 We expect a high standard of professionalism from you at all times while you are taking any of our courses. We expect all students to act in good faith at all times
 
-*TLDR: Don't be a ~~dick~~ jerk*
+*TLDR: Don't be a jerk*
 
 [sec.edu.au/good-faith-policy](https://sec.edu.au/good-faith-policy)
 
@@ -46,8 +46,8 @@ We expect a high standard of professionalism from you at all times while you are
 ## places for course discussion
 
 * [seceduau.slack.com/signup](https://seceduau.slack.com/signup)
-    * #cs6447
-    * #cs6447-22t2-t16a
+    * #cs6443
+    * #cs6443-22t2-h16a
 
 {{% /section %}}
 
@@ -74,7 +74,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## Course content
 * Wargames (25%)
-* Pentesting reports (25%)
+* 2 x PenTesting reports (25%)
 * Mid-term (10%)
 * Final (40%)
 
@@ -102,4 +102,10 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
-# Do some of the challenges!
+## Activities
+* Form groups for the reports (4-5 people)
+* Signing up/logging into QuoccaBank
+* Installing burp suite
+* Try out some of the challenges!
+    * Recon stuffs
+    * HTTP as a service (optional)
