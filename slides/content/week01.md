@@ -89,7 +89,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 * extended flags aren't *required\**, but you should do them anyway (they're way cooler imo)
 
---
+---
 
 ## Report
 * pentesting / vulnerability report
