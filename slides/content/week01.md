@@ -96,6 +96,13 @@ We expect a high standard of professionalism from you at all times while you are
     * groups of 4-5
     * keep track of how you got found each of the flags
 
+---
+
+## Bruteforcing at Uni
+if you use automated tools, pls dont use uni DNS servers, use these instead :)
+* Google - 8.8.8.8
+* Cloudflare - 1.1.1.1
+
 {{% /section %}}
 
 ---
@@ -104,8 +111,9 @@ We expect a high standard of professionalism from you at all times while you are
 {{% section %}}
 
 * web things??
-* hacking
-* stealing credentials/money i think?
+* hacking NASA
+* stealing money i think?
+* [link to the slides](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fmedia%2Eopenlearning%2Ecom%3A443%2FYeBDzZwyMePLbywk2UP9dScLxXrwUC68zPH4RxzXBivAM6tgYStqQKaYd75sPJuo%2E1653952985%2FCOMP6443%5FWeek%5F1%5Fv1%2E1%2Epptx&wdSlideId=256&wdModeSwitchTime=1654101511864)
 
 {{% /section %}}
 
