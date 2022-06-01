@@ -11,7 +11,7 @@ People b late
 
 {{< slide class="center" >}}
 # week01
-### COMP6[84]43 H16A 
+### COMP6443 H16A 
 
 ---
 
@@ -32,6 +32,7 @@ We expect a high standard of professionalism from you at all times while you are
 * Lachlan
 * CompSci (Security) / Maths
 * 4th year 👴
+* kinda cringe
 
 ---
 
@@ -63,6 +64,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 * Your name, degree, year?
 * Why'd you do the course?
+* What time did you sleep last night?
 * Fun fact?
 * ~~Your credit card number and the 3 wacky digits on the back~~
 
@@ -85,7 +87,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 * Cool to collaborate/work together, but your flags need to be different.
 
-* extended flags aren't required, but you should do them anyway (they're way cooler imo)
+* extended flags aren't *required*, but you should do them anyway (they're way cooler imo)
 
 --
 
@@ -103,16 +105,23 @@ We expect a high standard of professionalism from you at all times while you are
 
 * web things??
 * hacking
-* stealing credentials/money i think
+* stealing credentials/money i think?
 
 {{% /section %}}
 
 ---
 
 ## Activities
-* Form groups for the reports (4-5 people)
+* Form groups for the reports (3-4 people)
 * Signing up/logging into QuoccaBank
-* Installing burp suite/setting up certs
-* Try out some of the challenges!
-    * Recon stuffs
-    * HTTP as a service (optional)
+* Installing burp suite/~~setting up certs~~?
+* ~~Try out some of the challenges!~~
+    * ~~Recon stuffs~~
+    * ~~HTTP as a service (optional)~~
+
+---
+
+## Subdomain bruteforcing
+* Cyberchef
+
+* https://github.com/danielmiessler/SecLists - some great wordlists

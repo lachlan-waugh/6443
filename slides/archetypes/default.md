@@ -11,7 +11,7 @@ People b late
 
 {{< slide class="center" >}}
 # {{ replace .Name "-" " " | title }}
-### COMP6[84]43 H16A 
+### COMP6443 H16A 
 
 ---
 
