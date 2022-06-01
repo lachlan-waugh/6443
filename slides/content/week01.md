@@ -87,7 +87,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 * Cool to collaborate/work together, but your flags need to be different.
 
-* extended flags aren't *required*, but you should do them anyway (they're way cooler imo)
+* extended flags aren't *required\**, but you should do them anyway (they're way cooler imo)
 
 --
 
@@ -120,8 +120,3 @@ We expect a high standard of professionalism from you at all times while you are
     * ~~HTTP as a service (optional)~~
 
 ---
-
-## Subdomain bruteforcing
-* Cyberchef
-
-* https://github.com/danielmiessler/SecLists - some great wordlists

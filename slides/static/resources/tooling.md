@@ -2,6 +2,13 @@
 
 ## Cool websites B)
 * [CyberChef](https://gchq.github.io/CyberChef/)
+* [Request Bin](https://requestbin.com/)
+
+&nbsp;
+
+## Useful stuff
+* [cookie editor](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
+* [Python requests template](/6443/resources/post)
 
 &nbsp;
 
