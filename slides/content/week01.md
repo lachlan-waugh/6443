@@ -108,14 +108,10 @@ if you use automated tools, pls dont use uni DNS servers, use these instead :)
 ---
 
 ## Lecture content
-{{% section %}}
-
 * web things??
 * hacking NASA
 * stealing money i think?
 * [link to the slides](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fmedia%2Eopenlearning%2Ecom%3A443%2FYeBDzZwyMePLbywk2UP9dScLxXrwUC68zPH4RxzXBivAM6tgYStqQKaYd75sPJuo%2E1653952985%2FCOMP6443%5FWeek%5F1%5Fv1%2E1%2Epptx&wdSlideId=256&wdModeSwitchTime=1654101511864)
-
-{{% /section %}}
 
 ---
 
