@@ -16,7 +16,7 @@
 ### Passive
 * dig (linux command)
 * [nslookup](https://www.nslookup.io/)
-* [google](https://google.com)
+* [google](https://google.com) *(check out site:???.com)*
 * [crt.sh](https://crt.sh/)
 * [waybackmachine](https://archive.org/web/)
 * [DNS Dumpster](https://dnsdumpster.com/)
