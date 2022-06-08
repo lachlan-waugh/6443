@@ -29,7 +29,9 @@ We expect a high standard of professionalism from you at all times while you are
 {{% section %}}
 
 ## Presentations
-Bonus marks!
+* Bonus marks!
+* Talk about something cool (security related), you've seen in the last week
+* Around 10 minutes
 
 ---
 
@@ -41,6 +43,7 @@ Bonus marks!
 ---
 
 ## Reports
+* Keep it businessy & use a real vulnerability scoring system (CVSS, CVE), and some frameworks (NIST, OCTAVE)
 * [an example](https://docs.google.com/document/d/1s12Off74DZ8RcELdqdeZSxJTMkbN6l4MHtolwTUrnrU/edit)
 * [some more examples](https://github.com/juliocesarfort/public-pentesting-reports)
 
@@ -52,7 +55,8 @@ Bonus marks!
 
 {{% section %}}
 
-
+* what is cookie?
+    * what jwt
 
 {{% /section %}}
 
@@ -61,15 +65,45 @@ Bonus marks!
 ## A note on enumeration
 {{% section %}}
 
+* rate limit your shiz (or we'll do it for you)
+* again, check out [lwaugh.io/6443/tooling](/6443/tooling) for some helpful tools
+* do the demo lachlan
+
+---
+
+ps
+
+"*N.B. Both sub-domain enumeration and sub-directory brute-forcing are discouraged and will not assist you in these challenges. However, you may be find it useful to enumerate IDs or passwords.*" - Topic 3 challenges page on OL
+
 {{% section %}}
 
 ---
 
-## Go do some challenges
+# Presentations (woo)
+
+{{% section %}}
+
+* ~10 minutes in your groups exploring one of the below technologies 
+* 3-5 minutes presenting it to the rest of the class :)
+
+--
+
+## Topics
+* HTTP codes and types
+* SSL / TLS
+* Cookies
+* Certificate transparency
+* other technologies?
+
+{{% /section %}}
+
+---
+
+# Go do some challenges
 
 ---
 
 ## What is due?
-* this sunday: nothin
-* next sunday 23:59pm: week 2 challenges (blog, files, etc)
-* week 5 sunday? (maybe not idk): the first report
+Sunday 23:59pm: 
+* week03: week 2 challenges (blog, files, etc)
+* week05: the first report (maybe not idk the due date lol)
