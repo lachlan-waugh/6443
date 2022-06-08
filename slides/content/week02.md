@@ -57,7 +57,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 * http/s & tls
 * what is cookie?
-    * what jwt
+    * what jwt [jwt.io](https://jwt.io)
 * authentication vs authorization
 
 ---
@@ -93,9 +93,9 @@ ps
 --
 
 ## Topics
-* HTTP codes and types
+* HTTP status codes, types, and headers
 * SSL / TLS
-* Cookies
+* Cookies (and JWTs)
 * Certificate transparency
 * other technologies?
 
