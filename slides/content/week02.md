@@ -79,7 +79,7 @@ ps
 
 "*N.B. Both sub-domain enumeration and sub-directory brute-forcing are discouraged and will not assist you in these challenges. However, you may be find it useful to enumerate IDs or passwords.*" - Topic 3 challenges page on OL
 
-{{% \section %}}
+{{% ;section %}}
 
 ---
 
