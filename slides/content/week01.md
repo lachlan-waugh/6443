@@ -92,7 +92,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## Report
 * pentesting / vulnerability report
-    * groups of 4-5
+    * groups of 3-4
     * keep track of how you got found each of the flags
 
 ---

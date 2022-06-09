@@ -44,6 +44,11 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## Reports
 * Keep it businessy & use a real vulnerability scoring system (CVSS, CVE), and some frameworks (NIST, OCTAVE)
+* "We recommend you keep a record of the vulnerabilities you have found. Most pen-testers will be required to write a report after a 'penetration assessment', and you will too during this semester!" - Topic 03 challenges on OL
+
+---
+
+## Some examples
 * [an example](https://docs.google.com/document/d/1s12Off74DZ8RcELdqdeZSxJTMkbN6l4MHtolwTUrnrU/edit)
 * [some more examples](https://github.com/juliocesarfort/public-pentesting-reports)
 
@@ -70,7 +75,7 @@ We expect a high standard of professionalism from you at all times while you are
 {{% section %}}
 
 * rate limit your shiz (or we'll do it for you)
-* again, check out [lwaugh.io/6443/resources/tooling](/resources/tooling) for some helpful tools
+* again, check out [lwaugh.io/6443/tooling](/6443/tooling) for some helpful tools
 * do the demo lachlan
 
 ---
@@ -79,7 +84,7 @@ ps
 
 "*N.B. Both sub-domain enumeration and sub-directory brute-forcing are discouraged and will not assist you in these challenges. However, you may be find it useful to enumerate IDs or passwords.*" - Topic 3 challenges page on OL
 
-{{% /section %}}
+{{% section %}}
 
 ---
 
@@ -90,7 +95,7 @@ ps
 * ~10 minutes in your groups exploring one of the below technologies 
 * 3-5 minutes presenting it to the rest of the class :)
 
----
+--
 
 ## Topics
 * HTTP status codes, types, and headers
