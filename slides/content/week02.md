@@ -70,7 +70,7 @@ We expect a high standard of professionalism from you at all times while you are
 {{% section %}}
 
 * rate limit your shiz (or we'll do it for you)
-* again, check out [lwaugh.io/6443/tooling](/6443/tooling) for some helpful tools
+* again, check out [lwaugh.io/6443/resources/tooling](/resources/tooling) for some helpful tools
 * do the demo lachlan
 
 ---
@@ -79,7 +79,7 @@ ps
 
 "*N.B. Both sub-domain enumeration and sub-directory brute-forcing are discouraged and will not assist you in these challenges. However, you may be find it useful to enumerate IDs or passwords.*" - Topic 3 challenges page on OL
 
-{{% section %}}
+{{% /section %}}
 
 ---
 
@@ -90,7 +90,7 @@ ps
 * ~10 minutes in your groups exploring one of the below technologies 
 * 3-5 minutes presenting it to the rest of the class :)
 
---
+---
 
 ## Topics
 * HTTP status codes, types, and headers
