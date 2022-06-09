@@ -70,7 +70,7 @@ We expect a high standard of professionalism from you at all times while you are
 {{% section %}}
 
 * rate limit your shiz (or we'll do it for you)
-* again, check out [lwaugh.io/6443/tooling](/6443/tooling) for some helpful tools
+* again, check out [lwaugh.io/6443/resources/tooling](/resources/tooling) for some helpful tools
 * do the demo lachlan
 
 ---
