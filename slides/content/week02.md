@@ -90,7 +90,7 @@ ps
 * ~10 minutes in your groups exploring one of the below technologies 
 * 3-5 minutes presenting it to the rest of the class :)
 
---
+---
 
 ## Topics
 * HTTP status codes, types, and headers
