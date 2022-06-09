@@ -10,7 +10,7 @@ outputs: ["Reveal"]
 
 {{< slide class="center" >}}
 # Week02
-### COMP6443 H16A 
+### COMP6443 H16A
 
 ---
 

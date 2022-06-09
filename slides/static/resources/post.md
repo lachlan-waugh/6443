@@ -9,7 +9,7 @@ from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # cert  = ('/path/to/cert.pem', '/path/to/cert.key') # no longer required :(
-proxy = { "https:": "https://127.0.0.1:8080", "http:" : "http://127.0.0.1:8080" }
+proxy = { "https:": "http://127.0.0.1:8080", "http:" : "http://127.0.0.1:8080" }
 
 def view():
 	usr = "melon"
