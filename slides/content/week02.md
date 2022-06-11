@@ -84,18 +84,17 @@ ps
 
 "*N.B. Both sub-domain enumeration and sub-directory brute-forcing are discouraged and will not assist you in these challenges. However, you may be find it useful to enumerate IDs or passwords.*" - Topic 3 challenges page on OL
 
-{{% section %}}
+{{% /section %}}
 
 ---
 
-# Presentations (woo)
-
 {{% section %}}
 
+## Presentations (woo)
 * ~10 minutes in your groups exploring one of the below technologies 
 * 3-5 minutes presenting it to the rest of the class :)
 
---
+---
 
 ## Topics
 * HTTP status codes, types, and headers
@@ -113,6 +112,6 @@ ps
 ---
 
 ## What is due?
-Sunday 23:59pm: 
+Sunday 23:59pm
 * week03: week 2 challenges (blog, files, etc)
-* week05: the first report (maybe not idk the due date lol)
+* week05: the first report (I think?)
