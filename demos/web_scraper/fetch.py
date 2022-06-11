@@ -2,7 +2,7 @@ import requests
 import re
 import sys
 
-proxy = { "https:": "http://127.0.0.1:8080", "http:" : "http://127.0.0.1:8080" }
+proxy = { 'https:': 'http://127.0.0.1:8080', 'http:' : 'http://127.0.0.1:8080' }
 
 def read_domain(subd):
 	res = requests.get(f'https://{subd}.quoccabank.com', proxies = proxy)

@@ -11,13 +11,13 @@ const server = net.createServer(conn => {
 
             // If it's a post request, get the name from the body
             if (idx == 0 && /\nname/.test(data)) {
-                name = data.match(/\nname=(.*)$/)[1];
+                name = decodeURIComponent(data.match(/\nname=(.*)$/)[1]).replace(/\+/g, ' '); // kinda hacky but like l0l, cba using burp suite
                 break;
             // If it's a get request, reuse the existing cookie
             } else {
                 let [key, val] = line.split(': ')
                 if (/^cookie$/i.test(key)) {
-                    name = val.match(/name=([^;]*)/i)[1]
+                    name = (val.match(/name=([^;]*)/i)) ? val.match(/name=([^;]*)/i)[1] : '';
                 }
             }
         }

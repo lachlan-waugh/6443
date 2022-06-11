@@ -13,10 +13,10 @@ exports.header = (name) =>
 exports.body = (name) => `
     <h1>Response Splitting</h1>
     <p>
-        Hey there ${name ?? '?'}!
+        Wait, you really think that "${name ?? 'web apps isn\'t trivial'}"?
     </p>
     <form method="POST">
-        <textarea name='name' rows="3" placeholder="Wait a second, who are you?"></textarea>
-        <button type='submit'>hack!</button>
+        <textarea name='name' rows="3" placeholder="Gimme data, yum?"></textarea><br/>
+        <button type='submit'>chomp!</button>
     </form>
 `.trim();
