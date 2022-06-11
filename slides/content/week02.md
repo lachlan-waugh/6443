@@ -43,7 +43,7 @@ We expect a high standard of professionalism from you at all times while you are
 ---
 
 ## Reports
-* Keep it businessy & use a real vulnerability scoring system (e.g CVE), and some frameworks (e.g NIST)
+* Keep it businessy & use a real vulnerability scoring system (e.g CVE), and framework (e.g NIST)
 * "We recommend you keep a record of the vulnerabilities you have found. Most pen-testers will be required to write a report after a 'penetration assessment', and you will too during this semester!" - Topic 03 challenges on OL
 
 ---
