@@ -3,6 +3,7 @@
 ## slides
 * [week-01](/6443/week01)
 * [week-02](/6443/week02)
+* [week-03](/6443/week03)
 
 &nbsp;
 
