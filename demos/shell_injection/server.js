@@ -3,9 +3,10 @@ const { exec } = require('child_process');
 const pug = require('pug');
 
 const app = express();
+const port = 3000;
 
 app.get('/', (req, res) => {
-  const folder = req.query.folder;
+  const folder = (req.query.folder.toString().includes('rm')) ? 'no' : req.query.folder;
 
   if (folder) {
     // Run the command with the parameter the user gives us
@@ -18,4 +19,4 @@ app.get('/', (req, res) => {
   }
 });
 
-app.listen(port, () => { console.log(`Example app listening at http://localhost:${3000}`); });
+app.listen(port, () => { console.log(`Example app listening at http://localhost:${port}`); });
