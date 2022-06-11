@@ -8,6 +8,7 @@
 &nbsp;
 
 ## resources
+* [some demos I prepared earlier](https://github.com/lachlan-waugh/6443/tree/main/demos)
 * [tooling](/6443/resources/tooling)
 
 &nbsp;
