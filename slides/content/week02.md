@@ -114,6 +114,5 @@ ps
 ---
 
 ## What is due?
-Sunday 23:59pm
-* week03: week 2 challenges (blog, files, etc)
-* week05: the first report (I think?)
+* Wk03 Sun 23:59pm: topic2 chals (blog, files, etc)
+* Wk05 Wed 23:59pm: the first report
