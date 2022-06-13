@@ -6,7 +6,10 @@ const app = express();
 const port = 3000;
 
 app.get('/', (req, res) => {
-  const folder = (req.query.folder.toString().includes('rm')) ? 'no' : req.query.folder;
+  // security is my passion
+  const folder = (req.query.folder && req.query.folder.toString().includes('rm'))
+    ? 'no; cowsay "you have been securitied"'
+    : req.query.folder;
 
   if (folder) {
     // Run the command with the parameter the user gives us
