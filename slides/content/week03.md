@@ -41,8 +41,8 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## Due dates
 * Topic02 challenges: THIS SUNDAY 11:59pm
-* Midterm: Week05 during the lecture (I assume)
-* Report: Week05 Wednesday 11:59pm
+* Midterm: Week05 (during the lecture I assume?)
+* Report: Week05 Sunday 11:59pm
 
 {{% /section %}}
 
@@ -54,7 +54,8 @@ We expect a high standard of professionalism from you at all times while you are
 * Authentication
 * Recon
 * Session management
-* ~~IDOR~~
+* IDOR
+* hashing vs encryption
 
 ---
 
@@ -98,6 +99,12 @@ Insecure direct object reference
 
 ![](/img/week03/idor.png)
 
+---
+
+## Hashing vs encryption
+* ~~Hashing is just lossy encryption, change my mind~~
+* What's the difference?
+
 {{% /section %}}
 
 ---
@@ -106,7 +113,8 @@ Insecure direct object reference
 
 ## Defences
 * JWT
-* SAML (garbanzo) / OAuth (goodbanzo)
+* SAML (garbanzo)
+* OAuth (goodbanzo)
 * HSTS
 * CSP
 * SSO / FID
@@ -115,32 +123,59 @@ Insecure direct object reference
 ---
 
 ## JWT
+JSON Web Tokens
 * We already did this I think
 * Why's this even in the slides lol, it couldn't be a hint right (jk ... unless?)
 
 ---
 
 ## OAuth / SAML
-
+Security Assertion Markup Language
 
 ---
 
 ## HSTS
+HTTP Strict Transport Security
+* Helps to prevent HTTPS downgrade attacks
+    * Enforces the use of HTTPS.
+
+* HSTS pre-load list [click me ;)](https://hstspreload.org/)
+    * A list of domains that support HSTS.
+    * Used in most modern browsers
 
 ---
 
 ## CSP
+Content Security Policy
+
+Helps mitigate XSS and injection attacks by specifying where certain resources can be loaded from
+* e.g. .js files, images, .css files (??)
+* e.g. only load from certain domains, only specific files, only HTTPS sites.
 
 ---
 
 ## SSO / FID
+Single Sign-On / Federated Identity
+* **SSO**: access multiple services (in one organisation) with the same session/without reauthenticating.
+
+* **FID**: external authentication. Offers access to services across multiple organisations (links your identity to multiple IAMS's)
 
 ---
 
 ## Access control
+* MAC - Mandatory (levels w/ central authority)
+* DAC - Discretionary (levels w/ no central authority)
+* RBAC - Role-based (groups)
+* ABAC - Attribute-based (dynamic controls)
+* RuBAC - Rule-based (structured rules/policies)
 
+read more [here](https://www.sailpoint.com/identity-library/what-are-the-different-types-of-access-control-systems/)
 
 {{% /section %}}
+
+---
+
+
 
 ---
 
@@ -151,3 +186,4 @@ Insecure direct object reference
 ## Now you
 * In your groups, give the challenges a shot
 * If you've already solved them all (gj), maybe get started on the report.
+    * if you're bored try out a ctf to practice for next week? [e.g. ringezer0](https://ringzer0ctf.com/challenges)
