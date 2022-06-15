@@ -1,2 +1,4 @@
 Tech enthusiasts: My entire house is smart.
-Tech workers: The only piece of technology in my house is a printer and I keep a gun next to it so I can shoot it if it makes a noise I don't recognise.
+Tech workers: The only piece of technology in my house is a printer
+              and I keep a gun next to it so I can shoot it if it
+              makes a noise I don't recognise.
