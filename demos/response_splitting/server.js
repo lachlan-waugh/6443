@@ -6,13 +6,14 @@ const server = net.createServer(conn => {
         let name;
         data = data.toString();
 
-        for (let idx = 0, end = data.indexOf('\r\n', idx); end != -1 && idx != end; idx = end + 2, end = data.indexOf('\r\n', idx)) {
-            let line = data.slice(idx, end);
+        for (let i = 0, end = data.indexOf('\r\n', i); end != -1 && i != end; i = end + 2, end = data.indexOf('\r\n', i)) {
+            let line = data.slice(i, end);
 
             // If it's a post request, get the name from the body
-            if (idx == 0 && /\nname/.test(data)) {
+            if (i == 0 && /\nname/.test(data)) {
                 name = decodeURIComponent(data.match(/\nname=(.*)$/)[1]).replace(/\+/g, ' '); // kinda hacky but like l0l, cba using burp suite
                 break;
+
             // If it's a get request, reuse the existing cookie
             } else {
                 let [key, val] = line.split(': ')
