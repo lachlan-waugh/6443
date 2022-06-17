@@ -39,6 +39,14 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
+## What's coming up?
+* weeks 4/5: server-side injection
+    * SQLi, SSI, XXE, SSRF, SSTI
+* weeks 7/8: client-side injection
+    * XSS, JSONP, Clickjacking, CSRF
+
+---
+
 ## Due dates
 * Topic02 challenges: THIS SUNDAY 11:59pm
 * Midterm: Week05 (during the lecture I assume?)
@@ -81,8 +89,8 @@ Bruteforcing passwords ([seclists](https://github.com/danielmiessler/SecLists/Pa
 ---
 
 ## More recon
-* [robots.txt](www.google.com/robots.txt)
-* [sitemap.xml](www.google.com/sitemap.xml)
+* [robots.txt](https://www.google.com/robots.txt)
+* [sitemap.xml](https://www.google.com/sitemap.xml)
 * javascript files
 * html comments
 
@@ -105,6 +113,7 @@ Insecure direct object reference
 ## Hashing vs encryption
 * ~~Hashing is just lossy encryption, change my mind~~
 * What's the difference?
+* When would you use them?
 
 {{% /section %}}
 
