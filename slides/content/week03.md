@@ -91,6 +91,7 @@ Bruteforcing passwords ([seclists](https://github.com/danielmiessler/SecLists/Pa
 ## Session management
 * Cookies are great, and never insecure :)
 * Some of my favourite ways to encrypt them are base64 and base58!
+* Flask has it's own version of signed tokens (*similar* to JWTs)
 
 ---
 
