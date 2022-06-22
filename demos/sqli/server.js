@@ -8,25 +8,38 @@ app.use(express.urlencoded({ extended: true }));
 
 const SECRET = "SECRET_PASSWORD_123";
 
-app.get('/', (_, res) => res.redirect('/login'));
-app.post('/', (req, res) => {
-    // who cares about maintaining sessions lmao
-    const { user, pass, token } = req.body;
+app.get('/', (req, res) => {
+    const { secret, user, pass } = req.query;
 
-    if (token === "SUPER_PASSWORD_123") {
-        res,send(`welcome ${user}. Man, '${pass}' is a really strong password, well done!`);
+    // now this, is security B)
+    if (secret) {
+        res.send(`welcome ${user}. Man, '${pass}' is a really strong password, well done!`);
     } else {
-        res.send('NOT AUTHORISED!!');
+        res.redirect('/login');
     }
 });
 
-app.get('/login', (req, res) => res.end(fs.readFileSync('./site/login.html')));
+app.get('/login', (_, res) => res.end(fs.readFileSync('./site/login.html')));
 
 app.post('/login', (req, res) => {
     const { user, pass } = req.body;
-    console.log(`${user} ${pass}`)
+    let result;
 
-    res.end(execute(`SELECT username, password FROM users WHERE username = '${user}' AND password = '${pass}'`, false));
+    if (req.body.hasOwnProperty('b1')) {
+        result = execute(`SELECT * from users WHERE username = '${user}' AND password = '${pass}'`, false);
+    } else if (req.body.hasOwnProperty('b2')) {
+        result = execute(`SELECT * from users WHERE username = "${user}" AND password = "${pass}"`, false);
+    } else if (req.body.hasOwnProperty('b3')) {
+        result = execute(`SELECT * from users WHERE (username = '${user}' AND password = '${pass}')`, false);
+    } else {
+        result = execute(`SELECT * from users WHERE (username = '${user.replace(/OR/gi, '')}' AND password = '${pass}')`, true);
+    }
+
+    if (result.success) {
+        res.redirect(`/?secret=${SECRET}&user=${user}&pass=${pass}`)
+    } else {
+        res.end(JSON.stringify(result.data));
+    }
 });
 
 // app.get('/blogs', (req, res) => {

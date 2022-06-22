@@ -3,7 +3,7 @@ import sqlite from 'better-sqlite3';
 let db;
 
 const db_init = () => {
-    const db = sqlite(':memory:');
+    db = sqlite(':memory:');
 
     db.exec(`
     CREATE TABLE users (
@@ -17,36 +17,31 @@ const db_init = () => {
         ('admin', 'admin'), ('flag-haver', 'COMP6443{I_AM_BIGAPP_7}')
     `);
 
-    db.exec(`
-    CREATE TABLE blogs (
-        id integer primary key,
-        title string,
-        text string
-    );
+    // db.exec(`
+    // CREATE TABLE blogs (
+    //     id integer primary key,
+    //     title string,
+    //     text string
+    // );
 
-    INSERT INTO blogs (title, text) VALUES
-    ('abcd', 'abcd'), ('abcd', 'abcd'), ('abcd', 'abcd'),
-    ('abcd', 'abcd'), ('abcd', 'abcd'), ('abcd', 'abcd')
-    `);
-
-    return db;
+    // INSERT INTO blogs (title, text) VALUES
+    // ('abcd', 'abcd'), ('abcd', 'abcd'), ('abcd', 'abcd'),
+    // ('abcd', 'abcd'), ('abcd', 'abcd'), ('abcd', 'abcd')
+    // `);
 };
 
 const execute = (query, quiet=true) => {
-    if (!db) db = db_init();
+    db || db_init();
 
     try {
-        console.log(query);
-
-        result = db.prepare(query).get();
-        console.log(result);
-        if (result) return JSON.stringify( { status: 'success', data: result } )
+        const result = db.prepare(query).get();
+        if (result) return { success: true, data: result };
     } catch (e) {
-        console.warn(`ERROR: ${e.toString()}`)
-        if (!quiet) return JSON.stringify( { status: 'failure', data: e.toString() } )
+        console.warn(`ERROR: ${e.toString()}`);
+        if (!quiet) return { success: false, data: e.toString() };
     }
 
-    return JSON.stringify({ status: 'failure', data: "Incorrect username or password" });
+    return { success: false, data: "Incorrect username or password" };
 };
 
 export default execute;
