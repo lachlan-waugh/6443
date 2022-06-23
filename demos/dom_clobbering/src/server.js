@@ -19,4 +19,4 @@ app.get('/secret', (req, res) => {
 
 const someObject = window.someObject || {};
 
-app.listen(port, () => { console.log(`Example app listening at http://localhost:${port}`); });
+app.listen(port, () => console.log(`[*] listening on localhost:${port}`));
