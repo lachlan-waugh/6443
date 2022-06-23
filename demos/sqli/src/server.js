@@ -1,18 +1,19 @@
 import express from 'express';
-import execute from './database.js'; 
+import cookieParser from 'cookie-parser'; 
+import execute from './database.js';
 import fs from 'fs';
 
 const app = express();
 const port = 3000;
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser());
 
 const SECRET = "SECRET_PASSWORD_123";
 
 app.get('/', (req, res) => {
-    const { secret, user, pass } = req.query;
+    const [ user, pass, secret ] = atob(req.cookies.token).split(':');
 
-    // now this, is security B)
-    if (secret) {
+    if (secret === "SECRET_PASSWORD_123") { // why yes, security is my passion B)
         res.send(`welcome ${user}. Man, '${pass}' is a really strong password, well done!`);
     } else {
         res.redirect('/login');
@@ -23,27 +24,31 @@ app.get('/login', (_, res) => res.end(fs.readFileSync('./site/login.html')));
 
 app.post('/login', (req, res) => {
     const { user, pass, method } = req.body;
-    let result;
 
-    result = {
-        'btn1': () => execute(`SELECT * from users WHERE username = '${user}' AND password = '${pass}'`),
-        'btn2': () => execute(`SELECT * from users WHERE (username = '${user}' AND password = '${pass}')`),
-        'btn3': () => execute(`SELECT * from users WHERE (username = '${user.replace(/OR/gi, '')}' AND password = '${pass}')`, true)
-    }[method] ?? { success: false, data: 'nah man' };
+    // tried to use {...}[] ?? { ... }, but it kept breaking
+    // TODO: maybe fix it later? idk
+    const result = (method) ? {
+        'btn1': () => execute(`SELECT user, pass FROM users WHERE user = '${user}' AND pass = '${pass}'`),
+        'btn2': () => execute(`SELECT user, pass FROM users WHERE (user = '${user}' AND pass = '${pass}')`),
+        'btn3': () => execute(`SELECT user, pass FROM users WHERE (user = '${user.replace(/OR/gi, '')}' AND pass = '${pass}')`, true),
+        'btn4': () => {
+            const res = execute(`SELECT user, pass FROM users WHERE user = '${user}' and pass = '${pass}'`);
 
+            // I wanted to simulate an empty database, but couldn't be bothered
+            // so instead: check the user doesn't exist, and fail if they do l0l
+            // how do you bypass this check I wonder :thonking:
+            return (execute(`SELECT user, pass FROM users WHERE user = '${tmp.data.user}' AND pass = '${tmp.data.pass}'`).success)
+            ? { success: false, data: 'nah man that ain\'t it' }
+            : res;
+        }
+    }[method]() : { success: false, data: 'nah man' };
+ 
     if (result.success) {
-        res.redirect(`/?secret=${SECRET}&user=${user}&pass=${pass}`)
+        // TEN LAYERS OF eNcRyPtIoN
+        res.end(JSON.stringify({ success: true, data: btoa(`${result.data.user}:${result.data.pass}:${SECRET}`) }));
     } else {
-        res.end(JSON.stringify(result.data));
+        res.end(JSON.stringify(result));
     }
 });
-
-// app.get('/blogs', (req, res) => {
-
-// });
-
-// app.post('/blogs', (req, res) => {
-
-// });
 
 app.listen(port, () => console.log(`[*] listening on localhost:${port}`));
