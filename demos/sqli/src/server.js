@@ -1,5 +1,5 @@
 import express from 'express';
-import execute from './src/database.js'; 
+import execute from './database.js'; 
 import fs from 'fs';
 
 const app = express();
@@ -22,18 +22,14 @@ app.get('/', (req, res) => {
 app.get('/login', (_, res) => res.end(fs.readFileSync('./site/login.html')));
 
 app.post('/login', (req, res) => {
-    const { user, pass } = req.body;
+    const { user, pass, method } = req.body;
     let result;
 
-    if (req.body.hasOwnProperty('b1')) {
-        result = execute(`SELECT * from users WHERE username = '${user}' AND password = '${pass}'`);
-    } else if (req.body.hasOwnProperty('b2')) {
-        result = execute(`SELECT * from users WHERE (username = '${user}' AND password = '${pass}')`);
-    } else if (req.body.hasOwnProperty('b3')) {
-        result = execute(`SELECT * from users WHERE (username = '${user.replace(/OR/gi, '')}' AND password = '${pass}')`, true);
-    } else {
-	result = { success: false, data: 'nah man' };
-    }
+    result = {
+        'btn1': () => execute(`SELECT * from users WHERE username = '${user}' AND password = '${pass}'`),
+        'btn2': () => execute(`SELECT * from users WHERE (username = '${user}' AND password = '${pass}')`),
+        'btn3': () => execute(`SELECT * from users WHERE (username = '${user.replace(/OR/gi, '')}' AND password = '${pass}')`, true)
+    }[method] ?? { success: false, data: 'nah man' };
 
     if (result.success) {
         res.redirect(`/?secret=${SECRET}&user=${user}&pass=${pass}`)
