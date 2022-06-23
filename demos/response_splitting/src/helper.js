@@ -3,11 +3,9 @@ exports.header = (name) =>
         'HTTP/1.1 200 OK',
         'Connection: Closed',
         'Content-Type: text/html',
-        ...(name)
-        ? [`Set-Cookie: name=${name};`]
-        : [],
-        'Set-Cookie: secret=FLAG{super_secret_flag_haha_wait_what}',
-        'Content-Security-Policy: script-src: \'none\''
+        ...(name) ? [`Set-Cookie: name=${name};`] : [],
+        'Set-Cookie: secret=FLAG{super_secret_flag_haha_wait_what}; HttpOnly',
+        "Content-Security-Policy: script-src: 'none'"
     ];
 
 exports.body = (name) => `

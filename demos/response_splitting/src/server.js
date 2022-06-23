@@ -6,8 +6,12 @@ const server = net.createServer(conn => {
         let name;
         data = data.toString();
 
+        console.log(data);
+
         for (let i = 0, end = data.indexOf('\r\n', i); end != -1 && i != end; i = end + 2, end = data.indexOf('\r\n', i)) {
             let line = data.slice(i, end);
+
+            console.log(line);
 
             // If it's a post request, get the name from the body
             if (i == 0 && /\nname/.test(data)) {
