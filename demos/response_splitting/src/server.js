@@ -6,25 +6,18 @@ const server = net.createServer(conn => {
         let name;
         data = data.toString();
 
-        console.log(data);
+        // If it's a post request, get the name from the body
+        if (/^POST/.test(data) && /\nname=/.test(data)) {
+            // kinda hacky but like l0l, cba using burp suite
+            name = decodeURIComponent(data.match(/\nname=(.*)$/)[1]).replace(/\+/g, ' ');
 
-        for (let i = 0, end = data.indexOf('\r\n', i); end != -1 && i != end; i = end + 2, end = data.indexOf('\r\n', i)) {
-            let line = data.slice(i, end);
+            // the non-scuffed version, but you have to intercept with burp or it URL-encodes the \r\n\r\n into %0D%0A%0D%0A
+            // name = data.match(/\nname=(.*)$/)[1]
 
-            console.log(line);
-
-            // If it's a post request, get the name from the body
-            if (i == 0 && /\nname/.test(data)) {
-                name = decodeURIComponent(data.match(/\nname=(.*)$/)[1]).replace(/\+/g, ' '); // kinda hacky but like l0l, cba using burp suite
-                break;
-
-            // If it's a get request, reuse the existing cookie
-            } else {
-                let [key, val] = line.split(': ')
-                if (/^cookie$/i.test(key)) {
-                    name = (val.match(/name=([^;]*)/i)) ? val.match(/name=([^;]*)/i)[1] : '';
-                }
-            }
+        // If it's a get request, reuse the existing cookie
+        } else {
+            // regex is readable right? basically make sure the name cookie is set, otherwise it'll crash when trying to read it
+            name = (/; name=(.*)\r\n\r\n/.test(data)) ? data.match(/; name=(.*)\r\n\r\n/)[1] : ''
         }
 
         conn.end(help.header(name).map(s => s.trim()).join('\r\n') + '\r\n\r\n' + help.body(name))
