@@ -26,13 +26,13 @@ app.post('/login', (req, res) => {
     let result;
 
     if (req.body.hasOwnProperty('b1')) {
-        result = execute(`SELECT * from users WHERE username = '${user}' AND password = '${pass}'`, false);
+        result = execute(`SELECT * from users WHERE username = '${user}' AND password = '${pass}'`);
     } else if (req.body.hasOwnProperty('b2')) {
-        result = execute(`SELECT * from users WHERE username = "${user}" AND password = "${pass}"`, false);
+        result = execute(`SELECT * from users WHERE (username = '${user}' AND password = '${pass}')`);
     } else if (req.body.hasOwnProperty('b3')) {
-        result = execute(`SELECT * from users WHERE (username = '${user}' AND password = '${pass}')`, false);
-    } else {
         result = execute(`SELECT * from users WHERE (username = '${user.replace(/OR/gi, '')}' AND password = '${pass}')`, true);
+    } else {
+	result = { success: false, data: 'nah man' };
     }
 
     if (result.success) {

@@ -30,7 +30,7 @@ const db_init = () => {
     // `);
 };
 
-const execute = (query, quiet=true) => {
+const execute = (query, quiet=false) => {
     db || db_init();
 
     try {
