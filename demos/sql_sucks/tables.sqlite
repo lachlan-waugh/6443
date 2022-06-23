@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS spaceships (
+   	name char(64),
+	pwrd char(64),
+	capt varchar(100)
+);
+
+-- password is y0uw1lln3veRg3tthisB)
+
+INSERT INTO spaceships VALUES('iss_cool', '40e976e73eadd53372eae91398331a532c8082e1e3088e66e36900722401c0ab', 'FLAG{dummy_flag}');
+INSERT INTO spaceships VALUES('sick', '40e976e73eadd53372eae91398331a532c8082e1e3088e66e36900722401c0ab', 'ed');
+INSERT INTO spaceships VALUES('mad', '40e976e73eadd53372eae91398331a532c8082e1e3088e66e36900722401c0ab', 'edd');
+INSERT INTO spaceships VALUES('not_cool', '40e976e73eadd53372eae91398331a532c8082e1e3088e66e36900722401c0ab', 'eddy');
+INSERT INTO spaceships VALUES('it\'s a me', '40e976', 'mario') 

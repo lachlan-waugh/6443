@@ -1,0 +1,5 @@
+# pls don't look here i keep forgetting where my admin panel is :[
+
+User-Agent: *
+Disallow: /adm1n-p@n3I
+Disallow: /mario
