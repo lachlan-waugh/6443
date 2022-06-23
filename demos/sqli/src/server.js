@@ -37,7 +37,7 @@ app.post('/login', (req, res) => {
             // I wanted to simulate an empty database, but couldn't be bothered
             // so instead: check the user doesn't exist, and fail if they do l0l
             // how do you bypass this check I wonder :thonking:
-            return (execute(`SELECT user, pass FROM users WHERE user = '${tmp.data.user}' AND pass = '${tmp.data.pass}'`).success)
+            return (execute(`SELECT user, pass FROM users WHERE user = '${res.data.user}' AND pass = '${res.data.pass}'`).success)
             ? { success: false, data: 'nah man that ain\'t it' }
             : res;
         }
