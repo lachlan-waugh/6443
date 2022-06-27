@@ -21,14 +21,13 @@ const db_init = () => {
 const execute = (query, quiet=false) => {
     db || db_init();
 
-    // console.error(query)
+    console.error(`[*] DEBUG: ${query}`);
 
     try {
         const result = db.prepare(query).get();
-        // console.log(result);
         if (result) return { success: true, data: result };
     } catch (e) {
-        console.warn(`ERROR: ${e.toString()}`);
+        console.warn(`[-] ERROR: ${e.toString()}`);
         if (!quiet) return { success: false, data: e.toString() };
     }
 

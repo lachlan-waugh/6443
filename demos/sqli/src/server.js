@@ -11,6 +11,8 @@ app.use(cookieParser());
 const SECRET = "SECRET_PASSWORD_123";
 
 app.get('/', (req, res) => {
+    // if (!req.cookies.token) return res.redirect('/login');
+
     const [ user, pass, secret ] = atob(req.cookies.token).split(':');
 
     if (secret === "SECRET_PASSWORD_123") { // why yes, security is my passion B)
@@ -30,7 +32,11 @@ app.post('/login', (req, res) => {
     const result = (method) ? {
         'btn1': () => execute(`SELECT user, pass FROM users WHERE user = '${user}' AND pass = '${pass}'`),
         'btn2': () => execute(`SELECT user, pass FROM users WHERE (user = '${user}' AND pass = '${pass}')`),
-        'btn3': () => execute(`SELECT user, pass FROM users WHERE (user = '${user.replace(/OR/gi, '')}' AND pass = '${pass}')`, true),
+        'btn3': () => {
+            let stripped_user = user;
+            while (stripped_user.includes('OR')) stripped_user = stripped_user.replace(/OR/gi, '');
+            return execute(`SELECT user, pass FROM users WHERE (user = '${stripped_user}' AND pass = '${pass}')`, true)
+        },
         'btn4': () => {
             const res = execute(`SELECT user, pass FROM users WHERE user = '${user}' and pass = '${pass}'`);
 
