@@ -10,13 +10,13 @@ html = """
 </head>
 <body>
         <h1>Give data</h1>
+        {}
         <form method="GET">
-            <label for="data">Data:</label>
+            <label for="data">Data:</label></br>
             <textarea type="text" id="data" name="data"></textarea><br>
 
             <input type="submit" value="Submit">
         </form>
-        {}
 </body>
 </html>
 """
