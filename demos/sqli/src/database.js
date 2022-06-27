@@ -1,5 +1,4 @@
 import sqlite from 'better-sqlite3';
-import { redBright } from 'chalk';
 
 let db;
 
@@ -8,50 +7,25 @@ const db_init = () => {
 
     db.exec(`
     CREATE TABLE users (
-        id integer primary key,
-        username string,
-        password string
+        uid integer primary key,
+        user string,
+        pass string
     );
 
-    INSERT INTO users (username, password) VALUES
+    INSERT INTO users (user, pass) VALUES
         ('melon', 'hunter2'), ('web-admin', 'man_i_love_my_secure_app'),
         ('admin', 'admin'), ('flag-haver', 'COMP6443{I_AM_BIGAPP_7}')
     `);
-
-    // db.exec(`
-    // CREATE TABLE blogs (
-    //     id integer primary key,
-    //     title string,
-    //     text string
-    // );
-
-    // INSERT INTO blogs (title, text) VALUES
-    // ('abcd', 'abcd'), ('abcd', 'abcd'), ('abcd', 'abcd'),
-    // ('abcd', 'abcd'), ('abcd', 'abcd'), ('abcd', 'abcd')
-    // `);
 };
-
-const createQuery = (positions, ...vars) => {
-    let query = "";
-    let fmtQuery = "";
-    for (let i = 0; i < positions.length || i < vars.length; ++i) {
-        positions[i] && (fmtQuery += (query += positions[i]) && positions[i]);
-        vars[i] && (fmtQuery += redBright((query += vars[i]) && vars[i]));
-    }
-    
-    console.info("\n" + [Array(query.length + 7).fill('-').join(""), "query> " + fmtQuery].join("\n"));
-    return query;
-}
-
 
 const execute = (query, quiet=false) => {
     db || db_init();
 
-    console.log(query);
-    console.log(createQuery(query));
+    // console.error(query)
 
     try {
-        const result = db.prepare(createQuery(query)).get();
+        const result = db.prepare(query).get();
+        // console.log(result);
         if (result) return { success: true, data: result };
     } catch (e) {
         console.warn(`ERROR: ${e.toString()}`);

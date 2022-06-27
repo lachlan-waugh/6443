@@ -3,8 +3,8 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {font-family: Arial, Helvetica, sans-serif;}
-    form {border: 3px solid #f1f1f1;}
+    body { font-family: Arial, Helvetica, sans-serif; }
+    form { border: 3px solid #f1f1f1; }
 
     input[type=text], input[type=password] {
       width: 100%;
@@ -25,45 +25,68 @@
       width: 100%;
     }
 
-    button:hover {
-      opacity: 0.8;
-    }
-  
-    .container {
-      padding: 16px;
-    }
-
+    button:hover  { opacity: 0.8; }
+    .hidden       { display: none; }
+    .container    { padding: 16px; }
     .grid-container {
       display: grid;
       grid-template-columns: auto auto auto auto;
     }
-
-    span.psw {
-      float: right;
-      padding-top: 16px;
-    }
   </style>
 </head>
 <body>
+  <h2>SQLi demo</h2>
 
-<h2>SQLi demo</h2>
-
-<form method="POST">
-  <div class="container">
-    <label for="user"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="user" id="user" required>
-
-    <label for="pass"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="pass" id="pass" required>
-      
-    <div class="grid-container">
-      <button type="submit" name="b1">Login</button>
-      <button type="submit" name="b2">Login 2</button>
-      <button type="submit" name="b3">Login 3</button>
-      <button type="submit" name="b4">Login 4</button>
-    </div>
+  <div id="err-ctr" class="hidden">
+    <p><b style="color: red">ERROR: </b><a id="err-msg">asd</a></p>
   </div>
-</form>
 
+  <form method="POST">
+    <div class="container">
+      <label for="user"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="user" id="user" required>
+
+      <label for="pass"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="pass" id="pass" required>
+        
+      <div class="grid-container">
+        <button type="submit" class="btn1">Login</button>
+        <button type="submit" class="btn2">Login 2</button>
+        <button type="submit" class="btn3">Login 3</button>
+        <button type="submit" class="btn4">Login 4</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    const handle_login = (btn) => async (event) => {
+      event.preventDefault();
+
+      const result = await fetch(`/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          user: document.querySelector('#user').value,
+          pass: document.querySelector('#pass').value,
+          method: btn
+        })
+      }).then((res) => res.json());
+
+      if (result.success) {
+        document.cookie = `token=${result.data}`;
+        window.location = '/';
+      } else {
+        document.querySelector('#err-ctr').classList.remove('hidden');
+        document.querySelector('#err-msg').innerText = result.data;
+      }
+    }
+
+    document.querySelector('form').addEventListener('submit', (event) => event.preventDefault());
+    document.querySelector('.btn1').addEventListener('click', handle_login('btn1'));
+    document.querySelector('.btn2').addEventListener('click', handle_login('btn2'));
+    document.querySelector('.btn3').addEventListener('click', handle_login('btn3'));
+    document.querySelector('.btn4').addEventListener('click', handle_login('btn4'));
+  </script>
 </body>
+
 </html>

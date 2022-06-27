@@ -4,6 +4,7 @@
 * [week-01](/6443/week01)
 * [week-02](/6443/week02)
 * [week-03](/6443/week03)
+* [week-04](/6443/week04)
 
 &nbsp;
 
