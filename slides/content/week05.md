@@ -34,6 +34,19 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## Report
 > If you aren't in a group please let me know
+
+---
+
+## Midterm
+> How'd you all find it
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+# Lecture content
+> TODO
 {{% /section %}}
 
 ---
@@ -45,10 +58,16 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## SQLi demo (again)
 > this time actually written by me??
+> \++bonus challenge
 
 ---
 
 ## SSTI demo
+
+---
+
+## Basic PHP injection
+> if I have time lol
 {{% /section %}}
 
 ---
