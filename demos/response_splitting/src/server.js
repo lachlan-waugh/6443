@@ -16,8 +16,7 @@ const server = net.createServer(conn => {
 
         // If it's a get request, reuse the existing cookie
         } else {
-            // regex is readable right? basically make sure the name cookie is set, otherwise it'll crash when trying to read it
-            name = (/; name=(.*)\r\n\r\n/.test(data)) ? data.match(/; name=(.*)\r\n\r\n/)[1] : ''
+            name = data.match(/; name=(.*)\r\n\r\n/)?.[1];
         }
 
         conn.end(help.header(name).map(s => s.trim()).join('\r\n') + '\r\n\r\n' + help.body(name))
