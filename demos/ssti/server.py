@@ -21,9 +21,9 @@ html = """
 </html>
 """
 
-@app.route("/")
+@app.route('/')
 def home():
     return render_template_string(html.format(request.args.get('data', '')))
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
