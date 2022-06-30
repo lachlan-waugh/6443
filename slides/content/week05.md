@@ -98,6 +98,27 @@ anybody want to present the solutions for blog / files?
 
 ---
 
+## SSRF
+{{% section %}}
+
+### Server-side request forgery
+* Tricking the server into executing stuff it didn't intend to
+* Think about `HAAS`, where only HAAS could access `KB`
+* Maybe we could access other quoccabank services through `HAAS`
+
+---
+
+### Exploiting it
+* Internal services might (often will) be less secure than externally facing ones
+* Retrieve/disclose information (server side includes/local file inclusion)
+* Remote code execution?
+
+### how 2 fix
+
+{{% /section %}}
+
+---
+
 ## XXE
 {{% section %}}
 * DTD - Document Type Definition
