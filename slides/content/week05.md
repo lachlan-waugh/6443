@@ -114,6 +114,9 @@ anybody want to present the solutions for blog / files?
 * Remote code execution?
 
 ### how 2 fix
+* Don't assume that local services will be safe
+* Have a whitelist of IPs that can access this service
+* Set limits on the execution of the service (e.g. execution time, file sizes)
 
 {{% /section %}}
 
