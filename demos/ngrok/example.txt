@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE title [
+	<!ENTITY string "web apps is trivial ecks-dee" >
+]>
+
+<rss version="2.0">
+	<channel>
+		<title>I love XML!!</title>
+		<link>https://google.com</link>
+		<description>I love flags! :)</description>
+		<item>
+			<title>WOW &string;</title>
+			<description>A really cool blog post, check it out :)!</description>
+			<link>https://google.com</link>
+		</item>
+	</channel>
+</rss>
