@@ -16,8 +16,7 @@ const server = net.createServer(conn => {
 
         // If it's a get request, reuse the existing cookie
         } else {
-            // regex is readable right? basically make sure the name cookie is set, otherwise it'll crash when trying to read it
-            name = (/; name=(.*)\r\n\r\n/.test(data)) ? data.match(/; name=(.*)\r\n\r\n/)[1] : ''
+            name = data.match(/; name=(.*)\r\n\r\n/)?.[1];
         }
 
         conn.end(help.header(name).map(s => s.trim()).join('\r\n') + '\r\n\r\n' + help.body(name))
@@ -25,5 +24,5 @@ const server = net.createServer(conn => {
 }).on('error', err => { console.log(err); throw err })
 
 server.listen(process.env.PORT || 8000, process.env.HOST || '0.0.0.0', () => {
-  console.log(`Listening on ${server.address().address}:${server.address().port}`)
+  console.log(`[*] listening on ${server.address().address}:${server.address().port}`)
 })

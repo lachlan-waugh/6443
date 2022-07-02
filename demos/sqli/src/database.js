@@ -13,8 +13,8 @@ const db_init = () => {
     );
 
     INSERT INTO users (user, pass) VALUES
-        ('melon', 'hunter2'), ('web-admin', 'man_i_love_my_secure_app'),
-        ('admin', 'admin'), ('flag-haver', 'COMP6443{I_AM_BIGAPP_7}')
+        ('melon', 'Hunter2'), ('web-admin', 'man_i_love_my_secure_app'),
+        ('admin', 'admin'), ('flag-haver', 'COMP6443{SUBMIT_ME_TO_CTFD}')
     `);
 };
 

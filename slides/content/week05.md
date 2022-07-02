@@ -32,23 +32,190 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
-## Report
+## Report groups
 > If you aren't in a group please let me know
 
 ---
 
 ## Midterm
-> How'd you all find it
+> How'd you all find it (trivial enough?)
 {{% /section %}}
-
-> 
 
 ---
 
+## Reports
 {{% section %}}
 
+### What to include
+* Vulnerability Details
+* Proof of Concept / Steps to Reproduce
+* **Impact** !important
+* Remediation
+
+---
+
+### Really consider the impact
+* Order the report based on how damaging the vulnerabilities are
+* Don't just include things we've talked about in lectures/tuts, discuss general security issues you came across
+* Good explanation of the impact `>>>>` more flags
+
+---
+
+### What to include
+> Everything™!!
+* Challenge solutions
+* Midterm solutions
+* Recon/HAAS solutions
+
+{{% /section %}}
+
+---
+
+# Presentations
+{{% section %}}
+## anybody? 
+ten minute presentation on something cool security related from the last week?
+for bonus marks??
+
+---
+
+## SOLUTIONS?
+anybody want to present the solutions for blog / files?
+
+{{% /section %}}
+
+---
+
+### A refresher on SQLi
+> a demo (actually written by me??)
+
+---
+
 # Lecture content
-> TODO
+* XXE
+* SSRF
+* SSTI (did they go through this? idk)
+
+---
+
+## SSRF
+{{% section %}}
+
+### Server-side request forgery
+* Tricking the server into executing stuff it didn't intend to
+* Think about `HAAS`, where only HAAS could access `KB`
+* Maybe we could access other quoccabank services through `HAAS`
+
+---
+
+### Exploiting it
+* Internal services might (often will) be less secure than externally facing ones
+* Retrieve/disclose information (server side includes/local file inclusion)
+* Remote code execution?
+
+### how 2 fix
+* Don't assume that local services will be safe
+* Have a whitelist of IPs that can access this service
+* Set limits on the execution of the service (e.g. execution time, file sizes)
+
+{{% /section %}}
+
+---
+
+## XXE
+{{% section %}}
+* DTD - Document Type Definition
+* Internal Entity: an entity declared within the DTD (like a variable)
+* External Entity: an entity declared outside the DTD (files, stuff on other websites)
+
+---
+
+### Internal entities
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+  <!ENTITY string "hey, don't read my diary" >
+]>
+<diary>
+  <entry>&string;</entry>
+</diary>
+```
+
+&nbsp;
+
+prints
+```text
+hey, don't read my diary
+```
+
+---
+
+### External entities
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+  <!ENTITY funCatFact "https://FunCatFact.com/generate" >
+]>
+<diary>
+  <entry>&funCatFact;</entry>
+</diary>
+```
+
+&nbsp;
+
+prints
+```text
+Cats are asleep for 70% of their lives.
+```
+
+---
+
+### LFI/SSI
+Local file inclusion/server-side include
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+  <!ENTITY funCatFact SYSTEM "file:///flag.txt" >
+]>
+<diary>
+  <entry>&funCatFact;</entry>
+</diary>
+```
+
+&nbsp;
+
+prints
+```text
+COMP6443{....}
+```
+
+---
+
+### Parameterised entities
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+  <!ENTITY % difficulty "trivial" >
+  <!ENTITY % meme "web apps is %difficulty;" >
+]>
+<diary>
+  <entry>%meme;</entry>
+</diary>
+```
+
+&nbsp;
+
+prints
+```text
+web apps is trivial
+```
+
+---
+
+### How to host content
+* `python3 -m http.server + NGROK`
+* `RequestBin`
+
 {{% /section %}}
 
 ---
@@ -56,20 +223,12 @@ We expect a high standard of professionalism from you at all times while you are
 {{% section %}}
 # Demos!!1!
 
----
-
-## SQLi demo (again)
-> this time actually written by me??
-> \++bonus challenge
-
----
-
 ## SSTI demo
 
 ---
 
 ## Basic PHP injection
-> if I have time lol
+> if I have time lol (I didn't f-u docker :sadreact:)
 {{% /section %}}
 
 ---

@@ -93,7 +93,7 @@ SELECT \* FROM table WHERE ...
 		 		    	    | blog3 | admin |
       users		   blogs	    |=======|=======|
 ```
-
+	
 ---
 
 ## Notes on UNIONs
@@ -135,7 +135,7 @@ SELECT \* FROM table WHERE ...
 Using: `' OR 1=1 #`
 
 ```sql
-                            vvvvvvvvvv^^^^^^^
+                            vvvvvvvvvvvvvvvvv
 SELECT col FROM table WHERE col = '' OR 1=1 #
                             ^^^^^^^^^^^^^^^^^
 ```

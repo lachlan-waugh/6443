@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
     const [ user, pass, secret ] = atob(req.cookies.token).split(':');
 
-    if (secret === "SECRET_PASSWORD_123") { // why yes, security is my passion B)
+    if (secret === SECRET) { // why yes, security is my passion B)
         res.send(`welcome ${user}. Man, '${pass}' is a really strong password, well done!`);
     } else {
         res.redirect('/login');
