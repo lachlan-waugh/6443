@@ -100,6 +100,7 @@ anybody want to present the solutions for blog / files?
 
 ## XXE
 {{% section %}}
+### XML External Entities
 * DTD - Document Type Definition
 * Internal Entity: an entity declared within the DTD (like a variable)
 * External Entity: an entity declared outside the DTD (files, stuff on other websites)
