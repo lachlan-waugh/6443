@@ -28,7 +28,7 @@ We expect a high standard of professionalism from you at all times while you are
 {{% section %}}
 
 ## Due Dates
-> *Report and topic3 challenges are now due Week07 Wednesday*
+> *Report and week5 challenges are now due Week07 Wednesday*
 
 ---
 
@@ -87,7 +87,7 @@ anybody want to present the solutions for blog / files?
 ---
 
 ### A refresher on SQLi
-> a demo (actually written by me??)
+> a demo
 
 ---
 
@@ -95,30 +95,6 @@ anybody want to present the solutions for blog / files?
 * XXE
 * SSRF
 * SSTI (did they go through this? idk)
-
----
-
-## SSRF
-{{% section %}}
-
-### Server-side request forgery
-* Tricking the server into executing stuff it didn't intend to
-* Think about `HAAS`, where only HAAS could access `KB`
-* Maybe we could access other quoccabank services through `HAAS`
-
----
-
-### Exploiting it
-* Internal services might (often will) be less secure than externally facing ones
-* Retrieve/disclose information (server side includes/local file inclusion)
-* Remote code execution?
-
-### how 2 fix
-* Don't assume that local services will be safe
-* Have a whitelist of IPs that can access this service
-* Set limits on the execution of the service (e.g. execution time, file sizes)
-
-{{% /section %}}
 
 ---
 
@@ -220,6 +196,35 @@ web apps is trivial
 
 ---
 
+## SSRF
+{{% section %}}
+
+### Server-side request forgery
+* Trick a server into doing stuff it doesn't intend to
+* Think about the `HAAS` challenge, we weren't able to access `KB`, but `HAAS` could, and we can send requests through `HAAS`
+* What if we could access other internal services through `HAAS`, which aren't expecting us to access them
+
+---
+
+### Exploitation
+* Internal services might (often will) be less secure than externally facing ones
+* What can we do?
+  * Retrieve/disclose information (server side includes/local file inclusion)
+  * Remote code execution / Reverse shells?
+  * Other bad stuff
+
+---
+
+### Remediation
+* Don't assume local/internal services will be safe
+* Don't allow arbitrary execution times: e.g. returning an entire database would take a lot longer than an image
+* Have a whitelist of IPs that can access internal services
+* A *good* WAF
+
+{{% /section %}}
+
+---
+
 {{% section %}}
 # Demos!!1!
 
@@ -228,7 +233,7 @@ web apps is trivial
 ---
 
 ## Basic PHP injection
-> if I have time lol (I didn't f-u docker :sadreact:)
+> if I have time lol (I didn't rip docker :sadreact:)
 {{% /section %}}
 
 ---
