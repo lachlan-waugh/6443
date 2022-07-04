@@ -107,71 +107,78 @@ SELECT \* FROM table WHERE ...
 ## SQLi
 {{% section %}}
 
-### General injection vulnerabilities
-* using raw user input is dangerous
-* mixing up `data` and `control` characters
+### SQL Injection
+* *TLDR*: blindly trusting user input is bad
 
-```
-'";<script/>../--#`ls`
-```
+* What if we injected control characters which changed how the database interprets the query? e.g. inject our own `UNIONS/WHERES/etc`
 
----
-
-## What is the issue?
-* User input contains control characters that interfere with the syntax of the SQL statement
-* Programmers can be kinda dumb
-* The expectation that user input is trustworthy
+* How could it tell the difference?
 
 ---
 
-## How does SQLi work
+### How does SQLi work
 
 ```sql
-   SELECT col FROM table WHERE col = '<userInput>'
+SELECT * FROM users WHERE user = '{input}' AND password = '{...}'
 ```
 
 &nbsp;  
 
-Using: `' OR 1=1 #`
+If our input was: `' OR 1=1 --`
 
 ```sql
-                            vvvvvvvvvvvvvvvvv
-SELECT col FROM table WHERE col = '' OR 1=1 #
-                            ^^^^^^^^^^^^^^^^^
+--                        vvvvvvvvvvvvvvvvvvvv
+SELECT * FROM users WHERE user = '' OR 1=1 --'and password = '...'
+--                        ^^^^^^^^^^^^^^^^^^^^
+-- user = '' is always false, but 1=1 is always true
+-- so this will return every user from the database
 ```
 
 ---
 
-## Exploiting SQLi
-* determine syntax (errors, fingerprint)
-* find out the tables? (database schema)
+### Issues you may encounter
+* Syntax needs to be correct, or you'll throw an error
+  * so, determine syntax through errors/fingerprint
+
+* You have SQLi in `items`, but want user details
+  * find out the tables? (database schema)
+  * include that table with a `UNION`
 
 {{% /section %}}
 
 ---
 
 ## Mitigations
-* Hide error messages, disable debug mode
-  * Just fail, display generic errors, blank screen?
-* Web Application Firewalls (WAFs)
-  * Strip out malicious payloads (regex replace OR/FROM etc)
-  * or just fail when you encounter bad input (better?)
-* Parameterised Queries
+
+{{% section %}}
+
+### Defense
+* Reduce information disclosure
+  * Don't display error messages
+  * Just fail or show a basic error message (e.g. `'username or password incorrect'`)
+
+* Strip out malicious content (e.g. use a WAF)
+
+* Use the built-in parameterised queries, rather than using the raw input (e.g. format strings)
 
 ---
 
-## Defeating mitigations!1!!
+## Offense
 
-* Stripped payloads? > embed dummy characters (OORR)
-* No response? Side channel attacks
-    * Timing Attacks (IF success THEN sleep(1))
-    * Out of Band Attacks
-* Error-based extraction
-* Boolean-based extraction
+* Content stripped?
+  * embed dummy characters (oORr)
+  * use alternating case (WhErE)
+* No response?
+  * Timing Attacks (IF success THEN sleep(1))
+  * Error-based extraction (get the output in an error)
+  * Boolean-based extraction (IF success THEN ...)
+
+{{% /section %}}
 
 ---
 
-# Demo
+# SQLi Demo
+> A basic login form
 
 ---
 
