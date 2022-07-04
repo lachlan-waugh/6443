@@ -201,15 +201,15 @@ web apps is trivial
 
 ### Server-side request forgery
 * Trick a server into doing stuff it doesn't intend to
-* Think about the `HAAS` challenge, we weren't able to access `KB`, but `HAAS` could, and we can send requests through `HAAS`
-* What if we could access other internal services through `HAAS`, which aren't expecting us to access them
+* Consider `HAAS`, we weren't able to access `KB`, but `HAAS` could, and we can send requests through `HAAS`
+* What if we could access other internal services through `HAAS`, which aren't expecting it
 
 ---
 
 ### Exploitation
 * Internal services might (often will) be less secure than externally facing ones
 * What can we do?
-  * Retrieve/disclose information (server side includes/local file inclusion)
+  * Retrieve/disclose information (ssi/lfi)
   * Remote code execution / Reverse shells?
   * Other bad stuff
 
@@ -217,8 +217,8 @@ web apps is trivial
 
 ### Remediation
 * Don't assume local/internal services will be safe
-* Don't allow arbitrary execution times: e.g. returning an entire database would take a lot longer than an image
-* Have a whitelist of IPs that can access internal services
+* Don't allow arbitrary execution times: returning a database would take a lot longer than an image
+* A whitelist of IPs that can access internal services
 * A *good* WAF
 
 {{% /section %}}
