@@ -146,8 +146,7 @@ Cats are asleep for 70% of their lives.
 
 ---
 
-### LFI/SSI
-Local file inclusion/server-side include
+### LFI / SSI
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE foo [
@@ -191,6 +190,7 @@ web apps is trivial
 ### How to host content
 * `python3 -m http.server + NGROK`
 * `RequestBin`
+* `GitHub pages` (needs to build everytime though so it's slow)
 
 {{% /section %}}
 
@@ -201,7 +201,7 @@ web apps is trivial
 
 ### Server-side request forgery
 * Trick a server into doing stuff it doesn't intend to
-* Consider `HAAS`, we weren't able to access `KB`, but `HAAS` could, and we can send requests through `HAAS`
+* Consider `HAAS`, we can't access `KB`, but `HAAS` could, and we can send requests through `HAAS`
 * What if we could access other internal services through `HAAS`, which aren't expecting it
 
 ---
@@ -227,6 +227,8 @@ web apps is trivial
 
 {{% section %}}
 # Demos!!1!
+
+---
 
 ## SSTI demo
 
