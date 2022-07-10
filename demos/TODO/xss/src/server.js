@@ -1,34 +1,47 @@
-const express = require('express');
-const helper = require('./helper');
-const db = require('./db');
+import express from 'express';
+import fs from 'fs';
+
+import { db_push, db_pull } from './db.js';
 
 const app = express();
 const port = 3000;
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-app.get('/reflected', (req, res) => {
-    res.send(helper.body('reflect'));
+app.get('/', (req, res) => {
+    res.end(fs.readFileSync('./static/index.html'))
 });
 
-app.post('/reflected', (req, res) => {
-    res.send(helper.body('reflect', req.body.name));
+app.get('/reflected', (req, res) => {
+    res.end(fs.readFileSync('./static/index.html'));
 });
 
 app.get('/stored', (_, res) => {
-    res.send(helper.body('stored', db.pull()));
-});
-
-app.post('/stored', (req, res) => {
-    db.push(req.body.name);
-    res.send(helper.body('stored', db.pull()));
+    res.end(fs.readFileSync('./static/index.html'));
 });
 
 app.get('/dom', (req, res) => {
-
+    res.end(fs.readFileSync('./static/index.html'));
 });
 
-app.post('/dom', (req, res) => {
+app.post('/blogs', (req, res) => {
+    db_push(req.body.content);
+    res.send('success');
+});
 
+app.get('/blogs', (req, res) => {
+    res.send(JSON.stringify(db_pull()))
+});
+
+app.get('/css/', () => {
+	res.send(fs.readFileSync(`./site/${file}`));
+});
+
+app.get('/js/', () => {
+	res.send(fs.readFileSync(`./site/${file}`));
+});
+
+app.get('/img/', () => {
+	res.send(fs.readFileSync(`./site/${file}`));
 });
 
 app.listen(port, () => console.log(`[*] listening on localhost:${port}`)); 

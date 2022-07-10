@@ -1,9 +1,11 @@
+import express from 'express';
+
 const posts = [];
 
-exports.push = (post) => {
-    posts.push(post);
+export const db_push = (content) => {
+    posts.push({content: content, image: ''});
 }
 
-exports.pull = () => {
+export const db_pull = () => {
     return posts;
 }
