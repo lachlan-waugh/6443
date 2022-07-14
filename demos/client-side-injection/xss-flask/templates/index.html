@@ -1,26 +1,23 @@
 <!DOCTYPE html>
-{% autoescape False %}
+{% autoescape false %}
 <html>
   <head>
     <meta charset="utf-8">
-    <title>XSS Demo</title>
+    <title>secure commenting service</title>
     <link rel="stylesheet" href="/static/style.css">
   </head>
 
   <body>
-    <!-- Header -->
     <header>
-      <h1>XSS Demo</h1>
-      <p>Read, search and post comments</p>
+      <h1>secure commenting service</h1>
+      <p>our waf is so good haha</p>
     </header>
 
-    <!-- Search form -->
     <form method="GET">
-      <input type="text" name="q" placeholder="Search query" autocomplete="off" />
-      <input type="submit" value="Filter comments" />
+      <input type="text" name="q" placeholder="search query" autocomplete="off" />
+      <input type="submit" value="filter comments" />
     </form>
 
-    <!-- Comments -->
     {% if not query %}
       <h3>Showing all comments:</h3>
     {% else %}
@@ -28,17 +25,15 @@
     {% endif %}
 
     {% for comment in comments %}
-      <div title={{ comment }}>   <!-- autoscape=true -->
-      <!-- <div title="{{ comment }}"> --> <!-- autoscape=false -->
-      <!-- <div> -->
+      <div title={{ comment }}>
         <p>{{ comment }}</p>
       </div>
     {% endfor %}
 
     <!-- Write form -->
     <form action="/" method="POST">
-      <input type="text" name="comment" placeholder="Comment" autocomplete="off" />
-      <input type="submit" value="Submit new comment" />
+      <input type="text" name="comment" placeholder="comment" autocomplete="off" />
+      <input type="submit" value="new comment" />
     </form>
   </body>
 </html>
