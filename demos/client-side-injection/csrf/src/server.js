@@ -1,18 +1,17 @@
-const bodyParser = require('body-parser');
-const express = require('express');
-const exphbr = require('express-handlebars');
-const session = require('express-session');
-const db = require('./db');
+import express from 'express';
+import session from 'express-session';
+import exphbr from 'express-handlebars';
+import { check_login, get_account, send_funds } from './db.js';
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 app.use(session({
-	secret: 'not so secret',
+	secret: 'OhManYoullNeverGuessThis',
 	resave: true,
 	saveUninitialized: true,
 	cookie: { secure: false, httpOnly: false }
 }))
-app.engine('html', exphbr({
+app.engine('html', exphbr.engine({
 	defaultLayout: 'main',
 	extname: '.html'
 }));
@@ -22,55 +21,56 @@ app.set('view engine', 'html');
 const require_login = (req, res, next) => (req.session.user) ? next() : res.redirect('/login')
 
 app.get('/', require_login, (req, res, next) => {
-	console.log(`${req.session.user.name} ${db.get_account(req.session.user.name).balance}`)
-	res.render('home', {
+	res.render('bank/home', {
 		username: req.session.user.name,
-		balance: db.get_account(req.session.user.name).balance
+		balance: get_account(req.session.user.name).user.balance
 	});
 });
 
-app.get('/login', (req, res, next) => res.render('login'));
+app.get('/login', (req, res, next) => res.render('bank/login'));
 
 app.post('/login', (req, res, next) => {
-	const user = db.check_login(req.body.username, req.body.password);
+	const user = check_login(req.body.username, req.body.password);
 	if (!user.success) return res.status(400).send(user.message);
 
 	req.session.regenerate((error) => {
 		if (error) return res.status(500).send(`An unexpected error occurred : ${error}.`);
-		req.session.user = { name: user.username };
+		req.session.user = { name: user.user.username };
 		res.redirect('/');
 	});
 });
 
 app.get('/send', require_login, function(req, res, next) {
-	const r = db.send_funds(req.query.to, req.session.user.name, req.query.amount)
+	const r = send_funds(req.query.to, req.session.user.name, req.query.amount);
 	(r.success) ? res.redirect('/') : res.status(400).send(r.msg);
 });
 
 app.post('/send', require_login, (req, res, next) => {
-	const r = db.send_funds(req.body.to, req.session.user.name, req.body.amount)
+	console.log(req.body);
+	const r = send_funds(req.body.to, req.session.user.name, req.body.amount);
 	(r.success) ? res.redirect('/') : res.status(400).send(r.msg);
 });
 
-app.listen(3000, () => console.log('Server started and listening at localhost:3000'));
+app.listen(3000, () => console.log('bank server listening @ localhost:3000'));
 
-// --------------------------------------------
-// ---------- "Evil" app starts here ----------
-// --------------------------------------------
+/* 
+	>>>
+*/
 
-// Let's make another express app.
-const evilApp = express();
+const bad_app = express();
 
-// Templating middleware.
-evilApp.engine('html', exphbr({
+bad_app.engine('html', exphbr.engine({
 	defaultLayout: 'main',
 	extname: '.html'
 }));
+bad_app.set('view engine', 'html');
 
-evilApp.set('view engine', 'html');
+bad_app.get('/', (_, res, next) => res.render('evil/index'));
 
-evilApp.get('/', (req, res, next) => res.render('evil-examples'));
+bad_app.get('/clickme', (_, res, next) => res.render('evil/clickme'));
 
-evilApp.get('/malicious-form', (req, res, next) => res.render('malicious-form'));
+bad_app.get('/post', (_, res, next) => res.render('evil/post'));
 
-evilApp.listen(3001, () => console.log('"Evil" server started and listening at localhost:3001'));
+bad_app.get('/form', (_, res, next) => res.render('evil/form'));
+
+bad_app.listen(3001, () => console.log('bad server listening @ localhost:3001'));
