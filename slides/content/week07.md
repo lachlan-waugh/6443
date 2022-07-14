@@ -58,25 +58,26 @@ anybody want to present the solutions for BigApp/Signin/~~GCC/Feedifier/Letters~
 
 ---
 
-## 'Origin' and 'Site'
-{{% section %}}
+## Origin vs Site
 
 ### Origin
 > <span style="color: #021691">https://</span><span style="color: #fffacd">www\.example\.com</span><span style="color: #7FFFD4">:80</span>
 
+{{% fragment %}}
 origin = <span style="color: #021691">scheme</span> + <span style="color: #fffacd">host</span> + <span style="color: #7FFFD4">port</span>
+{{% /fragment %}}
 
 ---
 
+## Origin vs Site
 ### Site
 > <span style="color: #021691">http://</span><span style="color: #A52A2A">www.</span><u><span style="color: #fffacd">example</span><span style="color: #D2691E">.com</span></u><span style="color: #7FFFD4">:80</span>
 > <span style="color: #021691">https://</span><span style="color: #A52A2A">api.</span><u><span style="color: #fffacd">example</span><span style="color: #D2691E">.com</span></u><span style="color: #7FFFD4">:443</span>
 
+{{% fragment %}}
 site = <span style="color: #fffacd">private_domain</span> + <span style="color: #D2691E">public_suffix</span>
-
 * <s><span style="color: #021691">scheme</span>, <span style="color: #A52A2A">subdomain</span> and <span style="color: #7FFFD4">port</span></s>
-
-{{% /section %}}
+{{% /fragment %}}
 
 ---
 
@@ -90,11 +91,11 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 ---
 
 ### Cookies (SameSite)
-* *Strict*: Cookies aren't sent
-* *Lax* (default): not sent cross-site, 
-    * not sent on images/iframes
-    * only navigation (GET/HEAD)
-* *None*: Cookies are always sent
+* *Strict*: {{% fragment %}}Cookies aren't sent{{% /fragment %}}
+* *Lax*: {{% fragment %}} (default) not sent cross-site{{% /fragment %}}
+    * images/iframes {{% fragment %}}*`no`*{{% /fragment %}}
+    * navigation (GET)    {{% fragment %}}*`yes`*{{% /fragment %}}
+* *None*: {{% fragment %}}Cookies are always sent{{% /fragment %}}
 
 > read more [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
 
