@@ -81,21 +81,32 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 
 ---
 
-### Cross Origin Policy
+## Cross Origin Policy
 {{% section %}}
+* Blocks resource requests to/from an *external* site
+* "*External*" is based on a *Same Origin Policy*:
+    * Only requests from the same `origin` are allowed to use the resources
+    * Unless they have the correct headers ([more here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers))
+
+> [give it a try](https://www.test-cors.org/)
 
 ---
+
+### Hmm
+* It's just a browser protection
+* Doesn't prevent the request (it'll still succeed), it prevents you from accessing the response.
+* Would it block you if used python? (no)
 
 {{% /section %}}
 
 ---
 
 ### Cookies (SameSite)
-* *Strict*: {{% fragment %}}Cookies aren't sent{{% /fragment %}}
+* *None*: {{% fragment %}}Cookies are always sent{{% /fragment %}}
 * *Lax*: {{% fragment %}} (default) not sent cross-site{{% /fragment %}}
     * images/iframes {{% fragment %}}*`no`*{{% /fragment %}}
     * navigation (GET)    {{% fragment %}}*`yes`*{{% /fragment %}}
-* *None*: {{% fragment %}}Cookies are always sent{{% /fragment %}}
+* *Strict*: {{% fragment %}}Cookies aren't sent{{% /fragment %}}
 
 > read more [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
 
@@ -134,7 +145,7 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 
 ---
 
-## HTML injection & XSS
+## HTML injection
 {{% section %}}
 ### HTML injection
 * Browsers just render the DOM
@@ -147,6 +158,18 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 * Some are paired `<div></div>`
 * Some aren't `<img src=.../>`
 * what goes in here? `<script>...</script>`
+
+{{% /section %}}
+
+---
+
+## XSS
+{{% section %}}
+### Cross-site scripting
+* another 'mixing of data and control' issue
+* Tricking a **browser** into executing your code
+    * javascript, php, py-script?
+    * we'll just be looking at javascript lol
 
 ---
 
