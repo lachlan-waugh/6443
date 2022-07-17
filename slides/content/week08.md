@@ -30,25 +30,67 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## Mitigating XSS
 {{% section %}}
+### Basic WAF stuff
+* *Sanitisation*: stripping out unsafe tags/attributes
+    * &lt;script&gt;alert(1)&lt;script&gt; &rarr; alert(1)  
+* *Encoding*: escaping control characters
+    * <> &rarr; \&lt;\&gt;
+* *Validation*: allow/block-listing of content
+    * block requests if you detect bad content
+
+---
+
+### Don't use raw user input
+* `.innerHTML` treats content as HTML (control)
+    * use `.innerText` which treats it as data
+
+* sanitize your input with a library (DOMPurify `;)`)
+
+* don't write vanilla JS, use a framework.
+    * again, even if you use a framework, make sure the functions you're using sanitize the input
 
 ---
 
 ### Bypassing mitigations
+* Content stripped/blocked
+    * embed dummy characters: `SCRscriptIPT`
+    * use alternating case: `ScRiPt`
+    * different tag `<img onerror=...>`
+    * different event handler `<body onload=...>`
+
+[here's a couple more](https://github.com/payloadbox/xss-payload-list)
 
 {{% /section %}}
 
 ---
 
 ## CSP
-
----
-
-## Click-jacking
 {{% section %}}
+* Limits where you can load content from
+    * only scripts from `localhost`
+    * only images from `example.com/path`
+
+* only elements with a certain nonce value
+
+* generally blocks iframes, inline scripts, `eval()`
+
+* basically it's kinda smurfing, it's hard to bypass
 
 ---
 
-### Demo
+### Where is it defined
+* HTTP header
+    * `Content-Security-Policy: ...`
+
+* Or in a tag
+    * `<meta http-equiv="Content-Security-Policy" content="...">`
+    * though not as powerful
+
+---
+
+### How to break it?
+* Corrupting the HTTP header (response splitting?)
+* Overwriting the `<meta>` tag?
 
 {{% /section %}}
 
@@ -69,7 +111,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 &nbsp;
 
-<img src="../img/week08/response-splitting.png" style="scale: 150%" />
+<img src="../img/week08/response-splitting.png" style="scale: 200%" />
 
 ---
 
@@ -79,5 +121,30 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
+## Click-jacking
+{{% section %}}
+* A fake form sitting under a real form
+
+* if you try to interact with the fake form, you'll accidentally interact with the real one. 
+
+* This could be either local, or external
+    * local: same form switch confirm/cancel buttons
+    * external: an invisible iframe with a higher z-index
+
+---
+
+### Demo
+
+---
+
+### Defense
+* CSP / X-Frame-Options
+* SameSite cookies
+* Framebusters (~JS magic~)
+
+{{% /section %}}
+
+---
+
 ## Challenges
-> gl with support-v2 & report lul
+> gl with report & support-v2 lul
