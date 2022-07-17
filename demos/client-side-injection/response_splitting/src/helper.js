@@ -4,8 +4,8 @@ exports.header = (name) =>
         'Connection: Closed',
         'Content-Type: text/html',
         ...(name) ? [`Set-Cookie: name=${name};`] : [],
-        'Set-Cookie: secret=FLAG{super_secret_flag_haha_wait_what}; HttpOnly',
-        "Content-Security-Policy: script-src: 'none'"
+        // 'Set-Cookie: secret=FLAG{super_secret_flag_haha_wait_what}; HttpOnly',
+        "Content-Security-Policy: script-src 'none'"
     ];
 
 exports.body = (name) => `

@@ -23,6 +23,6 @@ const server = net.createServer(conn => {
     });
 }).on('error', err => { console.log(err); throw err })
 
-server.listen(process.env.PORT || 8000, process.env.HOST || '0.0.0.0', () => {
-  console.log(`[*] listening on ${server.address().address}:${server.address().port}`)
+server.listen(3000, '0.0.0.0', () => {
+  console.log(`[*] listening on localhost:${server.address().port}`)
 })
