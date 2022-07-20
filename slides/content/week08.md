@@ -37,6 +37,10 @@ Supply a single-use 'nonce' value.
 
 ---
 
+## Quick demo
+
+---
+
 ### Breaking mitigations
 
 * Bad programming, they might be doing it wrong
@@ -94,8 +98,8 @@ Supply a single-use 'nonce' value.
 
 ## CSP
 {{% section %}}
-* Limits where you can load content from
-    * only scripts from `localhost`
+* Limits where you can load content from, e.g.
+    * only scripts from local scripts
     * only images from `example.com/path`
 
 * only elements with a certain nonce value
@@ -169,6 +173,21 @@ Supply a single-use 'nonce' value.
 * CSP frame-src / X-Frame-Options
 * SameSite cookies
 * Framebusters (~JS magic~)
+
+{{% /section %}}
+
+---
+
+## JSONP
+{{% section %}}
+
+---
+
+### Demo
+
+---
+
+
 
 {{% /section %}}
 
