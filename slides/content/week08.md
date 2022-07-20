@@ -26,6 +26,26 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## Mitigating CSRF
 
+{{% section %}}
+### CSRF Tokens
+
+Supply a single-use 'nonce' value.
+
+* When the page is loaded, generate the nonce
+* When a request is made, it must include the nonce
+* It'll be stored as a: cookie, header, `<input>`
+
+---
+
+### Breaking mitigations
+
+* Bad programming, they might be doing it wrong
+    * Re-use a previous token (if it doesn't expire)
+    * Create your own?
+    * They might not even check it.
+
+{{% /section %}}
+
 ---
 
 ## Mitigating XSS
@@ -44,21 +64,29 @@ We expect a high standard of professionalism from you at all times while you are
 * `.innerHTML` treats content as HTML (control)
     * use `.innerText` which treats it as data
 
-* sanitize your input with a library (DOMPurify `;)`)
+* sanitize your input with a library (DOMPurify???)
 
 * don't write vanilla JS, use a framework.
     * again, even if you use a framework, make sure the functions you're using sanitize the input
 
 ---
 
-### Bypassing mitigations
+### Breaking mitigations
 * Content stripped/blocked
-    * embed dummy characters: `SCRscriptIPT`
-    * use alternating case: `ScRiPt`
+    * embed dummy characters: `<SCRscriptIPT>`
+    * use alternating case: `<ScRiPt>`
     * different tag `<img onerror=...>`
     * different event handler `<body onload=...>`
 
 [here's a couple more](https://github.com/payloadbox/xss-payload-list)
+
+---
+
+### X-XSS-Protection
+* no, it's [terrible](https://news.ycombinator.com/item?id=20472947)
+> 'First, XSS 'protection' is about to not be implemented by most browsers...'
+
+> 'Worse, the XSS 'protection' can be used to create security flaws...'
 
 {{% /section %}}
 
@@ -138,7 +166,7 @@ We expect a high standard of professionalism from you at all times while you are
 ---
 
 ### Defense
-* CSP / X-Frame-Options
+* CSP frame-src / X-Frame-Options
 * SameSite cookies
 * Framebusters (~JS magic~)
 
