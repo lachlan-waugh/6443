@@ -22,4 +22,4 @@ House cleaning Due Dates Some of the Topic04 challenges should be out These are 
 TLDR: Don&amp;rsquo;t be a jerk
 sec.edu.au/good-faith-policy
 Mitigating CSRF CSRF Tokens Supply a single-use &amp;rsquo;nonce&amp;rsquo; value.
-When the page is loaded, generate the nonce When a request is made, it must include the nonce It&amp;rsquo;ll be stored as a: cookie, header, &amp;lt;input&amp;gt; Breaking mitigations Bad programming, they might be doing it wrong Re-use a previous token (if it doesn&amp;rsquo;t expire) Create your own?</description></item></channel></rss>
+When the page is loaded, generate the nonce When a request is made, it must include the nonce It&amp;rsquo;ll be stored as a: cookie, header, &amp;lt;input&amp;gt; Quick demo Breaking mitigations Bad programming, they might be doing it wrong Re-use a previous token (if it doesn&amp;rsquo;t expire) Create your own?</description></item></channel></rss>
