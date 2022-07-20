@@ -4,7 +4,7 @@ import exphbr from 'express-handlebars';
 import { check_login, get_account, send_funds } from './db.js';
 import { uuid4 } from 'uuid';
 
-let token;
+let token = uuid4();
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
