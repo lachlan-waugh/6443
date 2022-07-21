@@ -24,6 +24,23 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
+# House cleaning 
+{{% section %}}
+
+## Due Dates
+* All of the topic04 challenges are out
+* They're due Sunday Week09.
+
+---
+
+## Reports (general feedback)
+* Consider context when determining impact, not everything is critical.
+* Keep technical stuff out of impact/remediation. It should mostly be in steps to reproduce.
+
+{{% /section %}}
+
+---
+
 ## Mitigating CSRF
 
 {{% section %}}
