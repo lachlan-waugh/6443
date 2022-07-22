@@ -1,13 +1,16 @@
 <style>#downloads { display: none !important; }</style>
 
-## Cool websites B)
-* [CyberChef](https://gchq.github.io/CyberChef/)
+## Cool tools you can use
+* [CyberChef](https://gchq.github.io/CyberChef/) (helping for encoding/decoding data)
+* [cookie editor](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
+
+## If you need to host some content (e.g. XXE/XSS)
 * [Request Bin](https://requestbin.com/)
+* 
 
 &nbsp;
 
 ## Useful stuff
-* [cookie editor](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
 * [Python requests template](/6443/resources/post)
 
 &nbsp;
