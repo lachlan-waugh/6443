@@ -8,12 +8,24 @@
 * [week-05](/6443/week05)
 * [week-07](/6443/week07)
 * [week-08](/6443/week08)
+* [week-09](/6443/week09)
+<!-- * [week-10](/6443/week10) -->
 
 &nbsp;
 
 ## resources
 * [some demos I prepared earlier](https://github.com/lachlan-waugh/6443/tree/main/demos)
-* [tooling](/6443/resources/tooling)
+* [recon stuff](/6443/resources/recon)
+
+## Cool/helpful tools
+* [CyberChef](https://gchq.github.io/CyberChef/) (helping for encoding/decoding data)
+* [cookie editor](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
+* [how2python-requests](/6443/resources/post)
+
+## If you need to host some content (e.g. XXE/XSS)
+* [request bin](https://requestbin.com/)
+* [http.server + ngrok](/6443/resources/ngrok)
+* [localtunnel (nodejs)](https://github.com/localtunnel/localtunnel)
 
 &nbsp;
 
