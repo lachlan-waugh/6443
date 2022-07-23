@@ -20,16 +20,27 @@
 &nbsp;
 
 ## Cool/helpful tools
-* [CyberChef](https://gchq.github.io/CyberChef/) (helping for encoding/decoding data)
+* [burpsuite](https://portswigger.net/burp)
+* [cyberChef](https://gchq.github.io/CyberChef/) (helping for encoding/decoding data)
 * [cookie editor](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
-* [how2python-requests](/6443/resources/post)
+* [automating requests (how2bruteforce)](/6443/resources/post)
 
 &nbsp;
 
-## If you need to host some content (e.g. XXE/XSS)
+## Hosting content (e.g. XXE/XSS)
 * [request bin](/6443/resources/requestbin)
 * [http.server + ngrok](/6443/resources/ngrok)
 * [localtunnel (nodejs)](https://github.com/localtunnel/localtunnel)
+
+&nbsp;
+
+## cool youtube series
+* [liveoverflow - pwny island (not just web stuff, but really cool)](https://www.youtube.com/watch?v=RDZnlcnmPUA&list=PLhixgUqwRTjzzBeFSHXrw9DnQtssdAwgG&index=1)
+
+&nbsp;
+
+## some beginner CTFs for practice
+* 
 
 &nbsp;
 
