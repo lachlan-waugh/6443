@@ -207,8 +207,6 @@ Supply a single-use 'nonce' value.
 
 ---
 
-
-
 ### Demo
 
 {{% /section %}}
