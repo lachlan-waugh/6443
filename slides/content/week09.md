@@ -23,3 +23,31 @@ We expect a high standard of professionalism from you at all times while you are
 [sec.edu.au/good-faith-policy](https://sec.edu.au/good-faith-policy)
 
 ---
+
+![](/img/week09/rmrfusr.png)
+> [here](https://github.com/MrMEEE/bumblebee-Old-and-abbandoned/issues/123)
+
+---
+
+{{% fragment %}}
+
+{{% /fragment %}}
+{{% fragment %}}
+
+{{% /fragment %}}
+{{% fragment %}}
+
+{{% /fragment %}}
+{{% fragment %}}
+[wayback machine](https://web.archive.org/web/20220727160118/https://github.com/lachlan-waugh/secrets-management)
+{{% /fragment %}}
+
+---
+
+### demo
+> [here](https://github.com/lachlan-waugh/secrets-management)
+
+---
+
+## Challenges
+> there's a whole bunch of them
