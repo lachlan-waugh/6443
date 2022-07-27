@@ -1,6 +1,8 @@
 title = "COMP6[84]43 Slides"
 languageCode = "en-au"
 
+enableEmoji=true
+
 relativeURLs = true
 theme = "reveal-hugo"
 
