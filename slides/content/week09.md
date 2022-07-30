@@ -33,7 +33,6 @@ How'd you find the course
 
 > [https://myexperience.unsw.edu.au](https://myexperience.unsw.edu.au)
 
-
 ---
 
 ## DevOps
@@ -58,6 +57,12 @@ How'd you find the course
 
 ---
 
+&nbsp;
+#### :computer: vms vs containers :whale:
+<img src="/img/week09/containers-vs-virtual-machines.jpg" style="scale: 90%"/>
+
+---
+
 > CVEs
 
 Common Vulnerability Enumerations
@@ -75,12 +80,6 @@ Common Vulnerability Enumerations
 * *DAST*: just have the application (black box)
 * *IAST*: runtime specific (e.g. only specific times)
 
----
-
-&nbsp;
-#### :computer: vms vs containers :whale:
-<img src="/img/week09/containers-vs-virtual-machines.jpg" style="scale: 90%"/>
-
 {{% /section %}}
 
 ---
@@ -88,20 +87,20 @@ Common Vulnerability Enumerations
 ## What makes a good app
 {{% section %}}
 
-### At a high level
-* UX/UI (e.g.
-    [meme](https://www.art.yale.edu/)
-    [meme2](https://www.art.yale.edu/about/about-this-site))
-* SEO (search engine optimization)
-* [Page load speed](https://pagespeed.web.dev/)
-
----
-
 ### The fundamentals
 * Availability :moneybag:
 * Reliability :moneybag:
 * Scalability :moneybag:
 * ~~Security~~ :see_no_evil: :hear_no_evil: :speak_no_evil:
+
+---
+
+### At a high level
+* UX/UI (e.g.
+    [meme](https://www.art.yale.edu/)
+    [meme2](https://www.art.yale.edu/about/about-this-site))
+* [load speed](https://pagespeed.web.dev/)
+* load balancing
 
 ---
 
@@ -135,7 +134,6 @@ Common Vulnerability Enumerations
 
 ### who'd be dumb enough to...
 [me lol](https://github.com/lachlan-waugh/cloud-computing/blob/main/creds/pub-key.pem)
-
 <img src="/img/week09/woops.png" style="scale: 70%"/>
 
 ---
@@ -150,10 +148,12 @@ Common Vulnerability Enumerations
 
 ---
 
-### How do I write a secure app?
+### what makes a secure web app
 
 > ~[technology](https://www.youtube.com/watch?v=Fc1P-AEaEp8)~
-* NGINX, [Lets Encrypt](https://letsencrypt.org/), Docker
+* NGINX, [Lets Encrypt](https://letsencrypt.org/) (TLS), Docker
+* don't trust ~~user input~~ anybody (zero-trust)
+* good access control
 
 ---
 
