@@ -48,25 +48,33 @@ We expect a high standard of professionalism from you at all times while you are
 ## Challenge Walkthroughs
 > bonus marks maybe?
 
+> support-v2 and report maybe?
+
 ---
 
 ## CI/CD
 {{% section %}}
 ### keeping it secure
 * github actions ([ramble](https://github.com/lachlan-waugh/6443))
-* ~~[not this](https://github.com/mattdiamond/fuckitjs)~~
 * [pre-commit hooks](https://pre-commit.com/)
 * `.gitignore`
-* `.git`
+* ~~[not this](https://github.com/mattdiamond/fuckitjs)~~
+
+---
+
+### what to keep secure
+* tokens
+* keys
 * `.env`
+* `.git`
 
 ---
 
 ### dumb projects idk
-* [nocode](https://github.com/kelseyhightower/nocode)
 * [git-blame](https://github.com/jayphelps/git-blame-someone-else)
 * [hello-world.rs](https://github.com/mTvare6/hello-world.rs)
 * [logout4shell](https://github.com/Cybereason/Logout4Shell)
+* [nocode](https://github.com/kelseyhightower/nocode)
 * [printf-tac-toe](https://github.com/carlini/printf-tac-toe)
 * [printbf](https://github.com/HexHive/printbf)
 {{% /section %}}
@@ -83,15 +91,7 @@ Browsing vs SDN (site-to-site)
 
 [Privacy](https://www.welivesecurity.com/2020/07/20/seven-vpn-services-leaked-data-20million-users-report/)
 
-> "providers who claim not to keep any logs of their users' online activities recently left 1.2 terabytes"
-
----
-
-Speeeeeed
-
----
-
-P2P SDNs
+> "providers who claim not to keep any logs of their users' online activities recently left 1.2 terabytes of private user data exposed" :thinking:
 
 {{% /section %}}
 
