@@ -24,28 +24,52 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
-## My Experience
-
-How'd you find the course
-* What'd you like
-* What'd you dislike
-* What can be improved
-
-> [https://myexperience.unsw.edu.au](https://myexperience.unsw.edu.au)
-
----
-
-{{% section %}}
 ## Final exam
+{{% section %}}
+### Overview
+* Tuesday, 16th August
+* 3 hours (1-4pm, I think?)
+* worth 40%
 
 ---
+
+### tips/how2hack
+* everything is assessable™
+* not just stuff from wargames
+* submit a short writeup explaination
+* there's also a shortish devsecops question
+* my biggest tip is try not to stress out
+* *\+ practice, practice, practice*
 
 {{% /section %}}
 
 ---
 
-CI/~~CD~~
-* github actions
+## Challenge Walkthroughs
+> bonus marks maybe?
+
+---
+
+## CI/CD
+{{% section %}}
+### keeping it secure
+* github actions ([ramble](https://github.com/lachlan-waugh/6443))
+* ~~[not this](https://github.com/mattdiamond/fuckitjs)~~
+* [pre-commit hooks](https://pre-commit.com/)
+* `.gitignore`
+* `.git`
+* `.env`
+
+---
+
+### dumb projects idk
+* [nocode](https://github.com/kelseyhightower/nocode)
+* [git-blame](https://github.com/jayphelps/git-blame-someone-else)
+* [hello-world.rs](https://github.com/mTvare6/hello-world.rs)
+* [logout4shell](https://github.com/Cybereason/Logout4Shell)
+* [printf-tac-toe](https://github.com/carlini/printf-tac-toe)
+* [printbf](https://github.com/HexHive/printbf)
+{{% /section %}}
 
 ---
 
@@ -70,3 +94,19 @@ Speeeeeed
 P2P SDNs
 
 {{% /section %}}
+
+---
+
+## My Experience
+How'd you find the course
+* What'd you like
+* What'd you dislike
+* What can be improved
+
+> [https://myexperience.unsw.edu.au](https://myexperience.unsw.edu.au)
+
+---
+
+## Challenges
+* *ctfproxy2*
+* *secrets*
