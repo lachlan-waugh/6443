@@ -121,5 +121,3 @@ if you use automated tools, pls dont use uni DNS servers, use these instead :)
 * ~~Try out some of the challenges!~~
     * ~~Recon stuffs~~
     * ~~HTTP as a service (optional)~~
-
----

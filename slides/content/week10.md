@@ -28,7 +28,7 @@ We expect a high standard of professionalism from you at all times while you are
 {{% section %}}
 ### Overview
 * Tuesday, 16th August
-* 3 hours (1-4pm, I think?)
+* 3 hours (9am-12pm, I think?)
 * worth 40%
 
 ---
