@@ -29,9 +29,6 @@ We expect a high standard of professionalism from you at all times while you are
 ## > whoami
 
 * Lachlan
-* CompSci (Security) / Maths
-* 4th year 👴
-* kinda cringe
 
 ---
 
@@ -40,6 +37,7 @@ We expect a high standard of professionalism from you at all times while you are
 * lachlan.waugh@student.unsw.edu.au
 * [@melon]() on the SecEdu Slack
 * [@lachaln]() on the SecSoc Discord
+* OpenLearning group (H18A Online)
 
 ---
 
@@ -48,6 +46,7 @@ We expect a high standard of professionalism from you at all times while you are
 * [seceduau.slack.com/signup](https://seceduau.slack.com/signup)
     * #cs6443
     * #cs6443-22t2-h16a
+* [discord.gg/???]()
 
 {{% /section %}}
 
@@ -71,13 +70,20 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
+## Questions
+* Are tuts compulsory? No
+* Are they recorded? Yes
+* Where are these resources? [lwaugh.io/6443/]()
+
+---
+
 {{% section %}}
 
 ## Course content
-* Wargames (25%)
-* 2 x PenTesting reports (25%)
-* Mid-term (10%)
-* Final (40%)
+* Wargames (10%)
+* 2 x PenTesting reports (40%)
+* Mid-term (0%)
+* Final (50%)
 
 ---
 
@@ -86,7 +92,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 * Cool to collaborate/work together, but your flags need to be different.
 
-* extended flags aren't *required\**, but you should do them anyway (they're way cooler imo)
+* extended flags aren't *required*, but you should do them anyway (they're way cooler imo)
 
 ---
 
@@ -94,6 +100,7 @@ We expect a high standard of professionalism from you at all times while you are
 * pentesting / vulnerability report
     * groups of 3-4
     * keep track of how you got found each of the flags
+    * threats and remediation are really important
 
 ---
 
@@ -117,7 +124,7 @@ if you use automated tools, pls dont use uni DNS servers, use these instead :)
 ## Activities
 * Form groups for the reports (3-4 people)
 * Signing up/logging into QuoccaBank
-* Installing burp suite/~~setting up certs~~?
-* ~~Try out some of the challenges!~~
-    * ~~Recon stuffs~~
-    * ~~HTTP as a service (optional)~~
+* Installing burp suite/setting up certs?
+* Try out some of the challenges!
+    * Recon stuffs
+    * HTTP as a service (optional)
