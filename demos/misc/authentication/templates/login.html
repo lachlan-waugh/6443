@@ -61,17 +61,22 @@
     const handle_login = (method) => async (event) => {
       event.preventDefault();
 
-      const result = await fetch(`/login`, {
-        method: method,
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          username: document.querySelector('#user').value,
-          password: document.querySelector('#pass').value,
-        })
-      }).then((res) => res.json());
+      const username = document.querySelector('#user').value;
+      const password = document.querySelector('#pass').value
+
+      const result = (method == 'POST')
+      ? await fetch(`/login`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username: username, password: password })
+          }
+        ).then((res) => res.json())
+      : await fetch(`/login?username=${username}&password=${password}`)
+        .then((res) => res.json());
 
       if (result.success) {
-        document.cookie = ${result.data};
+        document.cookie = `username=${result.user}`;
+        document.cookie = `password=${result.pass}`;
         window.location = '/';
       } else {
         document.querySelector('#err-ctr').classList.remove('hidden');
