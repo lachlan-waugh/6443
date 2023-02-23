@@ -4,13 +4,13 @@ layout: "bundle"
 outputs: ["Reveal"]
 ---
 
-## We'll get started at 16:05
+## We'll get started at 18:05
 
 ---
 
 {{< slide class="center" >}}
 # Week02
-### COMP6443 H16A
+### COMP6443 H18A
 
 ---
 
@@ -42,6 +42,12 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
+## Challenge walkthroughs
+* Present your solution for some of the challenges
+* Only the harder ones though, so probably none from this week 
+
+---
+
 ## Reports
 * Keep it businessy & use a real vulnerability scoring system (e.g CVE), and framework (e.g NIST)
 * "We recommend you keep a record of the vulnerabilities you have found. Most pen-testers will be required to write a report after a 'penetration assessment', and you will too during this semester!" - Topic 03 challenges on OL
@@ -61,7 +67,8 @@ We expect a high standard of professionalism from you at all times while you are
 {{% section %}}
 
 * http/s & tls
-* what is cookie?
+* authentication
+    * what is cookie?
     * what jwt [jwt.io](https://jwt.io)
 * authentication vs authorization
 
@@ -106,6 +113,11 @@ ps
 * other technologies?
 
 {{% /section %}}
+
+---
+
+# Demos
+> Authentication stuffs
 
 ---
 
