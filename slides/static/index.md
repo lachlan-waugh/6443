@@ -1,15 +1,15 @@
 <style>#downloads { display: none !important; }</style>
 
 ## tutorial
-* week-01 [slides](/6443/week01)
-* week-02 [slides](/6443/week02) [recording](https://youtu.be/LqnInRIUK-Q)
-* week-03 [slides](/6443/week03) [recording]()
-* week-04 [slides](/6443/week04) [recording]()
-* week-05 [slides](/6443/week05) [recording]()
-* week-07 [slides](/6443/week07) [recording]()
-* week-08 [slides](/6443/week08) [recording]()
-* week-09 [slides](/6443/week09) [recording]()
-* week-10 [slides](/6443/week10) [recording]()
+* week01 [slides](/6443/week01)
+* week02 [slides](/6443/week02) [recording](https://youtu.be/LqnInRIUK-Q)
+* week03 [slides](/6443/week03) [recording]()
+* week04 [slides](/6443/week04) [recording]()
+* week05 [slides](/6443/week05) [recording]()
+* week07 [slides](/6443/week07) [recording]()
+* week08 [slides](/6443/week08) [recording]()
+* week09 [slides](/6443/week09) [recording]()
+* week10 [slides](/6443/week10) [recording]()
 
 &nbsp;
 
