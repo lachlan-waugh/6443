@@ -1,32 +1,93 @@
+<style>#downloads { display: none !important; }</style>
+
+# Example
+> There's a couple different ways to send requests to Quoccabank
+
+&nbsp;
+
+## directly
 ```python
-#!/usr/bin/python3
+import requests, urllib3, re
 
-import requests
-import urllib3
-import re
+cert  = ('/path/to/cert.pem', '/path/to/cert.key')
 
+# Create the post
+page = requests.post(
+	"https://login.quoccabank.com",
+	data = {"username": "melon", "password": "Hunter2"},
+	certs=cert
+)
+
+# you could extract the session cookie like so!
+cookie = re.search(r"session=(.+?);", page.headers['Set-Cookie']).group(1)
+print(cookie)
+
+# now we can use that cookie, and send it to another page maybe?
+page = requests.get("https://quoccabank.com/view/", certs=cert, cookies = { 'session': cookie })
+print(page.text)
+```
+
+&nbsp;
+
+## Proxying through BurpSuite
+* This has the benefit of allowing you to use BurpSuite to
+	* intercept the requests
+	* view the history of your requests
+
+```python
+import requests, urllib3, re
+
+# helpful, as it ignores the annoying HTTPS error message
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-# cert  = ('/path/to/cert.pem', '/path/to/cert.key') # no longer required :(
-proxy = { "https:": "http://127.0.0.1:8080", "http:" : "http://127.0.0.1:8080" }
+proxy = { "https": "http://127.0.0.1:8080", "http" : "http://127.0.0.1:8080" }
 
-def view():
-	usr = "melon"
-	pwd = "Hunter2"
+page = requests.post("https://login.quoccabank.com",
+	proxies = proxy,
+	verify = False, # IMPORTANT: otherwise you'll get errors due to BurpSuites self-signed cert
+	data = {"username": "melon", "password": "Hunter2"}
+)
 
-	# Create the post
-	page = requests.post("https://login.quoccabank.com", proxies = proxy,
-        verify = False, data = {"username": usr, "password": pwd}
-	)
+# you could extract the session cookie like so!
+cookie = re.search(r"session=(.+?);", page.headers['Set-Cookie']).group(1)
+print(cookie)
 
-	# you could extract the session cookie like so!
-	cookie = re.search(r"session=(.+?);", page.headers['Set-Cookie']).group(1)
-	print(cookie)
+# now we can use that cookie, and send it to another page maybe?
+page = requests.get(
+	"https://quoccabank.com/view/",
+	proxies = proxy, 
+	verify = False,
+	cookies = { 'session': cookie }
+)
+print(page.text)
+```
 
-	# now we can view the page maybe??
-	page = requests.get("https://quoccabank.com/view/", proxies = proxy, verify = False)
-	print(page.text)
+&nbsp;
 
-view()
+## request.session
+* Using a requests session allows you to maintain a persistent session
+* You won't need to explicitly include your credentials with every request
+* This would also work with the certs, just use `s.certs = (...)` from above
+
+```python
+import requests, urllib3, re
+
+# helpful, as it ignores the annoying HTTPS error message
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
+s = requests.session()
+s.proxies = { "https": "http://127.0.0.1:8080", "http" : "http://127.0.0.1:8080" }
+s.verify = False
+
+page = s.post("https://login.quoccabank.com", data = {"username": "melon", "password": "Hunter2"})
+
+# you could extract the session cookie like so!
+cookie = re.search(r"session=(.+?);", page.headers['Set-Cookie']).group(1)
+print(cookie)
+
+# now we can use that cookie, and send it to another page maybe?
+page = s.get("https://quoccabank.com/view/", cookies = { 'session': cookie })
+print(page.text)
 ```

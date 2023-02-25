@@ -5,10 +5,15 @@ users = [
 ]
 
 def auth(username, password):
+	print(username)
+	print(password)
 	for user in users:
 		if user['username'] == username:
 			if user['password'] == password:
+				print(True)
 				return True
 			else:
+				print(False)
 				return False
+	print(None)
 	return None

@@ -69,8 +69,13 @@ We expect a high standard of professionalism from you at all times while you are
 * http/s & tls
 * authentication
     * what is cookie?
-    * what jwt [jwt.io](https://jwt.io)
+    * what is jwt [jwt.io](https://jwt.io)
 * authentication vs authorization
+
+---
+
+# Demo
+> Authentication stuffs
 
 ---
 
@@ -113,11 +118,6 @@ ps
 * other technologies?
 
 {{% /section %}}
-
----
-
-# Demos
-> Authentication stuffs
 
 ---
 

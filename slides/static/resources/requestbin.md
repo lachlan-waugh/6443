@@ -1,3 +1,5 @@
+<style>#downloads { display: none !important; }</style>
+
 ## Request Bin
 * Check it out [here](https://requestbin.com/)
 * There's two different options (see below)
