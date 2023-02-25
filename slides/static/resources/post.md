@@ -84,3 +84,4 @@ print(cookie)
 # now we can use that cookie, and send it to another page maybe?
 page = s.get("https://quoccabank.com/view/", cookies = { 'session': cookie })
 print(page.text)
+```
