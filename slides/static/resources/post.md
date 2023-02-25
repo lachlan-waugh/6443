@@ -3,6 +3,8 @@
 # Example
 > There's a couple different ways to send requests to Quoccabank
 
+&nbsp;
+
 ## directly
 ```python
 import requests, urllib3, re
@@ -24,6 +26,8 @@ print(cookie)
 page = requests.get("https://quoccabank.com/view/", certs=cert, cookies = { 'session': cookie })
 print(page.text)
 ```
+
+&nbsp;
 
 ## Proxying through BurpSuite
 * This has the benefit of allowing you to use BurpSuite to
@@ -58,6 +62,8 @@ page = requests.get(
 )
 print(page.text)
 ```
+
+&nbsp;
 
 ## request.session
 * Using a requests session allows you to maintain a persistent session
