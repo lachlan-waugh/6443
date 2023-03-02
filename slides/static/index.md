@@ -34,13 +34,17 @@
 
 &nbsp;
 
-## cool youtube series
+## cool youtube series/creators
 * [liveoverflow - pwny island (not just web stuff, but really cool)](https://www.youtube.com/watch?v=RDZnlcnmPUA&list=PLhixgUqwRTjzzBeFSHXrw9DnQtssdAwgG&index=1)
+* [john hammond (really good for beginners)](https://www.youtube.com/@_JohnHammond/videos)
+* [ippsec (more "advanced", does a lot of HTB)](https://www.youtube.com/@ippsec/videos)
 
 &nbsp;
 
 ## some beginner CTFs for practice
-* 
+* [ringezer0](https://ringzer0ctf.com/challenges)
+* [owasp juice shop](https://owasp.org/www-project-juice-shop/)
+* [port swigger labs](https://portswigger.net/web-security/all-labs)
 
 &nbsp;
 
