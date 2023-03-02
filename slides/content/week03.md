@@ -29,7 +29,7 @@ We expect a high standard of professionalism from you at all times while you are
 ## Challenges
 * From now on, all challenges are worth marks.
 * From next week, the challenges are more difficult!
-* For full marks, you'll probably have to do all the challenges ~~(there's some nerds lol)~~
+* We'll say which challenges are required
 
 ---
 
@@ -41,7 +41,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## What's coming up?
 * weeks 4/5: server-side injection
-    * SQLi, SSI, XXE, SSRF, SSTI
+    * SQLi, SSI, XXE, SSRF, SSTI, file uploads
 * weeks 7/8: client-side injection
     * XSS, JSONP, Clickjacking, CSRF
 
@@ -51,6 +51,34 @@ We expect a high standard of professionalism from you at all times while you are
 * Topic02 challenges: THIS SUNDAY 11:59pm
 * Midterm: Week05 (during the lecture I assume?)
 * Report: Week05 Sunday 11:59pm
+
+{{% /section %}}
+
+---
+
+## Reports
+{{% section %}}
+
+### What to include
+* Vulnerability Details
+* Proof of Concept / Steps to Reproduce
+* **Impact** !important
+* Remediation
+
+---
+
+### Really consider the impact
+* Order the report based on how damaging the vulnerabilities are
+* Don't just include things we've talked about in lectures/tuts, discuss general security issues you came across
+* Good explanation of the impact `>>>>` more flags
+
+---
+
+### What to include
+> Everything™!!
+* Challenge solutions
+* Midterm solutions
+* Recon/HAAS solutions
 
 {{% /section %}}
 
@@ -99,7 +127,15 @@ Bruteforcing passwords ([seclists](https://github.com/danielmiessler/SecLists/Pa
 ## Session management
 * Cookies are great, and never insecure :)
 * Some of my favourite ways to encrypt them are base64 and base58!
-* Flask has it's own version of signed tokens (*similar* to JWTs)
+* Most web frameworks have their own version of session tokens (e.g. Flask, Express)
+
+---
+
+## Issues with sessions
+* Deterministic tokens
+* Tokens that don't expire
+* Modifiable tokens
+* Can lead to session fixation/hijacking
 
 ---
 
@@ -124,7 +160,7 @@ Insecure direct object reference
 ## Defences
 * JWT
 * SAML (garbanzo)
-* OAuth (goodbanzo)
+* OAuth (goodbanzo) / OICD
 * HSTS
 * CSP
 * SSO / FID
@@ -134,22 +170,24 @@ Insecure direct object reference
 
 ## JWT
 JSON Web Tokens
-* We already did this I think
-* Why's this even in the slides lol, it couldn't be a hint right (jk ... unless?)
+* not very good as session tokens [read more](https://developer.okta.com/blog/2017/08/17/why-jwts-suck-as-session-tokens)
+* We already did this I think, why's this even in the slides lol, it couldn't be a hint right (jk ... unless?)
 
 ---
 
 ## OAuth / SAML
 Security Assertion Markup Language
+* SAML is bad, its a markup language sent over POST
+* OAuth is nicer, it uses JWTs which are much more lightweight (can be sent as headers)
 
 ---
 
 ## HSTS
 HTTP Strict Transport Security
-* Helps to prevent HTTPS downgrade attacks
-    * Enforces the use of HTTPS.
+* Enforces the use of HTTPS.
+    * Helps to prevent HTTPS downgrade attacks
 
-* HSTS pre-load list [click me ;)](https://hstspreload.org/)
+* HSTS pre-load list [here](https://hstspreload.org/)
     * A list of domains that support HSTS.
     * Used in most modern browsers
 
@@ -158,7 +196,7 @@ HTTP Strict Transport Security
 ## CSP
 Content Security Policy
 
-Helps mitigate XSS and injection attacks by specifying where certain resources can be loaded from
+Helps mitigate XSS and injection attacks by specifying which locations resources can be loaded from
 * e.g. .js files, images, .css files (??)
 * e.g. only load from certain domains, only specific files, only HTTPS sites.
 
@@ -185,10 +223,6 @@ read more [here](https://www.sailpoint.com/identity-library/what-are-the-differe
 
 ---
 
-# DEMO
-
----
-
 # Questions?
 
 ---
@@ -196,4 +230,4 @@ read more [here](https://www.sailpoint.com/identity-library/what-are-the-differe
 ## Now you
 * In your groups, give the challenges a shot
 * If you've already solved them all (gj), maybe get started on the report.
-    * if you're bored try out a ctf to practice for next week? [e.g. ringezer0](https://ringzer0ctf.com/challenges)
+    * if you're bored try out a ctf to practice for next week? e.g. [ringezer0](https://ringzer0ctf.com/challenges), [owasp juice shop](https://owasp.org/www-project-juice-shop/), 
