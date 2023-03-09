@@ -41,26 +41,35 @@ anybody want to present the solutions for blog / files?
 ---
 
 ## Upcoming due dates?
-* week05
-	* wed 6-7pm: mid-sem (10%)
-	* sun 11:59pm: report01 (10%)
-* week06
-	* mon\*: topic03 challenges
-
-\* *probably extended*
+> next week
+* wed 6-7pm: mid-sem (10%)
+* sun 11:59pm
+  * report01 (20%)
+  * topic03 challenges
 
 ---
 
 ## SQL
-Structured Query Language
 
 {{% section %}}
+> Structured Query Language
 * SQLite, PostgreSQL, MySQL, MSSQL Server
-* Fingerprinting
-	* `@@Version`: MSSQL
-	* `Version()`: MySQL
-	* `sqlite_version()`: sqlite
-* DB schema: metadata about the database
+
+---
+
+> Fingerprinting
+* work out the flavour/version
+	* **MySQL**: `Version()`
+	* **SQLite**: `sqlite_version()`
+	* **MSSQL**: `@@Version`
+
+---
+
+> Finding the schema
+* what tables exist, what do they look like?
+	* **MySQL**: `information_schema.[tables|columns]`
+	* **SQLite**: `sqlite_[master|schema]`
+	* **MSSQL**: `SHOW TABLES; DESCRIBE <table_name>`
 
 ---
 
@@ -68,7 +77,7 @@ Queries >
 * `SELECT <column> FROM <table>;`
 * `INSERT INTO table VALUES (a, b);`
 * `UPDATE table SET ... = ...`
-* `DELETE FROM table ...`
+* ~~`DELETE FROM table ...`~~ (*pls dont*)
 * `-- a comment (also #)`
 
 ---
@@ -78,7 +87,8 @@ SELECT \* FROM table WHERE ...
 * `col >  ...`
 * `col <  ...` 
 * `col <> ...	#` not equals (!=)
-* `col LIKE ...	#` regexp, (% is wildcard)
+* `col LIKE ...	#` regexp
+  * % and \_ are wildcards)
 
 ---
 
@@ -97,8 +107,9 @@ SELECT \* FROM table WHERE ...
 ---
 
 ## Notes on UNIONs
-* You can UNION 2 tables with different numbers of columns, but the query needs to extract the same number of columns from each of them
-* You can also UNION the same table 
+* The query needs to extract the same number of columns from both tables
+* The data-type for the columns must be compatible
+* You can also UNION the same table
 
 {{% /section %}}
 
@@ -140,7 +151,7 @@ SELECT * FROM users WHERE user = '' OR 1=1 --'and password = '...'
 * Syntax needs to be correct, or you'll throw an error
   * so, determine syntax through errors/fingerprint
 
-* You have SQLi in `items`, but want user details
+* You have SQLi in `items`, but want `users`
   * find out the tables? (database schema)
   * include that table with a `UNION`
 
@@ -156,14 +167,21 @@ SELECT * FROM users WHERE user = '' OR 1=1 --'and password = '...'
 * Reduce information disclosure
   * Don't display error messages
   * Just fail or show a basic error message (e.g. `'username or password incorrect'`)
-
 * Strip out malicious content (e.g. use a WAF)
-
-* Use the built-in parameterised queries, rather than using the raw input (e.g. format strings)
+* Block requests with anything sus (*kinda bad UX*)
 
 ---
 
-## Offense
+### Better defence
+* Don't use raw content
+  * Use parameterised queries rather than raw input
+  * use an ORM (database as an object)
+
+> Note: these have historically still been vulnerable, don't solely rely on them
+
+---
+
+### Offense
 
 * Content stripped?
   * embed dummy characters (oORr)
@@ -184,5 +202,4 @@ SELECT * FROM users WHERE user = '' OR 1=1 --'and password = '...'
 
 ## Now you
 * give the challenges a shot :)
-* the week05 ones aren't up yet :(
 * get your report ready!!
