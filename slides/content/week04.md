@@ -184,6 +184,15 @@ SELECT * FROM users WHERE user = '' OR 1=1 --'and password = '...'
 
 ---
 
+## NoSQL (MongoDB)
+* it's not sql so therefore no sqli right?
+  * yes but not yes
+  * it's still vulnerable to injection
+* not *necessarily* in the challenges
+> covered in the extended lecture
+
+---
+
 ## Presentations
 {{% section %}}
 ### anybody? 
@@ -192,7 +201,7 @@ for bonus marks??
 
 ---
 
-### SOLUTIONS?
+### Walkthroughs?
 anybody want to present the solutions for blog / files?
 
 {{% /section %}}
