@@ -22,22 +22,6 @@ We expect a high standard of professionalism from you at all times while you are
 
 [sec.edu.au/good-faith-policy](https://sec.edu.au/good-faith-policy)
 
-
----
-
-# Presentations
-{{% section %}}
-## anybody? 
-ten minute presentation on something cool security related from the last week?
-for bonus marks??
-
----
-
-## SOLUTIONS?
-anybody want to present the solutions for blog / files?
-
-{{% /section %}}
-
 ---
 
 ## Upcoming due dates?
@@ -88,7 +72,7 @@ SELECT \* FROM table WHERE ...
 * `col <  ...` 
 * `col <> ...	#` not equals (!=)
 * `col LIKE ...	#` regexp
-  * % and \_ are wildcards)
+  * `_` `(.)` and `%` `(.*)` are wildcards
 
 ---
 
@@ -159,6 +143,11 @@ SELECT * FROM users WHERE user = '' OR 1=1 --'and password = '...'
 
 ---
 
+# SQLi Demo
+> A basic login form
+
+---
+
 ## Mitigations
 
 {{% section %}}
@@ -195,11 +184,21 @@ SELECT * FROM users WHERE user = '' OR 1=1 --'and password = '...'
 
 ---
 
-# SQLi Demo
-> A basic login form
+## Presentations
+{{% section %}}
+### anybody? 
+ten minute presentation on something cool security related from the last week?
+for bonus marks??
+
+---
+
+### SOLUTIONS?
+anybody want to present the solutions for blog / files?
+
+{{% /section %}}
 
 ---
 
 ## Now you
-* give the challenges a shot :)
+* give the topic3 challenges a shot :)
 * get your report ready!!
