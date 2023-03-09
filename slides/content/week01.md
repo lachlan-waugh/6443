@@ -1,5 +1,5 @@
 ---
-title: "week01"
+title: "week01: intro"
 layout: "bundle"
 outputs: ["Reveal"]
 ---
@@ -88,9 +88,9 @@ We expect a high standard of professionalism from you at all times while you are
 ---
 
 ## Wargames
-* Don't leave them to the last minute, you'll be sad :(
+* don't leave them to the last minute, you'll be sad :(
 
-* Cool to collaborate/work together, but your flags need to be different.
+* cool to collaborate/work together, but your flags need to be different.
 
 * extended flags aren't *required*, but you should do them anyway (they're way cooler imo)
 
@@ -102,10 +102,20 @@ We expect a high standard of professionalism from you at all times while you are
     * keep track of how you got found each of the flags
     * threats and remediation are really important
 
+{{% /section %}}
+
+---
+
+{{% section %}}
+## Recon
+> I have some cool stuff @ [lwaugh.io/6443/resources/recon]()
+* active vs passive recon? what the heck is that
+* *TODO: maybe show some of it off?*
+
 ---
 
 ## Bruteforcing at Uni
-if you use automated tools, pls dont use uni DNS servers, use these instead :)
+> if you use automated tools, pls dont use uni DNS servers, use these :)
 * Google - 8.8.8.8
 * Cloudflare - 1.1.1.1
 
@@ -121,10 +131,15 @@ if you use automated tools, pls dont use uni DNS servers, use these instead :)
 
 ---
 
+## Demo
+> BurpSuite and ProxySwitchy oh my
+
+---
+
 ## Activities
-* Form groups for the reports (3-4 people)
+* Form groups for the reports (2-3 people)
 * Signing up/logging into QuoccaBank
 * Installing burp suite/setting up certs?
 * Try out some of the challenges!
     * Recon stuffs
-    * HTTP as a service (optional)
+    * HTTP as a service
