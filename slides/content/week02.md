@@ -1,5 +1,5 @@
 ---
-title: "Week02"
+title: "week02: iam"
 layout: "bundle"
 outputs: ["Reveal"]
 ---
@@ -24,7 +24,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
-# Admin stuff
+## admin stuff
 
 {{% section %}}
 
@@ -37,14 +37,13 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## Challenges
 * How are you finding this week's challenges?
-* For each set of challenges, I'll say which I think are worthwhile.
-    * This week: all of them lol
+* For each set of challenges, I'll say which I think are worthwhile. *This week: all of them lol*
 
 ---
 
-## Challenge walkthroughs
+## Walkthroughs
 * Present your solution for some of the challenges
-* Only the harder ones though, so probably none from this week 
+* Only the harder ones (maybe some of files/blog) 
 
 ---
 
@@ -54,7 +53,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
-## Some examples
+## Some example reports
 * [an example](https://docs.google.com/document/d/1s12Off74DZ8RcELdqdeZSxJTMkbN6l4MHtolwTUrnrU/edit)
 * [some more examples](https://github.com/juliocesarfort/public-pentesting-reports)
 
@@ -62,7 +61,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
-# Lecture content
+## lecture content
 
 {{% section %}}
 
@@ -74,8 +73,49 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
-# Demo
-> Authentication stuffs
+### what is auth...
+* authentication: who are you?
+* authorization: what are you allowed to do?
+
+---
+
+### cookies
+* pieces of text sent by websites to your browser.
+* help the website remember information about you
+* a sense of **persistence**
+
+---
+
+### why do I care
+> often used to store session data
+* session tokens (e.g. Flask/Express)
+* JWT (JSON Web Token)
+* username=melon;password=Hunter2
+
+---
+
+### hacking cookies
+* stealing cookies
+    * cross-site scripting (XSS) [week7/8]
+    * MITM attacks
+    * cross-site request forgery (CSRF) [week7/8]
+* forging cookies (called "baking")
+* ~~accidentally~~ showing your cookies on screen during the tute (who would do that?? haha)
+
+---
+
+## securing cookies
+* http-only (prevents XSS)
+* secure (prevents MITM)
+* same origin (prevents CSRF)
+* expiry
+
+---
+
+## demo
+> authentication stuffs
+
+* plsplsplswork
 
 ---
 
@@ -88,9 +128,22 @@ This slide is intentionally left blank
 ## A note on enumeration
 {{% section %}}
 
-* rate limit your shiz (or we'll do it for you)
-* again, check out [lwaugh.io/6443/tooling](/6443/tooling) for some helpful tools
-* do the demo lachlan
+* rate limit (or we'll do it for you)
+> 429/429/429/429
+* check out [lwaugh.io/6443/resources/recon](/6443/resources/recon)
+
+---
+
+> do the demo lachlan
+
+---
+
+## More recon
+* [robots.txt](https://www.google.com/robots.txt)
+* [sitemap.xml](https://www.google.com/sitemap.xml)
+* javascript files
+* html comments
+* wappalyzer
 
 ---
 
