@@ -1,5 +1,5 @@
 ---
-title: "Week04"
+title: "week04: sqli"
 layout: "bundle"
 outputs: ["Reveal"]
 ---

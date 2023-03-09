@@ -1,5 +1,5 @@
 ---
-title: "Week05"
+title: "week05: serverside"
 layout: "bundle"
 outputs: ["Reveal"]
 ---
