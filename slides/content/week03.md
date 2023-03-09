@@ -1,5 +1,5 @@
 ---
-title: "Week03"
+title: "week03: iam"
 layout: "bundle"
 outputs: ["Reveal"]
 ---
@@ -88,9 +88,9 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## Lecture content
 * Authentication
-* Recon
 * Session management
 * IDOR
+* HTTP Response codes
 * hashing vs encryption
 
 ---
@@ -116,14 +116,6 @@ Bruteforcing passwords ([seclists](https://github.com/danielmiessler/SecLists/Pa
 
 ---
 
-## More recon
-* [robots.txt](https://www.google.com/robots.txt)
-* [sitemap.xml](https://www.google.com/sitemap.xml)
-* javascript files
-* html comments
-
----
-
 ## Session management
 * Cookies are great, and never insecure :)
 * Some of my favourite ways to encrypt them are base64 and base58!
@@ -140,7 +132,7 @@ Bruteforcing passwords ([seclists](https://github.com/danielmiessler/SecLists/Pa
 ---
 
 ## IDOR
-Insecure direct object reference
+> Insecure Direct Object Reference
 
 ![](/img/week03/idor.png)
 
@@ -150,6 +142,17 @@ Insecure direct object reference
 * ~~Hashing is just lossy encryption, change my mind~~
 * What's the difference?
 * When would you use them?
+
+---
+
+## HTTP Response codes
+* 1XX - hold on
+* 2XX - here you go
+* 3XX - go away
+* 4XX - you messed up
+* 5XX - I messed up
+
+> [https://http.cat/]()
 
 {{% /section %}}
 
@@ -218,6 +221,23 @@ Single Sign-On / Federated Identity
 * RuBAC - Rule-based (structured rules/policies)
 
 read more [here](https://www.sailpoint.com/identity-library/what-are-the-different-types-of-access-control-systems/)
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+# Demo
+
+> automating requests in python
+
+---
+
+## how 2 script
+* python + requests
+* javascript + fetch
+* bash + curl
+* ~~carrier pigeon~~
 
 {{% /section %}}
 
