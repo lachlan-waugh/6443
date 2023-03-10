@@ -38,16 +38,11 @@ We expect a high standard of professionalism from you at all times while you are
 
 ---
 
-### A refresher on SQLi
-> a demo
-
----
-
 # Lecture content
 * XXE
 * SSRF
 * SSTI (did they go through this? idk)
-* RCE and Reverse Shells
+* Shell injection, RCE and Reverse Shells
 
 ---
 
@@ -210,8 +205,29 @@ web apps is trivial
 
 ---
 
+{{% section %}}
+
+## bash injection
+* TODO
+
+---
+
+## Demo
+
+---
+
 ## reverse shells
+* TODO
+
 > checkout [explainshell](https://www.explainshell.com/explain?cmd=nc+-lnvp+9999) and [revshells](https://revshells.com)
+
+---
+
+## Demo
+
+---
+
+{{% /section %}}
 
 
 ---
