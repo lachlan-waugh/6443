@@ -27,11 +27,6 @@ We expect a high standard of professionalism from you at all times while you are
 # House cleaning 
 {{% section %}}
 
-## Due Dates
-> *Report and week5 challenges are now due Week07 Wednesday*
-
----
-
 ## Report groups
 > If you aren't in a group please let me know
 
@@ -39,21 +34,6 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## Midterm
 > How'd you all find it (trivial enough?)
-{{% /section %}}
-
----
-
-# Presentations
-{{% section %}}
-## anybody? 
-ten minute presentation on something cool security related from the last week?
-for bonus marks??
-
----
-
-## SOLUTIONS?
-anybody want to present the solutions for blog / files?
-
 {{% /section %}}
 
 ---
@@ -67,6 +47,7 @@ anybody want to present the solutions for blog / files?
 * XXE
 * SSRF
 * SSTI (did they go through this? idk)
+* RCE and Reverse Shells
 
 ---
 
@@ -123,10 +104,10 @@ Cats are asleep for 70% of their lives.
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE foo [
-  <!ENTITY funCatFact SYSTEM "file:///flag.txt" >
+  <!ENTITY flag SYSTEM "file:///flag.txt" >
 ]>
 <diary>
-  <entry>&funCatFact;</entry>
+  <entry>&flag;</entry>
 </diary>
 ```
 
@@ -188,28 +169,57 @@ web apps is trivial
 
 ---
 
+### Demo!!
+> (sike it's literally just HAAS)
+
+---
+
 ### Remediation
 * Don't assume local/internal services will be safe
-* Don't allow arbitrary execution times: returning a database would take a lot longer than an image
+* Monitor internal requests, block any suspicious activity
+  * e.g. very long execution time could be someone fetchng information from a database
 * A whitelist of IPs that can access internal services
 * A *good* WAF
 
 {{% /section %}}
 
 ---
-
+## SSTI
 {{% section %}}
-# Demos!!1!
+### Server-side template injection
+* Templating engines (eg. Jinja2, Pug) use templates to inject code and variables into static files
+
+* Jinja2: `{{`\<CODE HERE\>`}}` e.g. `{{7*7}}` => `49`
+
+* *what if we tricked the template rendering into thinking our user-supplied content was code?*
 
 ---
 
-## SSTI demo
+## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/ssti)
+
+---
+
+{{% /section %}}
 
 ---
 
 ## Basic PHP injection
+{{% section %}}
 > if I have time lol (I didn't rip docker :sadreact:)
 {{% /section %}}
+
+---
+
+## reverse shells
+> checkout [explainshell](https://www.explainshell.com/explain?cmd=nc+-lnvp+9999) and [revshells](https://revshells.com)
+
+
+---
+
+# Presentations
+ten minute presentation on something cool security related from the last week?
+for bonus marks??
+
 
 ---
 
