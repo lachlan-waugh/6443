@@ -3,7 +3,7 @@ import { exec } from 'child_process';
 import pug from 'pug';
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 app.get('/', (req, res) => {
   // security is my passion
