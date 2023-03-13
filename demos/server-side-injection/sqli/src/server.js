@@ -11,7 +11,7 @@ app.use(cookieParser());
 const SECRET = "SECRET_PASSWORD_123";
 
 app.get('/', (req, res) => {
-    // if (!req.cookies.token) return res.redirect('/login');
+    if (!req.cookies.token) return res.redirect('/login');
 
     const [ user, pass, secret ] = atob(req.cookies.token).split(':');
 
