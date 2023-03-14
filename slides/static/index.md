@@ -4,7 +4,7 @@
 * week01 [slides](/6443/week01)
 * week02 [slides](/6443/week02) [recording](https://youtu.be/LqnInRIUK-Q)
 * week03 [slides](/6443/week03) [recording](https://youtu.be/UJuSaoALCQo)
-* week04 [slides](/6443/week04) [~~recording~~]()
+* week04 [slides](/6443/week04) [recording](https://youtu.be/oV7IPbSR6hg)
 * week05 [slides](/6443/week05) [~~recording~~]()
 * week07 [slides](/6443/week07) [~~recording~~]()
 * week08 [slides](/6443/week08) [~~recording~~]()
