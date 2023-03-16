@@ -17,7 +17,7 @@ def index():
     image_id = uuid.uuid4()
     image = requests.get(request.form['url'])
     if ('html' in image.headers['content-type']):
-        return render_template('index.html', error='ERROR: ' + image.content + ' is not a valid image')
+        return render_template('index.html', error='ERROR: not a valid image!!\n' + image.content.decode())
 
     with open(f'client/src/static/img/{image_id}.png', 'wb+') as f:
         f.write(image.content)
@@ -26,4 +26,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5002)
+    app.run(host="0.0.0.0", port=5000)
