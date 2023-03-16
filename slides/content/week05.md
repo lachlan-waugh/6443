@@ -164,8 +164,7 @@ web apps is trivial
 
 ---
 
-### Demo!!
-> (sike it's literally just HAAS)
+## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/ssrf)
 
 ---
 
@@ -200,7 +199,13 @@ web apps is trivial
 
 ## Basic PHP injection
 {{% section %}}
-> if I have time lol (I didn't rip docker :sadreact:)
+* PHP is the worst language in the world
+* Kris kinda went through in the tute, thought I'd just show what you could get with it though
+
+---
+
+## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/php_webshell)
+
 {{% /section %}}
 
 ---
@@ -208,22 +213,25 @@ web apps is trivial
 {{% section %}}
 
 ## bash injection
-* TODO
+* If you're ever using os.system() (or similar) to call shell functions containing user input
+  * first of all, probably don't
+  * second of all, it's kinda vulnerable
 
 ---
 
-## Demo
+## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/shell_injection)
 
 ---
 
 ## reverse shells
-* TODO
+* Sometimes you can get command injection, but it's really tedious
+* wouldn't it be easier if you could just get send your commands directly via terminal?
 
 > checkout [explainshell](https://www.explainshell.com/explain?cmd=nc+-lnvp+9999) and [revshells](https://revshells.com)
 
 ---
 
-## Demo
+## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/revshell)
 
 ---
 
@@ -233,9 +241,8 @@ web apps is trivial
 ---
 
 # Presentations
-ten minute presentation on something cool security related from the last week?
-for bonus marks??
-
+* ten minute presentation on something cool security related from the last week?
+* for bonus marks??
 
 ---
 
