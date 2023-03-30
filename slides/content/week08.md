@@ -54,6 +54,14 @@ Supply a single-use 'nonce' value.
 
 ---
 
+### CSRF Mitigations
+* CSRF Tokens, a nonce value supplied as input
+* Randomly generated when the page is loaded
+    * stored as a cookie, header, `<input>`
+* When a request is made, backend verifies the nonce
+
+---
+
 ## Quick demo
 
 ---
