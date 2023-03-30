@@ -28,7 +28,7 @@ We expect a high standard of professionalism from you at all times while you are
 {{% section %}}
 
 ## Due Dates
-* Some of the Topic04 challenges should be out
+* Most of the Topic04 challenges should be out
 * These are due Week08 Sunday @ 11:59pm
 
 ---
@@ -36,23 +36,7 @@ We expect a high standard of professionalism from you at all times while you are
 ## Report groups
 * The second report is out
 * If you need a new group for the 2nd report, msg me.
-* Feedback and marks will come out at some point (a point after I'm given them)
-
-{{% /section %}}
-
----
-
-## Presentations
-{{% section %}}
-
-### please 
-ten minute presentation on something cool security related from the last week?
-for bonus marks??
-
----
-
-### Solutions?
-anybody want to present the solutions for BigApp/Signin/~~GCC/Feedifier/Letters~~?
+* Marks/feedback will be out at some point
 
 {{% /section %}}
 
@@ -81,21 +65,69 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 
 ---
 
-## Cross Origin Policy
 {{% section %}}
+
+## SOP (Same Origin Policy)
 * Blocks resource requests to/from an *external* site
-* "*External*" is based on a *Same Origin Policy*:
-    * Only requests from the same `origin` are allowed to use the resources
-    * Unless they have the correct headers ([more here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers))
+
+* "*External*" is based on *SOP*: only requests from the same `origin` are allowed to use the resources
+
+* more secure ~~*but how people bypassed it isn't xd*~~
+
+> read more [here](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
+
+---
+
+### Cross-Origin Resource Sharing
+* Obviously sometimes you need to access resources from another origin (e.g. using images, videos)
+
+* This can be achieved if the resource owner sets certain headers on the resource ([more here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers))
 
 > [give it a try](https://www.test-cors.org/)
 
 ---
 
-### Hmm
+### Can it be bypassed
 * It's just a browser protection
 * Doesn't prevent the request (it'll still succeed), it prevents you from accessing the response.
-* Would it block you if used python? (no)
+* Would it block you if accessed it through a script?
+
+---
+
+### JSONP
+* What did people do before CORS was available?
+
+* JSON with Padding
+    * You can't load a resource from another domain (but you can load a script).
+
+    * So, return a script which loads the content? :brain:
+
+---
+
+### How 2 JSONP
+* How do you load the content? You run a function which takes the data as an argument.
+
+* Since we're loading the data, we define what function is being used to load it.
+
+---
+
+### JSONP Example
+* Define the function using a `callback` parameter
+```html
+<!-- https://melon.com/numbers?callback=load_data -->
+load_data([1, 2, 3, 4, 5])
+```
+
+&nbsp;
+
+* The script below will invoke `load_data([...])`
+```html
+<script src="https://melon.com/numbers?callback=load_data"></script>
+```
+
+---
+
+### JSONP Demo
 
 {{% /section %}}
 
@@ -113,35 +145,9 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 ---
 
 ## Client-side injection
-* CSRF
 * HTML Injection
 * XSS
-
----
-
-## CSRF
-{{% section %}}
-
-### What is it?
-* Cross-site request forgery
-* Trick a user into performing an unintended action
-    * e.g. make them authorize a bank transaction
-    * e.g. make them change their email/password
-* *kinda similar to SSRF*
-
----
-
-### Demo!
-
----
-
-### Mitigations
-* CSRF Tokens, a nonce value supplied as input
-* Randomly generated when the page is loaded
-    * stored as a cookie, header, `<input>`
-* When a request is made, backend verifies the nonce
-
-{{% /section %}}
+* CSRF
 
 ---
 
@@ -206,15 +212,72 @@ document.write(document.URL.substring(pos,document.URL.length));
 
 ---
 
-### Note
-* HTML Injection isn't just from `<script>` tags
-* event-handlers
-    * `<img src=x onerror=alert(1)/>`
-* js code:
-    * `const a = '<user_input>'`
+### XSS isn't just `<script>` tags
+```javascript
+// event-handlers
+<img src=x onerror=alert(1)/>
+ 
+// injecting into javascript code
+const a = '<user_input>'
+
+// and much more
+```
+
+> it's any time you get user supplied input in a javascript context
+
+---
+
+### Some good resources
+* [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XSS%20Injection)
+* [OWASP Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.html)
+* [HackTricks](https://book.hacktricks.xyz/pentesting-web/xss-cross-site-scripting)
+* [PortSwigger](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
+
+{{% /section %}}
+
+---
+
+## CSRF
+{{% section %}}
+
+### What is it?
+* Cross-site request forgery
+* Trick a user into performing an unintended action
+    * e.g. make them authorize a bank transaction
+    * e.g. make them change their email/password
+* *kinda similar to SSRF*
+
+---
+
+###
+
+```
+<form method="POST" >
+```
+
+---
+
+### Demo!
+
+{{% /section %}}
+
+---
+
+## Presentations
+{{% section %}}
+
+### Anyone?
+ten minute presentation on something cool security related from the last week?
+for bonus marks??
+
+---
+
+### Solutions?
+anybody want to present the solutions for the Letters/SignIn/GCC/Secrets/Teller
 
 {{% /section %}}
 
 ---
 
 # Challenges
+> do em :gun:
