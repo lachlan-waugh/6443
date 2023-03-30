@@ -32,8 +32,8 @@ export const send_funds = (src, dest, amount) => {
 	if (!dst_acc.success) 	return { success: false, msg: dst_acc.msg };
 	if (!amount) 			return { success: false, msg: '\'Amount\' cannot be empty.' };
 	
-	src_acc.user.balance += amount;
-	dst_acc.user.balance -= amount;
+	src_acc.user.balance += Number(amount);
+	dst_acc.user.balance -= Number(amount);
 
 	return { success: true };
 };
