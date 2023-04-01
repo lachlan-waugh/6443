@@ -10,6 +10,7 @@
 * week08 [slides](/6443/week08) [~~recording~~]()
 * week09 [slides](/6443/week09) [~~recording~~]()
 * week10 [slides](/6443/week10) [~~recording~~]()
+* [week07 help session (going through topic3 challenges)](https://youtu.be/tuofP6rkG0I)
 * [recordings playlist](https://www.youtube.com/playlist?list=PL2xJTaGLKqbvwvi1w_U8dd4g8aQwk8LQi)
 
 &nbsp;
