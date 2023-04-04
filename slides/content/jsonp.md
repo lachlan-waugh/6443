@@ -4,10 +4,6 @@ layout: "bundle"
 outputs: ["Reveal"]
 ---
 
-## We'll get started at 18:05
-
----
-
 {{< slide class="center" >}}
 # JSONP
 
@@ -54,8 +50,6 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 
 * This can be achieved if the resource owner sets certain headers on the resource ([more here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers))
 
-> [give it a try](https://www.test-cors.org/)
-
 ---
 
 ### Can it be bypassed
@@ -63,7 +57,11 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 * Doesn't prevent the request (it'll still succeed), it prevents you from accessing the response.
 * Would it block you if accessed it through a script?
 
+{{% /section %}}
+
 ---
+
+{{% section %}}
 
 ### JSONP
 * What did people do before CORS was available?
