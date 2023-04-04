@@ -11,24 +11,21 @@ outputs: ["Reveal"]
 
 ## Origin vs Site
 
+{{% section %}}
 ### Origin
 > <span style="color: #021691">https://</span><span style="color: #fffacd">www\.example\.com</span><span style="color: #7FFFD4">:80</span>
 
-{{% fragment %}}
 origin = <span style="color: #021691">scheme</span> + <span style="color: #fffacd">host</span> + <span style="color: #7FFFD4">port</span>
-{{% /fragment %}}
 
 ---
 
-## Origin vs Site
 ### Site
 > <span style="color: #021691">http://</span><span style="color: #A52A2A">www.</span><u><span style="color: #fffacd">example</span><span style="color: #D2691E">.com</span></u><span style="color: #7FFFD4">:80</span>
 > <span style="color: #021691">https://</span><span style="color: #A52A2A">api.</span><u><span style="color: #fffacd">example</span><span style="color: #D2691E">.com</span></u><span style="color: #7FFFD4">:443</span>
 
-{{% fragment %}}
 site = <span style="color: #fffacd">private_domain</span> + <span style="color: #D2691E">public_suffix</span>
 * <s><span style="color: #021691">scheme</span>, <span style="color: #A52A2A">subdomain</span> and <span style="color: #7FFFD4">port</span></s>
-{{% /fragment %}}
+{{% /section %}}
 
 ---
 
@@ -40,8 +37,6 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 * "*External*" is based on *SOP*: only requests from the same `origin` are allowed to use the resources
 
 * more secure ~~*but how people bypassed it isn't xd*~~
-
-> read more [here](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
 
 ---
 
