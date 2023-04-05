@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>secure search service</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>secure <s>commenting</s> service</h1>
+      <p>our <s>waf</s> csp is so good</p>
+    </header>
+
+    <form method="GET">
+      <input type="text" name="q" placeholder="search query" autocomplete="off" />
+      <input type="submit" value="filter comments" />
+    </form>
+
+    {% autoescape false %}
+    {% if not query %}<h3>Showing all results:</h3>{% else %}<h3>Showing results containing "{{ query }}":</h3>{% endif %}
+    {% endautoescape %}
+  </body>
+</html>
