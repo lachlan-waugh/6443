@@ -9,6 +9,10 @@ outputs: ["Reveal"]
 
 ---
 
+> slides are available [https://lwaugh.io/6443/extended08/](https://lwaugh.io/6443/extended08/)
+
+---
+
 # Bypassing CSP
 
 ---
@@ -95,6 +99,27 @@ outputs: ["Reveal"]
 
 ### Prototype pollution
 {{% section %}}
+
+### Javascript, ew
+* Javascript is a very "flexible" language
+* It's interpreted, things can change at runtime
+* Objects in JS follow a prototype-style
+
+---
+
+### Inheritance in Java vs JS
+* Java
+    * Compiled
+    * Relations are strictly defined at compile-time
+* Java
+    * Interpreted
+    * Relationships can change as the 
+    * Changes will be fed back into the interpreter
+
+---
+
+## Demo???
+
 
 
 ---
