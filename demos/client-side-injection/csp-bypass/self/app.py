@@ -12,7 +12,7 @@ app.config['TITLE'] = 'Comments or somethn'
 @app.route('/', methods=['GET'])
 def home():
     res = make_response(render_template('index.html', query=request.args.get('q')))
-    res.headers.set('Content-Security-Policy', "script-src: 'self'")
+    res.headers.set('Content-Security-Policy', "script-src 'self'")
     return res
 
 

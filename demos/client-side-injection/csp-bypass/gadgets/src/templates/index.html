@@ -20,7 +20,7 @@
     {% autoescape false %}
     {% if not query %}<h3>Showing all results:</h3>{% else %}<h3>Showing results containing "{{ query }}":</h3>{% endif %}
     {% endautoescape %}
-    <script src="/helper.js" nonce="{{ csp_nonce() }}"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js" nonce="{{ csp_nonce() }}"></script> -->
+    <!-- <script src="/helper.js" nonce="{{ csp_nonce() }}"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js" nonce="{{ csp_nonce() }}"></script>
   </body>
 </html>

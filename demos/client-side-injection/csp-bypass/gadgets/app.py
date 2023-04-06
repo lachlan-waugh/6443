@@ -12,7 +12,7 @@ app.config['TITLE'] = 'Comments or somethn'
 csp = {
     "object-src": "'none'",
     "base-uri": "'none'",
-    "script-src": "'strict-dynamic'" # "'unsafe-eval' cdnjs.cloudflare.com"
+    "script-src": "'strict-dynamic' 'unsafe-eval' cdnjs.cloudflare.com"
 }
 Talisman(
     app,
