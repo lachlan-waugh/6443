@@ -120,8 +120,4 @@ outputs: ["Reveal"]
 
 ## Demo???
 
-
-
----
-
 {{% /section %}}

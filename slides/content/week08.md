@@ -137,10 +137,10 @@ Supply a single-use 'nonce' value.
 
 ### Where is it defined
 * HTTP header
-    * `Content-Security-Policy: ...`
+    * `Content-Security-Policy: ???-src <directive>`
 
 * Or in a tag
-    * `<meta http-equiv="Content-Security-Policy" content="...">`
+    * `<meta http-equiv="Content-Security-Policy" content="???-src <directive>">`
     * though not as powerful
 
 ---

@@ -105,6 +105,7 @@ Common Vulnerability Enumerations
 ---
 
 &nbsp;
+
 #### [not doing this](https://github.com/MrMEEE/bumblebee-Old-and-abbandoned/issues/123)
 
 <img src="/img/week09/rmrfusr.png" style="scale: 90%"/>
@@ -133,7 +134,8 @@ Common Vulnerability Enumerations
 {{% section %}}
 
 ### who'd be dumb enough to...
-[me lol](https://github.com/lachlan-waugh/cloud-computing/blob/main/creds/pub-key.pem)
+[me lol](https://github.com/lachlan-waugh/cloud-computing/blob/main/creds/pub-key.pem) (it's not a pub-key...)
+
 <img src="/img/week09/woops.png" style="scale: 70%"/>
 
 ---
