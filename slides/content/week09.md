@@ -87,6 +87,18 @@ Common Vulnerability Enumerations
 #### I accidentally pushed some secrets [here](https://github.com/lachlan-waugh/secrets-management/)
 > can you find them?
 
+{{% fragment %}}
+[old commits](https://github.com/lachlan-waugh/secrets-management/commit/7014a975239de9e93cbf3ee937f608373422dfb7)
+{{% /fragment %}}
+
+{{% fragment %}}
+[wayback machine](https://web.archive.org/web/20220727160118/https://github.com/lachlan-waugh/secrets-management)
+{{% /fragment %}}
+
+{{% fragment %}}
+[github events](https://api.github.com/repos/lachlan-waugh/secrets-management/events) ([commit is here](https://github.com/lachlan-waugh/secrets-management/commit/d6127d5a02a5e1f90c36cdb86e25508f580f2573))
+{{% /fragment %}}
+
 ---
 
 {{% section %}}
