@@ -35,7 +35,7 @@ How'd you find the course
 
 ---
 
-## DevOps
+## Dev~~Sec~~Ops
 {{% section %}}
 
 &nbsp;
@@ -84,6 +84,30 @@ Common Vulnerability Enumerations
 
 ---
 
+#### I accidentally pushed some secrets [here](https://github.com/lachlan-waugh/secrets-management/)
+> can you find them?
+
+---
+
+{{% section %}}
+
+### who'd be dumb enough to...
+[me lol](https://github.com/lachlan-waugh/cloud-computing/blob/main/creds/pub-key.pem) (it's not a pub-key...)
+
+<img src="/img/week09/woops.png" style="scale: 70%"/>
+
+---
+
+### top 10 images taken moments ~~before~~ after disaster
+
+![](/img/week09/cursed.png)
+
+> maybe check your old projects to see if you've made similar dumb mistakes?
+
+{{% /section %}}
+
+---
+
 ## What makes a good app
 {{% section %}}
 
@@ -114,37 +138,58 @@ Common Vulnerability Enumerations
 
 ---
 
-#### I accidentally pushed some secrets [here](https://github.com/lachlan-waugh/secrets-management/)
-> can you find them?
-
-{{% fragment %}}
-[old commits](https://github.com/lachlan-waugh/secrets-management/commit/7014a975239de9e93cbf3ee937f608373422dfb7)
-{{% /fragment %}}
-
-{{% fragment %}}
-[github events](https://api.github.com/repos/lachlan-waugh/secrets-management/events) ([commit is here](https://github.com/lachlan-waugh/secrets-management/commit/efa29132d0332ec7361e2c702d1be7f7d147e19d))
-{{% /fragment %}}
-
-{{% fragment %}}
-[wayback machine](https://web.archive.org/web/20220727160118/https://github.com/lachlan-waugh/secrets-management)
-{{% /fragment %}}
-
----
-
 {{% section %}}
 
-### who'd be dumb enough to...
-[me lol](https://github.com/lachlan-waugh/cloud-computing/blob/main/creds/pub-key.pem) (it's not a pub-key...)
+### Supply chain attacks
 
-<img src="/img/week09/woops.png" style="scale: 70%"/>
+> dependency stuffs
 
 ---
 
-### top 10 images taken moments ~~before~~ after disaster
+> Trusting code we didn't write ourselves
 
-![](/img/week09/cursed.png)
+* npm
+* pip/pypi
+* pacman/aur
+* cargo
 
-> maybe check your old projects to see if you've made similar dumb mistakes?
+---
+
+### Vulnerabilities
+
+* [log4j](https://www.upguard.com/blog/apache-log4j-vulnerability) (2 billion devices!!!)
+
+* [pac-resolver](https://arstechnica.com/information-technology/2021/09/npm-package-with-3-million-weekly-downloads-had-a-severe-vulnerability/) (3 million weekly downloads)
+
+---
+
+### Malicious developers
+
+* [node-ipc](https://www.lunasec.io/docs/blog/node-ipc-protestware/) / [lovenotwar](https://snyk.io/advisor/npm-package/lovenotwar)
+
+---
+
+### Dependency confusion
+* `npm install xyz`
+* how does it resolve `xyz`
+* public & private version of `xyz`
+* higher version number
+
+> [read more](https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610)
+
+---
+
+### Typosquatting
+* `pip install falsk`
+* package named `falsk`: 
+
+> [read more](https://medium.com/checkmarx-security/typosquatting-campaign-targeting-12-of-pythons-top-packages-downloading-malware-hosted-on-github-9501f35b8efb)
+
+---
+
+### Vulnerability in the package manager
+
+> I don't have an example :shrug:
 
 {{% /section %}}
 
@@ -152,12 +197,12 @@ Common Vulnerability Enumerations
 
 ### what makes a secure web app
 
-> ~[technology](https://www.youtube.com/watch?v=Fc1P-AEaEp8)~
+> ~~[technology](https://www.youtube.com/watch?v=Fc1P-AEaEp8)~~
+
 * NGINX, [Lets Encrypt](https://letsencrypt.org/) (TLS), Docker
 * don't trust ~~user input~~ anybody (zero-trust)
 * good access control
 
 ---
 
-## Challenges
-> there's a whole bunch of them
+## Challenges/Walkthrough

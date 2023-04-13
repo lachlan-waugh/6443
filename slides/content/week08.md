@@ -29,7 +29,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## Due Dates
 * All of the topic04 challenges are out
-* They're due Sunday Week09.
+* They're due Sunday Week08.
 
 ---
 
