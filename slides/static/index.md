@@ -7,10 +7,11 @@
 * week04 [slides](/6443/week04) [recording](https://youtu.be/oV7IPbSR6hg)
 * week05 [slides](/6443/week05) [recording](https://youtu.be/WXXR_9NI1Rk)
 * week07 [slides](/6443/week07) [recording](https://youtu.be/RPGSFByujyM)
-* week08 [slides](/6443/week08) [~~recording~~]()
+* week08 [slides](/6443/week08) [recording](https://youtu.be/hVTEYfB4cRo)
 * week09 [slides](/6443/week09) [~~recording~~]()
 * week10 [slides](/6443/week10) [~~recording~~]()
-* [week07 help session (going through topic3 challenges)](https://youtu.be/tuofP6rkG0I)
+* [topic3 challenge walkthrough](https://youtu.be/tuofP6rkG0I)
+* [~~topic4 challenge walkthrough~~]()
 * [recordings playlist](https://www.youtube.com/playlist?list=PL2xJTaGLKqbvwvi1w_U8dd4g8aQwk8LQi)
 
 &nbsp;
