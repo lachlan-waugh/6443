@@ -1,5 +1,5 @@
 ---
-title: "week08: clientside"
+title: "08: clientside"
 layout: "bundle"
 outputs: ["Reveal"]
 ---

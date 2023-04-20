@@ -1,5 +1,5 @@
 ---
-title: "week01: intro"
+title: "01: intro"
 layout: "bundle"
 outputs: ["Reveal"]
 ---

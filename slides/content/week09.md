@@ -1,5 +1,5 @@
 ---
-title: "Week09"
+title: "09: devsecops"
 layout: "bundle"
 outputs: ["Reveal"]
 ---

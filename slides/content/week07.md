@@ -1,5 +1,5 @@
 ---
-title: "week07: xss"
+title: "07: xss"
 layout: "bundle"
 outputs: ["Reveal"]
 ---

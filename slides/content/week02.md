@@ -1,5 +1,5 @@
 ---
-title: "week02: iam"
+title: "02: identity"
 layout: "bundle"
 outputs: ["Reveal"]
 ---
