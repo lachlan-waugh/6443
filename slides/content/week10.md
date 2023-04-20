@@ -52,6 +52,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## CI/CD
 {{% section %}}
+
 ### keeping it secure
 * github actions ([ramble](https://github.com/lachlan-waugh/6443))
 * [pre-commit hooks](https://pre-commit.com/)
@@ -111,6 +112,7 @@ Browsing vs SDN (site-to-site)
 ---
 
 ### Privilege escalation
+> We want our commands to execute as root/admin/superuser
 
 ---
 
@@ -136,12 +138,6 @@ Browsing vs SDN (site-to-site)
 * [grype](https://github.com/anchore/grype)
 
 {{% /section %}}
-
----
-
-### How2Cron
-
-* [crontab.guru](https://crontab.guru/)
 
 ---
 
