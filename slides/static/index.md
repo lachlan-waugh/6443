@@ -53,7 +53,8 @@
 
 ## Community stuff
 * Email me @ [lachlan.waugh@student.unsw.edu.au]()
-* Join the [slack](https://seceduau.slack.com/signup) (im [@melon]()), then join the servers:
+* Join the [slack](https://seceduau.slack.com/signup) (im `@melon`), then join the servers:
     * #cs6443
     * #cs6443-23t1-h18a
-* Join the [discord]() (im also [@melon]()), check out the `comp6443-6843` channel (under `security`) 
+* Join the [discord]() (again `@melon`), check out the `comp6443-6843` channel (under `security`)
+* pls dont contact the course account for random stuff or I'll get fired.
