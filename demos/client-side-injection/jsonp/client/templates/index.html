@@ -17,7 +17,7 @@
 			<input type="submit" value="filter comments" />
 		</form>
 
-		{% autoescape true %}
+		{% autoescape false %}
 		{% if not query %}
 		<h3>Showing all comments:</h3>
 		{% else %}
@@ -28,6 +28,6 @@
 		<div id="jokes"></div>
 
 		<script src="/load.js"></script>
-		<!-- <script src="http://localhost:8000/jsonp?q={{ query }}&callback=load"></script> -->
+		<script src="http://localhost:8000/jsonp?q={{ query }}&callback=load"></script>
 	</body>
 </html>
