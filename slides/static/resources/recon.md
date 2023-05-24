@@ -1,5 +1,3 @@
-<style>#downloads { display: none !important; }</style>
-
 ## Recon stuff
 ### Passive
 * dig (linux command)

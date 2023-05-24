@@ -36,7 +36,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 * lachlan.waugh@student.unsw.edu.au
 * [@melon]() on the SecEdu Slack
-* [@lachaln]() on the SecSoc Discord
+* [@melon]() on the SecSoc Discord
 * OpenLearning group (H18A Online)
 
 ---

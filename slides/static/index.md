@@ -1,5 +1,3 @@
-<style>#downloads { display: none !important; }</style>
-
 ## tutorial
 * week01 [slides](/6443/week01)
 * week02 [slides](/6443/week02) [recording](https://youtu.be/LqnInRIUK-Q)

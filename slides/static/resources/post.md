@@ -1,5 +1,3 @@
-<style>#downloads { display: none !important; }</style>
-
 # Example
 > There's a couple different ways to send requests to Quoccabank
 
