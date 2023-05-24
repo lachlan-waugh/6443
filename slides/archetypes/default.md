@@ -13,3 +13,20 @@ outputs: ["Reveal"]
 ### COMP6443 H16A 
 
 ---
+
+## Lecture content
+{{% section %}}
+
+{{% /section %}}
+
+---
+
+## Demo
+
+---
+
+## Tutorial
+
+---
+
+## Walkthrough
