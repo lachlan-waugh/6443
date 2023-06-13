@@ -1,4 +1,5 @@
 ## tutorial
+* [recordings playlist](https://www.youtube.com/playlist?list=PL2xJTaGLKqbvwvi1w_U8dd4g8aQwk8LQi)
 * week01 [slides](/6443/week01)
 * week02 [slides](/6443/week02) [recording](https://youtu.be/LqnInRIUK-Q)
 * week03 [slides](/6443/week03) [recording](https://youtu.be/UJuSaoALCQo)
@@ -10,7 +11,7 @@
 * week10 [slides](/6443/week10) [recording](https://youtu.be/YlqPga4WcQ4)
 * [topic3 challenge walkthrough](https://youtu.be/tuofP6rkG0I)
 * [topic4 challenge walkthrough](https://youtu.be/RncUBdjRfFc)
-* [recordings playlist](https://www.youtube.com/playlist?list=PL2xJTaGLKqbvwvi1w_U8dd4g8aQwk8LQi)
+* [exam preparation help session](https://youtu.be/RtxUTukS7rM)
 
 &nbsp;
 
