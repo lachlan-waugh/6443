@@ -17,7 +17,7 @@ def jsonp():
 
 @app.route('/')
 def root():
-    return '\n'.join(x for x in db.get_comments()), 200
+    return json.dumps(db.get_comments()), 200
 
 
 if __name__ == '__main__':

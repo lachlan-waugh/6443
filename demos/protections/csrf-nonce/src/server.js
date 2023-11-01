@@ -4,7 +4,7 @@ import exphbr from 'express-handlebars';
 import { check_login, get_account, send_funds } from './db.js';
 import { v1 as uuid } from 'uuid';
 
-let token = uuid();
+let token = 1 // uuid(); // 'abcd1234' // 
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -24,11 +24,12 @@ app.set('view engine', 'html');
 const require_login = (req, res, next) => (req.session.user) ? next() : res.redirect('/login')
 
 app.get('/', require_login, (req, res, next) => {
-	token = uuid();
+	token++;
+	// tokens.push(token);
 	res.render('bank/home', {
 		username: req.session.user.name,
 		balance: get_account(req.session.user.name).user.balance,
-		token: 'HAHA_YOULL_NEVER_GUESS_THIS' // token
+		token: token
 	});
 });
 
@@ -46,13 +47,15 @@ app.post('/login', (req, res, next) => {
 });
 
 app.get('/send', require_login, function(req, res, next) {
-	if (req.query.token !== token) res.status(400).send('CSRF detected I\'m calling the feds!!');
+	console.log(req.body.token)
+	console.log(token)
+	if (token !== req.query.csrf) return res.status(400).send('CSRF detected I\'m calling the feds!!');
 	const r = send_funds(req.query.to, req.session.user.name, req.query.amount);
 	(r.success) ? res.redirect('/') : res.status(400).send(r.msg);
 });
 
 app.post('/send', require_login, (req, res, next) => {
-	if (req.body.token !== token) res.status(400).send('CSRF detected I\'m calling the feds!!');
+	if (req.body.token !== token) return res.status(400).send('CSRF detected I\'m calling the feds!!');
 	const r = send_funds(req.body.to, req.session.user.name, req.body.amount);
 	(r.success) ? res.redirect('/') : res.status(400).send(r.msg);
 });
