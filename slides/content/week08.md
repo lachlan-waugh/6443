@@ -203,23 +203,5 @@ Supply a single-use 'nonce' value.
 
 ---
 
-## JSONP
-{{% section %}}
-> JSON with Padding
-
-* Requesting a resource from another domain can be blocked due to cross-origin policy.
-
-* Requesting a script doesn't have this "problem"
-
-* So """brilliant""" programmers designed a system to return a result through a script
-
----
-
-### Demo
-
-{{% /section %}}
-
----
-
 ## Challenges
 > gl with report & support-v2 lul

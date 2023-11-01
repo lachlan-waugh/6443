@@ -151,12 +151,16 @@ load_data([1, 2, 3, 4, 5])
 
 ---
 
-## HTML injection
 {{% section %}}
-### HTML injection
+
+## HTML injection
 * Browsers just render the DOM
 * How would it know if tags are user-supplied or server-supplied
 * what if our input was just `<s>`?
+
+---
+
+> Cool graphic?
 
 ---
 
@@ -169,13 +173,14 @@ load_data([1, 2, 3, 4, 5])
 
 ---
 
-## XSS
 {{% section %}}
-### Cross-site scripting
+
+### XSS (Cross-site scripting)
+
 * another 'mixing of data and control' issue
+    * your browser only receives a single stream of data
+    * the content of the stream determines if it's control or data
 * Tricking a **browser** into executing your code
-    * javascript, php, py-script?
-    * we'll just be looking at javascript lol
 
 ---
 
@@ -237,6 +242,19 @@ const a = '<user_input>'
 
 ---
 
+---
+
+### Bonus: breaking mitigations
+* Content stripped/blocked
+    * embed dummy characters: `<SCRscriptIPT>`
+    * use alternating case: `<ScRiPt>`
+    * different tag `<img onerror=...>`
+    * different event handler `<body onload=...>`
+
+> [here's a couple more](https://github.com/payloadbox/xss-payload-list)
+
+---
+
 ## CSRF
 {{% section %}}
 
@@ -263,21 +281,20 @@ const a = '<user_input>'
 
 ---
 
-## Presentations
+## Click-jacking
 {{% section %}}
+* A fake form sitting under a real form
 
-### Anyone?
-ten minute presentation on something cool security related from the last week?
-for bonus marks??
+* if you try to interact with the fake form, you'll accidentally interact with the real one. 
+
+* This could be either local, or external
+    * local: same form switch confirm/cancel buttons
+    * external: an invisible iframe with a higher z-index
 
 ---
 
-### Solutions?
-anybody want to present the solutions for the Letters/SignIn/GCC/Secrets/Teller
+### Demo
 
 {{% /section %}}
 
 ---
-
-# Challenges
-> do em :gun:
