@@ -9,7 +9,7 @@ outputs: ["Reveal"]
 
 ---
 
-> slides are available [https://lwaugh.io/6443/extended08/](https://lwaugh.io/6443/extended08/)
+> slides are available [https://waugh.zip/6443/extended08/](https://waugh.zip/6443/extended08/)
 
 ---
 
