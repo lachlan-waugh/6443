@@ -47,6 +47,13 @@ We expect a high standard of professionalism from you at all times while you are
 * [secso.cc/discord](https://secso.cc/discord)
 * [seceduau.slack.com/signup](https://seceduau.slack.com/signup) > #cs6443 (kinda dead)
 
+---
+
+## faq
+* are tuts compulsory? no
+* are they recorded? maybe?
+* where are these resources? [waugh.zip/6443/](https://waugh.zip/6443/)
+
 {{% /section %}}
 
 ---
@@ -65,13 +72,6 @@ We expect a high standard of professionalism from you at all times while you are
 * ~~your credit card number and the 3 wacky digits on the back~~
 
 {{% /section %}}
-
----
-
-## faq
-* are tuts compulsory? no
-* are they recorded? maybe?
-* where are these resources? [waugh.zip/6443/](https://waugh.zip/6443/)
 
 ---
 
@@ -164,7 +164,11 @@ check out [waugh.zip/6443/resources/recon](https://waugh.zip/6443/resources/reco
 
 ### demo 
 
+{{% /section %}}
+
 ---
+
+{{% section %}}
 
 ### bruteforcing considerations
 * very noisy
@@ -172,8 +176,6 @@ check out [waugh.zip/6443/resources/recon](https://waugh.zip/6443/resources/reco
     * you might be blocked
 * not everything is a bruteforcing challenge
     * in a real engagement they'd get angry
-
-{{% /section %}}
 
 ---
 
@@ -200,7 +202,7 @@ check out [waugh.zip/6443/resources/recon](https://waugh.zip/6443/resources/reco
 ---
 
 ## Activities
-* Form groups for the reports (2-3 people)
+* Form groups for the reports (3 people)
 * Signing up/logging into QuoccaBank
 * Installing burp suite/setting up certs?
 * Try out some of the challenges!
