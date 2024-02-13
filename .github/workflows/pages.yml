@@ -27,9 +27,8 @@ jobs:
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
-        working-directory: ./slides/public
         with: 
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: pages
-          publish_dir: .
+          publish_dir: ./slides/public
           enable_jekyll: true
