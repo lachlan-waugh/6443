@@ -128,15 +128,6 @@ This slide is intentionally left blank
 
 ---
 
-## More recon
-* [robots.txt](https://www.google.com/robots.txt)
-* [sitemap.xml](https://www.google.com/sitemap.xml)
-* javascript files
-* html comments
-* wappalyzer
-
----
-
 ps
 
 "*N.B. Both sub-domain enumeration and sub-directory brute-forcing are discouraged and will not assist you in these challenges. However, you may be find it useful to enumerate IDs or passwords.*" - Topic 3 challenges page on OL
