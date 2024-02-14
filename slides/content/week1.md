@@ -79,8 +79,10 @@ We expect a high standard of professionalism from you at all times while you are
 ## course content
 * wargames (10%)
 * 2 x pentesting reports (40%)
-* mid-term (0%)
+* mid-term (0%)*
 * final (50%)
+
+> \* not exactly
 
 ---
 
