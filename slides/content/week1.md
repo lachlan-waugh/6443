@@ -28,7 +28,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 ## > whoami
 
-* Hey I'm Jesse :wave:
+* Lachlan
 
 ---
 
@@ -37,13 +37,12 @@ We expect a high standard of professionalism from you at all times while you are
 * lachlan.waugh@student.unsw.edu.au
 * [@melon]() on the SecSoc Discord
 * [@melon]() on the SecEdu Slack (kinda dead)
-* [Club Penguin]() on League
 
 ---
 
 ## places for course discussion
 
-* check out [course information > course discussion](https://webcms3.cse.unsw.edu.au/COMP6443/24T1/resources/96261) on webcms
+* [course information > course discussion](https://webcms3.cse.unsw.edu.au/COMP6443/24T1/resources/96261) on webcms
 * [secso.cc/discord](https://secso.cc/discord)
 * [seceduau.slack.com/signup](https://seceduau.slack.com/signup) > #cs6443 (kinda dead)
 
@@ -62,7 +61,7 @@ We expect a high standard of professionalism from you at all times while you are
 
 {{% section %}}
 
-![](../img/week01/icebreaker.jpg)
+![](/assets/img/week1/icebreaker.jpg)
 
 ---
 
@@ -86,19 +85,20 @@ We expect a high standard of professionalism from you at all times while you are
 ---
 
 ## wargames
+the good stuff
+
 * don't leave them to the last minute, you'll be sad :(
-
 * cool to collaborate/work together, but your flags need to be different.
-
 * extended flags aren't *required*, but you should do them anyway (they're way cooler imo)
 
 ---
 
 ## report
-* pentesting / vulnerability report
-    * groups of 3-4
-    * keep track of how you got found each of the flags
-    * threats and remediation are really important
+pentesting / vulnerability report
+
+* groups of 3 (organised next week)
+* keep track of how you got found each of the flags
+* threats and remediation are really important
 
 {{% /section %}}
 
@@ -112,27 +112,32 @@ check out [waugh.zip/6443/resources/recon](https://waugh.zip/6443/resources/reco
 ---
 
 ### what is recon
-* these should always be your first steps
+these should always be your first steps
+
 * essentially everything that isn't exploitation
     * looking at a website
     * reading the html source
-    * giving a application input it doesn't expect (e.g., code, a really big input, a file type it doesn't expect)
+    * giving an application input (e.g. stuff it doesn't expect: code, really big input, different file type)
 
 ---
 
 ### why is it important?
+important to expand & understand your attack surface
+
 * asymmetry of attack and defence
     * defenders need to defend everything
     * attackers only need a single vulnerability
-* important to expand your attack surface
-* understand what the application does, before trying to exploit it
+* you should understand what an application does, before you try to exploit it
 
 ---
 
 ### passive recon
-* finding web content
-* information leaked in local files (e.g. robots.txt, sitemap.xml, javascript files, html comments)
-* surely nobody would expose information in [HTML](https://www.malwarebytes.com/blog/news/2022/02/journalist-wont-be-indicted-for-hacking-for-viewing-a-state-websites-html)
+recon that doesn't involve interacting with the service
+
+* googling
+* osint
+* documentation
+* etc
 
 ---
 
@@ -142,20 +147,30 @@ check out [waugh.zip/6443/resources/recon](https://waugh.zip/6443/resources/reco
 ---
 
 ### active recon
-* grabbing a big list of words, and seeing if any of them resolve:
-    * as a subdomain: <word>.example.com
-    * as a subdirectory: example.com/<word>
-    * as a port: example.com:<word> 
+interacting with the application
+
+* clicking around to finding web content
+* information leaked in local files (e.g. robots.txt, sitemap.xml, javascript files, html comments)
+
+> nobody exposes information in [HTML](https://www.malwarebytes.com/blog/news/2022/02/journalist-wont-be-indicted-for-hacking-for-viewing-a-state-websites-html)...
+
+---
+
+### enumeration
+grab a big list of words, and see if any of them resolve:
+* as a *subdomain*: **WORD**.example.com
+* as a *file/directory*: example.com/**WORD**
+* as a *port*: example.com:**NUMBER**
 * also [linpeas](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS), [sqlmap](https://github.com/sqlmapproject/sqlmap), [metasploit](https://www.metasploit.com/)
 
 ---
 
 ### subdomain/subdirectory/port
 * subdirectory: another part of the same site
-    * gobuster, dirbuster, etc
-* subdomain: another server
-    * also gobuster, dirbuster
-* port: another application
+    * gobuster, dirbuster, ffuf, etc
+* subdomain: another service on the site
+    * gobuster, dirbuster, ffuf, etc
+* port: another application (probably not a webserver)
     * nmap
  
 > [seclists](https://github.com/danielmiessler/SecLists) and [wordlists](https://github.com/kkrypt0nn/wordlists) can be helpful wordlists
@@ -192,7 +207,7 @@ check out [waugh.zip/6443/resources/recon](https://waugh.zip/6443/resources/reco
 * web things??
 * hacking NASA
 * stealing money i think?
-* [link to the slides](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fmedia%2Eopenlearning%2Ecom%3A443%2FYeBDzZwyMePLbywk2UP9dScLxXrwUC68zPH4RxzXBivAM6tgYStqQKaYd75sPJuo%2E1653952985%2FCOMP6443%5FWeek%5F1%5Fv1%2E1%2Epptx&wdSlideId=256&wdModeSwitchTime=1654101511864)
+* [link to the slides](https://webcms3.cse.unsw.edu.au/COMP6443/24T1/resources/96313)
 
 ---
 
@@ -203,8 +218,9 @@ check out [waugh.zip/6443/resources/recon](https://waugh.zip/6443/resources/reco
 
 ## Activities
 * Form groups for the reports (3 people)
-* Signing up/logging into QuoccaBank
-* Installing burp suite/setting up certs?
+* Signing up/log into QuoccaBank
+    * Installing burp suite/setting up certs?
+    * Sign up to CTFD
 * Try out some of the challenges!
     * Recon stuffs
     * HTTP as a service
