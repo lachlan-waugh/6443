@@ -75,17 +75,15 @@ import requests, urllib3, re
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-s = requests.session()
+s = requests.Session()
 s.proxies = { "https": "http://127.0.0.1:8080", "http" : "http://127.0.0.1:8080" }
 s.verify = False
 
 page = s.post("https://login.quoccabank.com", data = {"username": "melon", "password": "Hunter2"})
 
-# you could extract the session cookie like so!
-cookie = re.search(r"session=(.+?);", page.headers['Set-Cookie']).group(1)
-print(cookie)
-
-# now we can use that cookie, and send it to another page maybe?
-page = s.get("https://quoccabank.com/view/", cookies = { 'session': cookie })
+# the session automatically stores our cookies - no need to manually extract and send them!
+page = s.get("https://quoccabank.com/view/")
 print(page.text)
+
+# thanks @scorpiontornado for helping making this persistent session script.. more persistent
 ```
