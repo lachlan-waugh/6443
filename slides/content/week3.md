@@ -47,30 +47,6 @@ outputs: ["Reveal"]
 ---
 
 ## Reports
-{{% section %}}
-
-### What to include
-* Vulnerability Details
-* Proof of Concept / Steps to Reproduce
-* **Impact** !important
-* Remediation
-
----
-
-### Really consider the impact
-* Order the report based on how damaging the vulnerabilities are
-* Don't just include things we've talked about in lectures/tuts, discuss general security issues you came across
-* Good explanation of the impact `>>>>` more flags
-
----
-
-### What to include
-> Everything™!!
-* Challenge solutions
-* Midterm solutions
-* Recon/HAAS solutions
-
-{{% /section %}}
 
 ---
 

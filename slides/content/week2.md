@@ -9,7 +9,7 @@ outputs: ["Reveal"]
 ---
 
 {{< slide class="center" >}}
-# authorization and authentication
+# authorization & authentication
 ### 6[84]43 week2
 
 ---
@@ -18,32 +18,52 @@ outputs: ["Reveal"]
 
 {{% section %}}
 
-## Presentations
-* Bonus marks!
-* Talk about something cool (security related), you've seen in the last week
-* Around 10 minutes
+## challenges
+* how are you finding this week's challenges?
+* for each set of challenges, I'll say which I think are worthwhile. *this week: all of them lol*
 
 ---
 
-## Challenges
-* How are you finding this week's challenges?
-* For each set of challenges, I'll say which I think are worthwhile. *This week: all of them lol*
+## walkthroughs
+* present your solution for some of the challenges
+* only the harder ones (maybe some of files/blog) 
+
+{{% /section %}}
 
 ---
 
-## Walkthroughs
-* Present your solution for some of the challenges
-* Only the harder ones (maybe some of files/blog) 
+{{% section %}}
+
+### what to talk about
+* vulnerability details
+* proof of concept / steps to Reproduce
+* **impact** !important
+* remediation
+
+---
+
+### Really consider the impact
+* Order the report based on how damaging the vulnerabilities are
+* Don't just include things we've talked about in lectures/tuts, discuss general security issues you came across
+* Good explanation of the impact `>>>>` more flags
+
+---
+
+### what to include
+> everything™!!
+* challenge solutions
+* midterm solutions
+* recon/haas solutions
 
 ---
 
 ## Reports
-* Keep it businessy & use a real vulnerability scoring system (e.g CVE), and framework (e.g NIST)
-* "We recommend you keep a record of the vulnerabilities you have found. Most pen-testers will be required to write a report after a 'penetration assessment', and you will too during this semester!" - Topic 03 challenges on OL
+* keep it businessy & use a real vulnerability scoring system (e.g CVE), and framework (e.g NIST)
+* "we recommend you keep a record of the vulnerabilities you have found. Most pen-testers will be required to write a report after a 'penetration assessment', and you will too during this semester!" - Topic 03 challenges on OL
 
 ---
 
-## Some example reports
+## some example reports
 * [an example](https://docs.google.com/document/d/1s12Off74DZ8RcELdqdeZSxJTMkbN6l4MHtolwTUrnrU/edit)
 * [some more examples](https://github.com/juliocesarfort/public-pentesting-reports)
 
@@ -51,15 +71,14 @@ outputs: ["Reveal"]
 
 ---
 
-## lecture content
+## authentication vs authorization
 
 {{% section %}}
 
 * http/s & tls
-* authentication
-    * what is cookie?
-    * what is jwt [jwt.io](https://jwt.io)
 * authentication vs authorization
+* cookies
+* what is jwt [jwt.io](https://jwt.io)
 
 ---
 
@@ -115,24 +134,13 @@ This slide is intentionally left blank
 
 ---
 
-## A note on enumeration
-{{% section %}}
-
-* rate limit (or we'll do it for you)
-> 429/429/429/429
-* check out [lwaugh.io/6443/resources/recon](/6443/resources/recon)
-
----
-
 > do the demo lachlan
 
 ---
 
 ps
 
-"*N.B. Both sub-domain enumeration and sub-directory brute-forcing are discouraged and will not assist you in these challenges. However, you may be find it useful to enumerate IDs or passwords.*" - Topic 3 challenges page on OL
-
-{{% /section %}}
+"*N.B. Both sub-domain enumeration and sub-directory brute-forcing are discouraged and will not assist you in these challenges. However, you may be find it useful to enumerate IDs or passwords.*" - Topic 3 challenges page on O
 
 ---
 
@@ -155,10 +163,11 @@ ps
 
 ---
 
-# Go do some challenges
+## What is due?
+* wk2 sun 23:59pm: topic1 chals (recon, haas) 
+* wk3 sun 23:59pm: topic2 chals (blog, files, etc)
+* wk5 wed 23:59pm: the first report
 
 ---
 
-## What is due?
-* Wk03 Sun 23:59pm: topic2 chals (blog, files, etc)
-* Wk05 Wed 23:59pm: the first report
+# Go do some challenges
