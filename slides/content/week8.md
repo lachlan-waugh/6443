@@ -1,16 +1,16 @@
 ---
-title: "08: clientside"
+title: "8: clientside"
 layout: "bundle"
 outputs: ["Reveal"]
 ---
 
-## We'll get started at 18:05
+## We'll get started at 1[68]:05
 
 ---
 
 {{< slide class="center" >}}
-# Week08
-### COMP6443 H18A 
+# client-side injection
+### 6[84]43 week8
 
 ---
 

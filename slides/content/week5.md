@@ -1,16 +1,16 @@
 ---
-title: "05: serverside"
+title: "5: serverside"
 layout: "bundle"
 outputs: ["Reveal"]
 ---
 
-## We'll get started at 18:05
+## We'll get started at 1[68]:05
 
 ---
 
 {{< slide class="center" >}}
-# Week05
-### COMP6443 H18A 
+# server-side injection
+### 6[84]43 week5
 
 ---
 

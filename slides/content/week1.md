@@ -9,8 +9,8 @@ outputs: ["Reveal"]
 ---
 
 {{< slide class="center" >}}
-# week1
-### COMP6443 H1[68]A 
+# recon & tooling
+### 6[84]43 week1 
 
 ---
 

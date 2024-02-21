@@ -1,16 +1,16 @@
 ---
-title: "02: identity"
+title: "2: auth"
 layout: "bundle"
 outputs: ["Reveal"]
 ---
 
-## We'll get started at 18:05
+## We'll get started at 1[68]:05
 
 ---
 
 {{< slide class="center" >}}
-# Week02
-### COMP6443 H18A
+# authorization and authentication
+### 6[84]43 week2
 
 ---
 

@@ -4,13 +4,13 @@ layout: "bundle"
 outputs: ["Reveal"]
 ---
 
-## We'll get started at 18:05
+## We'll get started at 1[68]:05
 
 ---
 
 {{< slide class="center" >}}
-# Week09
-### COMP6443 H18A 
+# dev sec ops
+### 6[84]43 week9 
 
 ---
 

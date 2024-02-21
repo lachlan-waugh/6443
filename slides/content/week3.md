@@ -1,16 +1,16 @@
 ---
-title: "03: iam 2"
+title: "3: iam groot"
 layout: "bundle"
 outputs: ["Reveal"]
 ---
 
-## We'll get started at 18:05
+## We'll get started at 1[68]:05
 
 ---
 
 {{< slide class="center" >}}
-# Week03
-### COMP6443 H18A 
+# identity and access management
+### 6[84]43 week3
 
 ---
 
