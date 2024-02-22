@@ -14,13 +14,18 @@ outputs: ["Reveal"]
 
 ---
 
+{{% section %}}
+
 ## admin stuff
 
-{{% section %}}
+---
 
 ## challenges
 * how are you finding this week's challenges?
-* for each set of challenges, I'll say which I think are worthwhile. *this week: all of them lol*
+* for each set of challenges, I'll say which I think you should try
+    * *this week: all of them lol*
+* there's some flags online that are old, ignore them
+* points don't indicate difficulty
 
 ---
 
@@ -33,6 +38,10 @@ outputs: ["Reveal"]
 ---
 
 {{% section %}}
+
+## Reports
+
+---
 
 ### what to talk about
 * vulnerability details
@@ -57,23 +66,29 @@ outputs: ["Reveal"]
 
 ---
 
-## Reports
+### tldr
 * keep it businessy & use a real vulnerability scoring system (e.g CVE), and framework (e.g NIST)
 * "we recommend you keep a record of the vulnerabilities you have found. Most pen-testers will be required to write a report after a 'penetration assessment', and you will too during this semester!" - Topic 03 challenges on OL
 
 ---
 
-## some example reports
+### some example reports
 * [an example](https://docs.google.com/document/d/1s12Off74DZ8RcELdqdeZSxJTMkbN6l4MHtolwTUrnrU/edit)
 * [some more examples](https://github.com/juliocesarfort/public-pentesting-reports)
+
+---
+
+### report groups
 
 {{% /section %}}
 
 ---
 
+{{% section %}}
+
 ## authentication vs authorization
 
-{{% section %}}
+---
 
 * http/s & tls
 * authentication vs authorization
@@ -86,20 +101,32 @@ outputs: ["Reveal"]
 * authentication: who are you?
 * authorization: what are you allowed to do?
 
+{{% /section %}}
+
 ---
 
-### cookies
+{{% section %}}
+
+## cookies
+yum
+
+---
+
+### what are they?
 * pieces of text sent by websites to your browser.
 * help the website remember information about you
-* a sense of **persistence**
+* a sense of **persistence** (HTTP is stateless)
 
 ---
 
 ### why do I care
-> often used to store session data
+often used to store session data
+
 * session tokens (e.g. Flask/Express)
 * JWT (JSON Web Token)
 * username=melon;password=Hunter2
+
+> often encrypted
 
 ---
 
@@ -109,38 +136,66 @@ outputs: ["Reveal"]
     * MITM attacks
     * cross-site request forgery (CSRF) [week7/8]
 * forging cookies (called "baking")
-* ~~accidentally~~ showing your cookies on screen during the tute (who would do that?? haha)
+* bruteforcing keys?
 
 ---
 
 ## securing cookies
-* http-only (prevents XSS)
-* secure (prevents MITM)
-* same origin (prevents CSRF)
-* expiry
+the following attributes for cookies mean they are only sent:
+
+* http-only: over http (not accessible by js)
+* secure: over `https://` (not `http://`)
+* expiry: if they isn't expired
+* same site: *next slide*
 
 ---
 
-## demo
-> authentication stuffs
+### same site
+* *none*: cookies are always sent
+* *lax*:  (default) not sent cross-site
+    * images/iframes *`no`*
+    * navigation (GET)    *`yes`*
+* *strict*: cookies aren't sent
 
+> read more [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
+
+---
+
+## auth demo
 * plsplsplswork
 
 ---
-
-This slide is intentionally left blank
 
 {{% /section %}}
 
 ---
 
-> do the demo lachlan
+## IDOR
+> Insecure Direct Object Reference
+
+![](/img/week03/idor.png)
 
 ---
 
-ps
+## bruteforcing & scripting
 
+---
+
+### frist of all
 "*N.B. Both sub-domain enumeration and sub-directory brute-forcing are discouraged and will not assist you in these challenges. However, you may be find it useful to enumerate IDs or passwords.*" - Topic 3 challenges page on O
+
+---
+
+## how 2 script
+* python + requests
+* javascript + fetch
+* bash + curl
+* ~~carrier pigeon~~
+
+---
+
+### lets do it
+do the demo lachlan
 
 ---
 

@@ -123,17 +123,6 @@ load_data([1, 2, 3, 4, 5])
 
 ---
 
-### Cookies (SameSite)
-* *None*: {{% fragment %}}Cookies are always sent{{% /fragment %}}
-* *Lax*: {{% fragment %}} (default) not sent cross-site{{% /fragment %}}
-    * images/iframes {{% fragment %}}*`no`*{{% /fragment %}}
-    * navigation (GET)    {{% fragment %}}*`yes`*{{% /fragment %}}
-* *Strict*: {{% fragment %}}Cookies aren't sent{{% /fragment %}}
-
-> read more [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
-
----
-
 ## Client-side injection
 * HTML Injection
 * XSS

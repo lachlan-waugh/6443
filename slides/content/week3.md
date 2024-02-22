@@ -97,13 +97,6 @@ Bruteforcing passwords ([seclists](https://github.com/danielmiessler/SecLists/Pa
 
 ---
 
-## IDOR
-> Insecure Direct Object Reference
-
-![](/img/week03/idor.png)
-
----
-
 ## Hashing vs encryption
 * ~~Hashing is just lossy encryption, change my mind~~
 * What's the difference?
@@ -188,24 +181,7 @@ Single Sign-On / Federated Identity
 
 read more [here](https://www.sailpoint.com/identity-library/what-are-the-different-types-of-access-control-systems/)
 
-{{% /section %}}
-
----
-
-{{% section %}}
-# Demo
-
-> automating requests in python
-
----
-
-## how 2 script
-* python + requests
-* javascript + fetch
-* bash + curl
-* ~~carrier pigeon~~
-
-{{% /section %}}
+t {{% /section %}}
 
 ---
 
