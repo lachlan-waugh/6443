@@ -23,12 +23,6 @@ outputs: ["Reveal"]
 
 ---
 
-## Solutions?
-* Idk how to solve them tbh, but maybe someone could demo? (I think only HAAS so far)
-* Maybe you could get a bonus mark?
-
----
-
 ## What's coming up?
 * weeks 4/5: server-side injection
     * SQLi, SSI, XXE, SSRF, SSTI, file uploads
@@ -47,19 +41,21 @@ outputs: ["Reveal"]
 ---
 
 ## Reports
+any questions
 
 ---
 
 {{% section %}}
 
-## Lecture content
-* Authentication
-* Session management
-* IDOR
-* HTTP Response codes
-* hashing vs encryption
+## OAuth
 
 ---
+
+{{% /section %}}
+
+---
+
+{{% section %}}
 
 ## Authentication
 Weak passwords
