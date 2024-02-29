@@ -101,6 +101,17 @@ outputs: ["Reveal"]
 * authentication: who are you?
 * authorization: what are you allowed to do?
 
+---
+
+## HTTP Response codes
+* 1XX - hold on
+* 2XX - here you go
+* 3XX - go away
+* 4XX - you messed up
+* 5XX - I messed up
+
+> [https://http.cat/]()
+
 {{% /section %}}
 
 ---

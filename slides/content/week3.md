@@ -24,30 +24,63 @@ outputs: ["Reveal"]
 ---
 
 ## What's coming up?
-* weeks 4/5: server-side injection
+* wk4+5: server-side injection
     * SQLi, SSI, XXE, SSRF, SSTI, file uploads
-* weeks 7/8: client-side injection
+* wk7+8: client-side injection
     * XSS, JSONP, Clickjacking, CSRF
 
 ---
 
-## Due dates
-* Topic02 challenges: THIS SUNDAY 11:59pm
-* Midterm: Week05 (during the lecture I assume?)
-* Report: Week05 Sunday 11:59pm
+## due dates
+* topic2 challenges: THIS SUNDAY 11:59pm
+* midterm: week5 monday
+* report: week5 sunday 11:59pm
 
 {{% /section %}}
 
 ---
 
-## Reports
+{{% section %}}
+
+## reports
 any questions
 
 ---
 
+### suggestions
+
+{{% /section %}}
+
+---
+
 {{% section %}}
 
-## OAuth
+## identity
+
+---
+
+### SSO / FID
+single sign-On / federated identity
+* **SSO**: access multiple services (in one organisation) with the same session/without reauthenticating.
+
+* **FID**: external authentication. Offers access to services across multiple organisations (links your identity to multiple IAMS's)
+
+> e.g. google
+
+---
+
+### OAuth
+
+---
+
+### Access control
+* MAC - Mandatory (levels w/ central authority)
+* DAC - Discretionary (levels w/ no central authority)
+* RBAC - Role-based (groups)
+* ABAC - Attribute-based (dynamic controls)
+* RuBAC - Rule-based (structured rules/policies)
+
+read more [here](https://www.sailpoint.com/identity-library/what-are-the-different-types-of-access-control-systems/)
 
 ---
 
@@ -57,57 +90,46 @@ any questions
 
 {{% section %}}
 
-## Authentication
-Weak passwords
+### Authentication
+weak passwords
 
-![](/img/week03/password_meme.jpg)
-
----
-
-Bruteforcing passwords ([seclists](https://github.com/danielmiessler/SecLists/Passwords/) again woo): Overly verbose error messages/information disclosure bad?
-
-![](/img/week03/password_taken_meme.jpg)
+![](../assets/img/week3/password_meme.jpg)
 
 ---
 
-## Protections?
+bruteforcing passwords ([seclists](https://github.com/danielmiessler/SecLists/Passwords/) again woo): Overly verbose error messages/information disclosure bad?
+
+![](/img/week3/password_taken_meme.jpg)
+
+---
+
+### Protections?
 * 2FA
-* Captchas
-* Account lockouts
+* captchas
+* account lockouts
 * ~~firing idiots~~ strong password policies
 
 ---
 
-## Session management
-* Cookies are great, and never insecure :)
-* Some of my favourite ways to encrypt them are base64 and base58!
-* Most web frameworks have their own version of session tokens (e.g. Flask, Express)
+## session management
+* cookies are great, and never insecure :)
+* some of my favourite ways to encrypt them are base64 and base58!
+* most web frameworks have their own version of session tokens (e.g. Flask, Express)
 
 ---
 
 ## Issues with sessions
-* Deterministic tokens
-* Tokens that don't expire
-* Modifiable tokens
-* Can lead to session fixation/hijacking
+* deterministic tokens
+* tokens that don't expire
+* modifiable tokens
+* can lead to session fixation/hijacking
 
 ---
 
 ## Hashing vs encryption
-* ~~Hashing is just lossy encryption, change my mind~~
-* What's the difference?
-* When would you use them?
-
----
-
-## HTTP Response codes
-* 1XX - hold on
-* 2XX - here you go
-* 3XX - go away
-* 4XX - you messed up
-* 5XX - I messed up
-
-> [https://http.cat/]()
+* ~~hashing is just lossy encryption, change my mind~~
+* what's the difference?
+* when would you use them?
 
 {{% /section %}}
 
@@ -115,14 +137,37 @@ Bruteforcing passwords ([seclists](https://github.com/danielmiessler/SecLists/Pa
 
 {{% section %}}
 
-## Defences
+###  secrets
+
+### locally stored
+* in plain text?
+* via command line
+* via environment variables (.env)
+
+---
+
+### externally stored
+pulling secrets from an external service
+
+* HashiCorp Vault
+* AWS Secrets Manager
+* Google Secret Manager
+
+> much easier fine-grained access
+
+---
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+## Other stuff
 * JWT
 * SAML (garbanzo)
-* OAuth (goodbanzo) / OICD
 * HSTS
 * CSP
-* SSO / FID
-* Access control
 
 ---
 
@@ -158,26 +203,7 @@ Helps mitigate XSS and injection attacks by specifying which locations resources
 * e.g. .js files, images, .css files (??)
 * e.g. only load from certain domains, only specific files, only HTTPS sites.
 
----
-
-## SSO / FID
-Single Sign-On / Federated Identity
-* **SSO**: access multiple services (in one organisation) with the same session/without reauthenticating.
-
-* **FID**: external authentication. Offers access to services across multiple organisations (links your identity to multiple IAMS's)
-
----
-
-## Access control
-* MAC - Mandatory (levels w/ central authority)
-* DAC - Discretionary (levels w/ no central authority)
-* RBAC - Role-based (groups)
-* ABAC - Attribute-based (dynamic controls)
-* RuBAC - Rule-based (structured rules/policies)
-
-read more [here](https://www.sailpoint.com/identity-library/what-are-the-different-types-of-access-control-systems/)
-
-t {{% /section %}}
+{{% /section %}}
 
 ---
 
