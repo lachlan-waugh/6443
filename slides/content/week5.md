@@ -9,7 +9,7 @@ outputs: ["Reveal"]
 ---
 
 {{< slide class="center" >}}
-# server-side injection
+# more server-side
 ### 6[84]43 week5
 
 ---
@@ -29,10 +29,10 @@ outputs: ["Reveal"]
 ---
 
 # Lecture content
+* LFI
+* File disclosure (path traversal)
 * XXE
 * SSRF
-* SSTI (did they go through this? idk)
-* Shell injection, RCE and Reverse Shells
 
 ---
 

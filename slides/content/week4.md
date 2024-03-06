@@ -1,5 +1,5 @@
 ---
-title: "04: sqli"
+title: "4: ssi"
 layout: "bundle"
 outputs: ["Reveal"]
 ---
@@ -9,10 +9,13 @@ outputs: ["Reveal"]
 ---
 
 {{< slide class="center" >}}
-# sql injection
+## server-side injection
 ### 6[84]43 week4 
 
 ---
+
+* SSTI (did they gggo through this? idk)
+* Shell injection, RCE and Reverse Shells
 
 ## Upcoming due dates?
 > next week
