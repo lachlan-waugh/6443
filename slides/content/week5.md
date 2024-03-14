@@ -17,6 +17,8 @@ outputs: ["Reveal"]
 # House cleaning 
 {{% section %}}
 
+---
+
 ## Report groups
 > If you aren't in a group please let me know
 
@@ -28,25 +30,137 @@ outputs: ["Reveal"]
 
 ---
 
-# Lecture content
-* LFI
-* File disclosure (path traversal)
-* XXE
-* SSRF
+## Injection
+* Bash Injection
+* SSTI
+* PHP Injection
 
 ---
 
-## XXE
 {{% section %}}
-### XML External Entities
+
+## bash injection
+* If you're ever using os.system() (or similar) to call shell functions containing user input
+  * first of all, probably don't
+  * second of all, it's kinda vulnerable
+
+---
+
+## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/shell_injection)
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+### SSTI (Server-side template injection)
+* Templating engines (eg. Jinja2, Pug) use templates to inject code and variables into static files
+
+* Jinja2: `{{`\<CODE HERE\>`}}` e.g. `{{7*7}}` => `49`
+
+* *what if we tricked the template rendering into thinking our user-supplied content was code?*
+
+---
+
+## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/ssti)
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+## Basic PHP injection
+* PHP is a very different language to most
+* It's kinda like a html server (where the file path is the url path)
+* This means if you add a new .php file somewhere, and navigate there, it'll execute
+
+---
+
+## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/php_webshell)
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+### Helpful stuff
+* reverse shells
+* hosting content (ngrok, requestbin)
+
+---
+
+## reverse shells
+* Sometimes you can get command injection, but it's really tedious
+* wouldn't it be easier if you could just get send your commands directly via terminal?
+
+> checkout [explainshell](https://www.explainshell.com/explain?cmd=nc+-lnvp+9999) and [revshells](https://revshells.com)
+
+---
+
+## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/revshell)
+
+---
+
+### How to host content
+* `python3 -m http.server + NGROK`
+* localtunnel
+* `RequestBin`
+* `GitHub pages` (needs to build everytime though so it's slow)
+
+---
+
+## Demo?
+
+{{% /section %}}
+
+---
+
+## File-based vulnerabilities
+* File disclosure (e.g. XXE)
+* Local file inclusion (e.g. PHP)
+* File uploads
+
+---
+
+{{% section %}}
+
+### File disclosure
+somehow include a page 
+* `?page=index.html` (what about `?page=../../../etc/passwd`)
+* image upload `https://a.com/catpicture.png` (what about `file:///etc/passwd`)
+* error messages
+
+---
+
+### XML (Extended Markup Language)
+* a data format kinda like json, that looks like HTML
+
+```html
+<users>
+    <user id="1">
+        <username>melon</username>
+        <password>Hunter2</password>
+    </user>
+    <user id="2">
+        <username>admin</username>
+        <password>admin</password>
+    </user>
+</users>
+```
+
+---
+
+## XXE (XML External Entities)
 * DTD - Document Type Definition
-* Internal Entity: an entity declared within the DTD (like a variable)
-* External Entity: an entity declared outside the DTD (files, stuff on other websites)
+* *Internal Entity*: an entity declared within the DTD (like a variable)
+* *External Entity*: an entity declared outside the DTD (files, stuff on other websites)
 
 ---
 
 ### Internal entities
-```xml
+```html
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE foo [
   <!ENTITY string "hey, don't read my diary" >
@@ -66,7 +180,7 @@ hey, don't read my diary
 ---
 
 ### External entities
-```xml
+```html
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE foo [
   <!ENTITY funCatFact "https://FunCatFact.com/generate" >
@@ -85,8 +199,8 @@ Cats are asleep for 70% of their lives.
 
 ---
 
-### LFI / SSI
-```xml
+### SSI
+```html
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE foo [
   <!ENTITY flag SYSTEM "file:///flag.txt" >
@@ -106,7 +220,7 @@ COMP6443{....}
 ---
 
 ### Parameterised entities
-```xml
+```html
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE foo [
   <!ENTITY % difficulty "trivial" >
@@ -124,115 +238,23 @@ prints
 web apps is trivial
 ```
 
----
-
-### How to host content
-* `python3 -m http.server + NGROK`
-* `RequestBin`
-* `GitHub pages` (needs to build everytime though so it's slow)
-
-{{% /section %}}
-
----
-
-## SSRF
-{{% section %}}
-
-### Server-side request forgery
-* Trick a server into doing stuff it doesn't intend to
-* Consider `HAAS`, we can't access `KB`, but `HAAS` could, and we can send requests through `HAAS`
-* What if we could access other internal services through `HAAS`, which aren't expecting it
-
----
-
-### Exploitation
-* Internal services might (often will) be less secure than externally facing ones
-* What can we do?
-  * Retrieve/disclose information (ssi/lfi)
-  * Remote code execution / Reverse shells?
-  * Other bad stuff
-
----
-
-## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/ssrf)
-
----
-
-### Remediation
-* Don't assume local/internal services will be safe
-* Monitor internal requests, block any suspicious activity
-  * e.g. very long execution time could be someone fetchng information from a database
-* A whitelist of IPs that can access internal services
-* A *good* WAF
-
-{{% /section %}}
-
----
-## SSTI
-{{% section %}}
-### Server-side template injection
-* Templating engines (eg. Jinja2, Pug) use templates to inject code and variables into static files
-
-* Jinja2: `{{`\<CODE HERE\>`}}` e.g. `{{7*7}}` => `49`
-
-* *what if we tricked the template rendering into thinking our user-supplied content was code?*
-
----
-
-## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/ssti)
-
----
-
-{{% /section %}}
-
----
-
-## Basic PHP injection
-{{% section %}}
-* PHP is the worst language in the world
-* Kris kinda went through in the tute, thought I'd just show what you could get with it though
-
----
-
-## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/php_webshell)
-
 {{% /section %}}
 
 ---
 
 {{% section %}}
 
-## bash injection
-* If you're ever using os.system() (or similar) to call shell functions containing user input
-  * first of all, probably don't
-  * second of all, it's kinda vulnerable
+### Local file inclusion
+PHP has this reaelly funny `include()` function 
+
+* Think of it like importing another page
+* Strangely, it can do a lot more than that
 
 ---
 
-## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/shell_injection)
-
----
-
-## reverse shells
-* Sometimes you can get command injection, but it's really tedious
-* wouldn't it be easier if you could just get send your commands directly via terminal?
-
-> checkout [explainshell](https://www.explainshell.com/explain?cmd=nc+-lnvp+9999) and [revshells](https://revshells.com)
-
----
-
-## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/revshell)
-
----
+### Demo
 
 {{% /section %}}
-
-
----
-
-# Presentations
-* ten minute presentation on something cool security related from the last week?
-* for bonus marks??
 
 ---
 
