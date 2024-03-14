@@ -1,0 +1,1 @@
+<img src="/img/amongus.gif" height="1000" width="1000"/>

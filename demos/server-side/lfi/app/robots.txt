@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /php/roblox.php
+Disallow: /php/amongus.php
+Disallow: /php/fortnite.php
+Disallow: /php/flag.php
