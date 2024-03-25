@@ -186,6 +186,40 @@ SELECT * FROM users WHERE user = '' OR 1=1 --'and password = '...'
 
 ---
 
+## SSRF
+{{% section %}}
+
+### Server-side request forgery
+* Trick a server into doing stuff it doesn't intend to
+* Consider `HAAS`, we can't access `KB`, but `HAAS` could, and we can send requests through `HAAS`
+* What if we could access other internal services through `HAAS`, which aren't expecting it
+
+---
+
+### Exploitation
+* Internal services might (often will) be less secure than externally facing ones
+* What can we do?
+  * Retrieve/disclose information (ssi/lfi)
+  * Remote code execution / Reverse shells?
+  * Other bad stuff
+
+---
+
+## [Demo](https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/ssrf)
+
+---
+
+### Remediation
+* Don't assume local/internal services will be safe
+* Monitor internal requests, block any suspicious activity
+  * e.g. very long execution time could be someone fetchng information from a database
+* A whitelist of IPs that can access internal services
+* A *good* WAF
+
+{{% /section %}}
+
+---
+
 ## Presentations
 {{% section %}}
 ### anybody? 
