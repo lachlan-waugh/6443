@@ -31,6 +31,47 @@ outputs: ["Reveal"]
 
 ---
 
+{{% section %}}
+
+### JSONP
+* What did people do before CORS was available?
+
+* JSON with Padding
+    * You can't load a resource from another domain (but you can load a script).
+
+    * So, return a script which loads the content? :brain:
+
+---
+
+### How 2 JSONP
+* How do you load the content? You run a function which takes the data as an argument.
+
+* Since we're loading the data, we define what function is being used to load it.
+
+---
+
+### JSONP Example
+* Define the function using a `callback` parameter
+```html
+<!-- https://melon.com/numbers?callback=load_data -->
+load_data([1, 2, 3, 4, 5])
+```
+
+&nbsp;
+
+* The script below will invoke `load_data([...])`
+```html
+<script src="https://melon.com/numbers?callback=load_data"></script>
+```
+
+---
+
+### JSONP Demo
+
+{{% /section %}}
+
+---
+
 ## Mitigating CSRF
 
 {{% section %}}
