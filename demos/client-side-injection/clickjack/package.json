@@ -2,9 +2,8 @@
   "name": "clickjacking",
   "version": "1.0.0",
   "description": "A simple clickjacking app.",
-  "main": "index.js",
   "scripts": {
-    "start": "node ./src/server.js & node ./src/bad-server.js"
+    "start": "bun run server.js & bun run bad-server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
