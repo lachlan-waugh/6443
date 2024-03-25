@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, make_response
+from flask import Flask, render_template, request
 import db
 
 app = Flask(__name__)
 app.config['TITLE'] = 'Comments or somethn'
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -12,5 +13,6 @@ def index():
     query = request.args.get('q')
     return render_template('index.html', comments=db.get_comments(query), query=query)
 
+
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)
