@@ -1,5 +1,7 @@
 FROM node:16
 
+RUN sudo apt install cowsay
+
 WORKDIR /app
 COPY ./app/package*.json /app/
 COPY ./app /app/
