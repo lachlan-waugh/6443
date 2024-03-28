@@ -9,32 +9,32 @@ outputs: ["Reveal"]
 ---
 
 {{< slide class="center" >}}
-# ~~cross-site scripting~~ javascript injection
+# client side injection
 ### 6[84]43 week7 
 
 ---
 
-# House cleaning 
+# house cleaning 
 {{% section %}}
 
-## Due Dates
-* Most of the Topic04 challenges should be out
-* These are due Week8 Sunday @ 11:59pm
+## due dates
+* most of the Topic04 challenges should be out
+* these are due Week8 Sunday @ 11:59pm
 
 ---
 
-## Report groups
-* The second report is out
-* If you need a new group for the 2nd report, msg me.
-* Marks/feedback will be out at some point
+## report groups
+* the second report is out
+* if you need a new group for the 2nd report, msg me.
+* marks/feedback will be out at some point
 
 {{% /section %}}
 
 ---
 
-## Origin vs Site
+## origin vs site
 
-### Origin
+### origin
 > <span style="color: #021691">https://</span><span style="color: #fffacd">www\.example\.com</span><span style="color: #7FFFD4">:80</span>
 
 {{% fragment %}}
@@ -43,8 +43,9 @@ origin = <span style="color: #021691">scheme</span> + <span style="color: #fffac
 
 ---
 
-## Origin vs Site
-### Site
+## origin vs site
+
+### site
 > <span style="color: #021691">http://</span><span style="color: #A52A2A">www.</span><u><span style="color: #fffacd">example</span><span style="color: #D2691E">.com</span></u><span style="color: #7FFFD4">:80</span>
 > <span style="color: #021691">https://</span><span style="color: #A52A2A">api.</span><u><span style="color: #fffacd">example</span><span style="color: #D2691E">.com</span></u><span style="color: #7FFFD4">:443</span>
 
@@ -106,9 +107,11 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 
 ---
 
-### Know your tags
-* Some are paired `<div></div>`
-* Some aren't `<img src=.../>`
+### understand the tags
+different ones have different props, etc
+
+* some are paired `<div></div>`
+* some aren't `<img src=.../>`
 * what goes in here? `<script>...</script>`
 
 {{% /section %}}
@@ -117,7 +120,8 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 
 {{% section %}}
 
-### XSS (Cross-site scripting)
+### xss (cross-site scripting)
+a better name is Javascript Injection
 
 * another 'mixing of data and control' issue
     * your browser only receives a single stream of data
@@ -126,8 +130,8 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 
 ---
 
-### Reflected XSS
-* Payload is part of user input
+### reflected XSS
+* payload is part of user input
     * e.g. a search query, cookie, header, etc 
     * anything insecurely rendered on the page
 
@@ -135,9 +139,9 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 
 ---
 
-### Stored XSS
-* Payload is stored in some database
-    * Anybody who visits a certain page will view it
+### stored XSS
+* payload is stored in some database
+    * anybody who visits a certain page will view it
     * e.g. blog posts, twitter (lol)
 * generally worse, but more easily detected
 
@@ -148,8 +152,8 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 
 ```html
 <script>
-const pos=document.URL.indexOf("context=")+8;
-document.write(document.URL.substring(pos,document.URL.length));
+const pos = document.URL.indexOf("context=") + 8;
+document.write(document.URL.substring(pos, document.URL.length));
 </script>
 ```
 
@@ -159,7 +163,7 @@ document.write(document.URL.substring(pos,document.URL.length));
 
 ---
 
-### XSS isn't just `<script>` tags
+### xss isn't just `<script>` tags
 ```javascript
 // event-handlers
 <img src=x onerror=alert(1)/>
@@ -181,8 +185,6 @@ const a = '<user_input>'
 * [PortSwigger](https://portswigger.net/web-security/cross-site-scripting/cheat-sheet)
 
 {{% /section %}}
-
----
 
 ---
 
@@ -223,20 +225,18 @@ const a = '<user_input>'
 
 ---
 
-## Click-jacking
+## click-jacking
 {{% section %}}
-* A fake form sitting under a real form
+* a fake form sitting under a real form
 
 * if you try to interact with the fake form, you'll accidentally interact with the real one. 
 
-* This could be either local, or external
+* this could be either local, or external
     * local: same form switch confirm/cancel buttons
     * external: an invisible iframe with a higher z-index
 
 ---
 
-### Demo
+### demo
 
 {{% /section %}}
-
----
