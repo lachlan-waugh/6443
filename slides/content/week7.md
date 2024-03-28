@@ -19,7 +19,7 @@ outputs: ["Reveal"]
 
 ## Due Dates
 * Most of the Topic04 challenges should be out
-* These are due Week08 Sunday @ 11:59pm
+* These are due Week8 Sunday @ 11:59pm
 
 ---
 
