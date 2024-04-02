@@ -1,2 +1,3 @@
 /slides/public
 __pycache__
+.venv
