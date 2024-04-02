@@ -88,9 +88,10 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 ---
 
 ## Client-side injection
-* HTML Injection
-* XSS
-* CSRF
+* html injection
+* xss
+* csrf
+* clickjacking
 
 ---
 
