@@ -25,4 +25,4 @@ def req(req):
     return make_response(render_template('script.js', name=req))
 
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=5000)
+  app.run(host='0.0.0.0', port=7000)
