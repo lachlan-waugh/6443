@@ -12,6 +12,7 @@ outputs: ["Reveal"]
 
 * CSP
 * CSP bypasses
+    * response splitting
     * JSONP
     * base tag
     * script gadgets
