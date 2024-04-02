@@ -4,28 +4,28 @@ layout: "bundle"
 outputs: ["Reveal"]
 ---
 
-## We'll get started at 1[68]:05
+## we'll get started at 1[68]:05
 
 ---
 
 {{< slide class="center" >}}
-# client-side injection
+## client-side protections
 ### 6[84]43 week8
 
 ---
 
-# House cleaning 
+# house cleaning 
 {{% section %}}
 
-## Due Dates
-* All of the topic04 challenges are out
-* They're due Sunday Week08.
+## due dates
+* the rest of the topic04 challenges should be out
+* they're due sunday week9.
 
 ---
 
-## Reports (general feedback)
-* Consider context when determining impact, not everything is critical.
-* Keep technical stuff out of impact/remediation. It should mostly be in steps to reproduce.
+## reports (general feedback)
+* consider context when determining impact, not everything is critical.
+* keep technical stuff out of impact/remediation. It should mostly be in steps to reproduce.
 
 {{% /section %}}
 
@@ -33,94 +33,19 @@ outputs: ["Reveal"]
 
 {{% section %}}
 
-### JSONP
-* What did people do before CORS was available?
+## mitigating xss
+basic waf stuff
 
-* JSON with Padding
-    * You can't load a resource from another domain (but you can load a script).
-
-    * So, return a script which loads the content? :brain:
-
----
-
-### How 2 JSONP
-* How do you load the content? You run a function which takes the data as an argument.
-
-* Since we're loading the data, we define what function is being used to load it.
-
----
-
-### JSONP Example
-* Define the function using a `callback` parameter
-```html
-<!-- https://melon.com/numbers?callback=load_data -->
-load_data([1, 2, 3, 4, 5])
-```
-
-&nbsp;
-
-* The script below will invoke `load_data([...])`
-```html
-<script src="https://melon.com/numbers?callback=load_data"></script>
-```
-
----
-
-### JSONP Demo
-
-{{% /section %}}
-
----
-
-## Mitigating CSRF
-
-{{% section %}}
-### CSRF Tokens
-
-Supply a single-use 'nonce' value.
-
-* When the page is loaded, generate the nonce
-* When a request is made, it must include the nonce
-* It'll be stored as a: cookie, header, `<input>`
-
----
-
-### CSRF Mitigations
-* CSRF Tokens, a nonce value supplied as input
-* Randomly generated when the page is loaded
-    * stored as a cookie, header, `<input>`
-* When a request is made, backend verifies the nonce
-
----
-
-## Quick demo
-
----
-
-### Breaking mitigations
-
-* Bad programming, they might be doing it wrong
-    * Re-use a previous token (if it doesn't expire)
-    * Create your own?
-    * They might not even check it.
-
-{{% /section %}}
-
----
-
-## Mitigating XSS
-{{% section %}}
-### Basic WAF stuff
-* *Sanitisation*: stripping out unsafe tags/attributes
+* *sanitisation*: stripping out unsafe tags/attributes
     * &lt;script&gt;alert(1)&lt;script&gt; &rarr; alert(1)  
-* *Encoding*: escaping control characters
-    * <> &rarr; \&lt;\&gt;
-* *Validation*: allow/block-listing of content
+* *encoding*: escaping control characters
+    * \<\> &rarr; \&lt;\&gt;
+* *validation*: allow/block-listing of content
     * block requests if you detect bad content
 
 ---
 
-### Don't use raw user input
+### don't use raw user input
 * `.innerHTML` treats content as HTML (control)
     * use `.innerText` which treats it as data
 
@@ -131,8 +56,8 @@ Supply a single-use 'nonce' value.
 
 ---
 
-### Breaking mitigations
-* Content stripped/blocked
+### breaking mitigations
+* content stripped/blocked
     * embed dummy characters: `<SCRscriptIPT>`
     * use alternating case: `<ScRiPt>`
     * different tag `<img onerror=...>`
@@ -152,50 +77,161 @@ Supply a single-use 'nonce' value.
 
 ---
 
-## CSP
 {{% section %}}
-* Limits where you can load content from, e.g.
-    * only scripts from local scripts
-    * only images from `example.com/path`
 
-* only elements with a certain nonce value
+### csrf mitigations
+csrf tokens
 
-* generally blocks iframes, inline scripts, `eval()`
+Supply a single-use 'nonce' value.
 
-* basically it's kinda smurfing, it's hard to bypass
-
----
-
-### Where is it defined
-* HTTP header
-    * `Content-Security-Policy: ???-src <directive>`
-
-* Or in a tag
-    * `<meta http-equiv="Content-Security-Policy" content="???-src <directive>">`
-    * though not as powerful
+* when the page is loaded, generate the nonce
+* when a request is made, it must include the nonce
+* it'll be stored as a: cookie, header, `<input>`
 
 ---
 
-### How to break it?
-* Corrupting the HTTP header (response splitting?)
-* Overwriting the `<meta>` tag?
+## quick demo
+
+---
+
+### breaking mitigations
+
+* bad programming, they might be doing it wrong
+    * re-use a previous token (if it doesn't expire)
+    * create your own?
+    * they might not even check it.
 
 {{% /section %}}
 
 ---
 
-## HTTP Response Splitting
+### clickjacking mitigations
+* csp frame-src / X-Frame-Options
+* same-site cookies
+* framebusters (~js magic~)
+
+---
+
 {{% section %}}
-* An exploit when user-controlled input is used in a server's HTTP response header
-* how does a program determine: 
+## CSP
+Content Security Policy
+
+* limits where a site can load content from, e.g.
+    * only scripts from this website
+    * only images from `https://b.com/a/path/`
+    * only elements with a certain nonce value
+
+* generally blocks iframes, inline scripts, `eval()`
+
+* powerful & hard to bypass (if devs were smart)
+
+---
+
+### how is it defined
+policy directives made of directive and value
+
+e.g. `script-src: unsafe-inline`
+
+* `script-src` is the `directive`
+* `unsafe-inline` is the `value`
+* the whole thing is the policy directive
+
+---
+
+### what directives are there
+
+* script-src
+* frame-src
+* img-src
+* object-src
+* default-src
+
+> read more [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)
+
+---
+
+### what values are there
+
+* *none*: blocks all loading
+* *self*: only from the current origin
+* *strict-dynamic*: anything w/ a hash/nonce (& anything they load/create)
+* *unsafe-inline*: e.g. \<script\>alert(1)\</script\>
+* *unsafe-eval*: e.g. eval(), setTimeout()
+
+---
+
+### where is it defined
+* http header
+    * `Content-Security-Policy: ???-src <policy directive>`
+
+* or in a tag
+    * `<meta http-equiv="Content-Security-Policy" content="???-src <directive>">`
+    * though not as powerful
+
+{{% /section %}}
+
+---
+
+### how to break it?
+* corrupting the HTTP header (response splitting?)
+* overwriting the `<meta>` tag?
+
+---
+
+{{% section %}}
+
+### jsonp
+* what did people do before CORS was available?
+
+* json with padding
+    * you can't load a resource from another domain
+    * but you can load a script
+    * so, return a script which loads the content? :brain:
+
+---
+
+### what
+* how do you load the content? you run a function which takes the data as an argument.
+
+* since we're loading the data, we define what function is being used to load it.
+
+---
+
+### jsonp example
+* define the function using a `callback` parameter
+```html
+<!-- https://melon.com/numbers?callback=load_data -->
+load_data([1, 2, 3, 4, 5])
+```
+
+&nbsp;
+
+* the script below will invoke `load_data([...])`
+```html
+<script src="https://melon.com/numbers?callback=load_data"></script>
+```
+
+---
+
+### demo
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+## http response splitting
+* an exploit when user-controlled input is used in a server's HTTP response header
+* how does  program determine: 
     * the end of a header?
     * the end of the headers/start of the body?
 
 ---
 
-* Headers are separated by `\r\n` (`CR\LF`)
-* Body is separated with two `\r\n`'s
-* What if our input included `\r\n\r\n`?
+* headers are separated by `\r\n` (`CR\LF`)
+* body is separated with two `\r\n`'s
+* what if our input included `\r\n\r\n`?
 
 &nbsp;
 
@@ -203,32 +239,7 @@ Supply a single-use 'nonce' value.
 
 ---
 
-### Demo
-
-{{% /section %}}
-
----
-
-## Click-jacking
-{{% section %}}
-* A fake form sitting under a real form
-
-* if you try to interact with the fake form, you'll accidentally interact with the real one. 
-
-* This could be either local, or external
-    * local: same form switch confirm/cancel buttons
-    * external: an invisible iframe with a higher z-index
-
----
-
-### Demo
-
----
-
-### Defense
-* CSP frame-src / X-Frame-Options
-* SameSite cookies
-* Framebusters (~JS magic~)
+### demo
 
 {{% /section %}}
 
