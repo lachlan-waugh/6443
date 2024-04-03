@@ -20,7 +20,7 @@ Site http://www.example.com:80 https://api.example.com:443
 site = private_domain + public_suffix
 scheme, subdomain and port SOP (Same Origin Policy) Blocks resource requests to/from an external site
 &amp;ldquo;External&amp;rdquo; is based on SOP: only requests from the same origin are allowed to use the resources
-more secure but how people bypassed it isn&amp;rsquo;t xd</description></item><item><title>x8: cs</title><link>/lectures/ext8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/ext8/</guid><description>We&amp;rsquo;ll get started at 18:05 client side attacks 6843 week8 how do browsers work? how can we exploit this mutation xss dom clobbering client-side js exploitation how do browsers work they render html, css, and js into the DOM
+more secure but how people bypassed it isn&amp;rsquo;t xd</description></item><item><title>x8: cs</title><link>/lectures/ext8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/ext8/</guid><description>We&amp;rsquo;ll get started at 18:05 client side attacks 6843 week8 overview how do browsers work? how can we exploit this mutation xss dom clobbering client-side js exploitation how do browsers work they render html, css, and js into the DOM
 you can think of them kinda like an intepreter (or a couple of interpreters)
 syntax errors what happens when a brower receives invalidly formatted content (js, html, css)?
 have you even seen a html syntax error</description></item></channel></rss>
