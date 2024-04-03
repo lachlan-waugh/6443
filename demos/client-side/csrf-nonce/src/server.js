@@ -4,7 +4,7 @@ import exphbr from 'express-handlebars';
 import { check_login, get_account, send_funds } from './db.js';
 import { v1 as uuid } from 'uuid';
 
-let token = 1 // uuid(); // 'abcd1234' // 
+let token = uuid(); // 'abcd1234' // 
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -60,4 +60,4 @@ app.post('/send', require_login, (req, res, next) => {
 	(r.success) ? res.redirect('/') : res.status(400).send(r.msg);
 });
 
-app.listen(3000, () => console.log('bank server listening @ localhost:3000'));
+app.listen(7000, () => console.log('bank server listening @ localhost:3000'));

@@ -9,7 +9,7 @@ const load = (content) => {
 }
 
 const load_data = async () => {
-    const jokes = await (await fetch('http://localhost:8000')).text();
+    const jokes = await (await fetch('http://100.107.38.147:7031')).text();
     load(jokes);
 };
-load_data();
+// load_data();
