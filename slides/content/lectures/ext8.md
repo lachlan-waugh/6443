@@ -116,6 +116,14 @@ mutation xss abuses these browser "mutations" to bypass filters and sanitizers
 * the sanitizer/filter will recognise it as "benign"
 * when the browser parses it, it gets mutated into something malicious
 
+---
+
+### applications
+mxss is not just applicable to html
+
+* html is a subset of xml
+* so is svg
+
 > a good paper [here](https://cure53.de/fp170.pdf)
 
 ---
