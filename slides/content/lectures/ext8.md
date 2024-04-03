@@ -14,6 +14,7 @@ outputs: ["Reveal"]
 
 ---
 
+### overview
 * how do browsers work?
 * how can we exploit this
     * mutation xss
@@ -175,10 +176,11 @@ mxss in google search (2019)
 ### what is noscript
 The \<noscript\> tag defines an alternate content to be displayed to users that have disabled scripts in their browser or have a browser that doesn't support script.
 
+> tldr, its content gets displayed when javascript is disabled
+
 ---
 
 ### what is the difference
-also what is noscript
 
 ```js
 template.innerHTML = '<noscript>...'
@@ -212,9 +214,31 @@ div.children[0]
 ### dom clobbering
 a technique which exploits how javascript interacts with page content
 
-* if 
 * by injecting html, you can manipulate the DOM, and possibly invoke javascript execution
 * can allow xss where html injection is possible, but normal xss payloads are blocked
+
+---
+
+### how do browsers handle attributes?
+if you have an element with some id, it'll be added as an attribute of it's parent element, with that id as it's key
+
+```html
+<a id="blah"></a>
+<script>
+    document.blah # returns the <a> tag
+</script>
+```
+
+> this is also the case for child elements (read more [here](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction))
+
+---
+
+### why is this important
+well the "clobbering" aspect
+
+* what if there's already a "blah" attribute you're trying to access?
+* what if there are two elements with the id "blah"?
+* which one is grabbed?
 
 ---
 
@@ -234,6 +258,19 @@ window.onload = function(){
 
 ---
 
+### another example
+a sanitizer might try to iterate through the "attributes" of the form element.
+
+```html
+<form onclick=alert(1)><input id=attributes>Click me
+```
+
+---
+
+### demo
+
+---
+
 ### resources
 
 * [some example payloads](https://domclob.xyz/domc_markups/list)
@@ -246,6 +283,6 @@ window.onload = function(){
 
 {{% section %}}
 
-
+### extra: js stuff
 
 {{% /section %}}
