@@ -1,10 +1,8 @@
 const load = (content) => {
     content.forEach((joke) => {
-        let d = document.createElement('div');
-        let p = document.createElement('p');
-        p.innerText = joke
-        d.appendChild(p);
-        document.querySelector('#jokes').appendChild(d)
+        let a = document.createElement('article');
+        a.innerText = joke
+        document.querySelector('#jokes').appendChild(a)
     });
 }
 
@@ -12,4 +10,4 @@ const load_data = async () => {
     const jokes = await (await fetch('http://jokes.com:7031')).text();
     load(jokes);
 };
-//load_data();
+load_data();

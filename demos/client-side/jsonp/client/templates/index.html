@@ -1,33 +1,24 @@
 <!DOCTYPE html>
+{% autoescape false %}
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>jokes</title>
-		<link rel="stylesheet" href="/style.css">
-	</head>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.jade.min.css"/>
+    <meta charset="utf-8">
+    <title>melons funny jokes</title>
+  </head>
+  <body>
+    <main class="container"> 
+      <h1>melons funny jokes</h1>
+      <form method="GET">
+        <input type="search" name="q" placeholder="search query" autocomplete="off" />
+      </form>
 
-	<body>
-		<header>
-      <h1>funny jokes</h1>
-			<p>haha</p>
-		</header>
+      <h3>Showing all jokes{% if query %} containing "{{ query }}"{% endif %}:</h3> 
+      <div id="jokes"></div>
 
-		<form method="GET">
-			<input type="text" name="q" placeholder="search query" autocomplete="off" />
-			<input type="submit" value="filter comments" />
-		</form>
-
-		{% autoescape false %}
-		{% if not query %}
-		<h3>Showing all comments:</h3>
-		{% else %}
-		<h3>Showing comments containing "{{ query }}":</h3>
-		{% endif %}
-		{% endautoescape %}
-
-		<div id="jokes"></div>
-
-		<script src="/load.js"></script>
-		<script src="http://jokes.com:7031/jsonp?q={{ query }}&callback=load"></script>
-	</body>
+      <script src="/load.js"></script>
+      <!-- <script src="http://jokes.com:7031/jsonp?q={{ query }}&callback=load"></script> -->
+    </main>
+  </body>
 </html>
+{% endautoescape %}
