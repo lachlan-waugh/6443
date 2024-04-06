@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, make_response
 import db
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 app.config['TITLE'] = 'Comments or somethn'
 
 @app.route('/', methods=['GET', 'POST'])
