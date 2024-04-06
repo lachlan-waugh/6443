@@ -1,12 +1,7 @@
 from flask import Flask, render_template, request, make_response
 from flask_talisman import Talisman
 
-app = Flask(
-    __name__,
-    static_folder='src/static',
-    template_folder='src/templates',
-    static_url_path=''
-)
+app = Flask(__name__, static_url_path='')
 app.config['TITLE'] = 'Comments or somethn'
 
 csp = {
