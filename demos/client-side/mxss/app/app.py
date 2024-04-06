@@ -11,7 +11,11 @@ def index():
         db.add_comment(request.form['comment'])
 
     query = request.args.get('q')
-    return render_template('index.html', comments=db.get_comments(query), query=query)
+    return render_template(
+        'index.html',
+        comments=db.get_comments(query),
+        query=query
+    )
 
 
 if __name__ == '__main__':
