@@ -2,39 +2,31 @@
 {% autoescape false %}
 <html>
   <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.jade.min.css"/>
     <meta charset="utf-8">
     <title>secure commenting service</title>
-    <link rel="stylesheet" href="/static/style.css">
   </head>
-
   <body>
-    <header>
+    <main class="container"> 
       <h1>secure commenting service</h1>
-      <p>our waf is so good haha</p>
-    </header>
+      <form method="GET">
+        <input type="search" name="q" placeholder="search query" autocomplete="off" />
+      </form>
 
-    <form method="GET">
-      <input type="text" name="q" placeholder="search query" autocomplete="off" />
-      <input type="submit" value="filter comments" />
-    </form>
+      <h3>Showing all comments{% if query %} containing "{{ query }}"{% endif %}:</h3>
+      
+      <form action="/" method="POST"> 
+        <fieldset role="group">
+          <input type="text" name="comment" placeholder="comment" autocomplete="off" />
+          <input type="submit" value="new comment" />
+        </fieldset>
+      </form>
 
-    {% if not query %}
-      <h3>Showing all comments:</h3>
-    {% else %}
-      <h3>Showing comments containing "{{ query }}":</h3>
-    {% endif %}
-
-    {% for comment in comments %}
-      <div title={{ comment }}>
-        <p>{{ comment }}</p>
+      <div class="comments">
+        {% for comment in comments %}<article>{{ comment }}</article>
+        {% endfor %}
       </div>
-    {% endfor %}
-
-    <!-- Write form -->
-    <form action="/" method="POST">
-      <input type="text" name="comment" placeholder="comment" autocomplete="off" />
-      <input type="submit" value="new comment" />
-    </form>
+    </main>
   </body>
 </html>
 {% endautoescape %}
