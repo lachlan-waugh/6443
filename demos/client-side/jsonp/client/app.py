@@ -12,7 +12,7 @@ def index():
     query = request.args.get('q')
     resp = make_response(render_template('index.html', query=query))
 
-    resp.headers.set('Content-Security-Policy', "script-src 'self' 100.107.38.147:7031")
+    resp.headers.set('Content-Security-Policy', "script-src 'self' jokes.com:7031")
     return resp
 
 

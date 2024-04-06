@@ -4,7 +4,7 @@ import exphbr from 'express-handlebars';
 import { check_login, get_account, send_funds } from './db.js';
 import { v1 as uuid } from 'uuid';
 
-let token = uuid(); // 'abcd1234' // 
+let token = 1; // 'abcd1234' // 
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -24,7 +24,7 @@ app.set('view engine', 'html');
 const require_login = (req, res, next) => (req.session.user) ? next() : res.redirect('/login')
 
 app.get('/', require_login, (req, res, next) => {
-	token++;
+	//token++;
 	// tokens.push(token);
 	res.render('bank/home', {
 		username: req.session.user.name,
