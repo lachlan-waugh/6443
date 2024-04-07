@@ -1,9 +1,25 @@
+waf.{$SITE_DOMAIN}:80 {
+  reverse_proxy xss_waf:8000
+}
+
 bank.{$SITE_DOMAIN}:80 {
   reverse_proxy csrf_nonce:8000
 }
 
 csrf.{$SITE_DOMAIN}:80 {
   reverse_proxy csrf_nonce:8001
+}
+
+meta.{$SITE_DOMAIN}:80 {
+  reverse_proxy meta_tag:8000
+}
+
+headers.{$SITE_DOMAIN}:80 {
+  reverse_proxy response_splitting:8000
+}
+
+filewriter.{$SITE_DOMAIN}:80 {
+  reverse_proxy xss_filewrite:8000
 }
 
 jokes.{$SITE_DOMAIN}:80 {
@@ -18,10 +34,12 @@ bestjoke.{$SITE_DOMAIN}:80 {
   reverse_proxy jsonp_client2:8000
 }
 
-meta.{$SITE_DOMAIN}:80 {
-  reverse_proxy meta_tag:8000
+
+
+based.{$SITE_DOMAIN}:80 {
+  reverse_proxy base_tag:8000
 }
 
-headers.{$SITE_DOMAIN}:80 {
-  reverse_proxy response_splitting:8000
+gadgets.{$SITE_DOMAIN}:80 {
+  reverse_proxy gadgets:8000
 }

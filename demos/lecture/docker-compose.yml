@@ -1,5 +1,3 @@
-version: "3.11"
-
 services:
   caddy:
     image: caddy:alpine
@@ -42,6 +40,13 @@ services:
     build:
       context: ./response_splitting
 
+  xss_filewrite:
+    depends_on:
+    - caddy
+    restart: always
+    build:
+      context: ./xss-filewrite
+
   # jsonp
   jsonp_server:
     depends_on:
@@ -69,27 +74,20 @@ services:
       context: ./jsonp
       args:
         CHALLENGE: client2
+ 
+  # xss_fileupload:
+  #   depends_on:
+  #   - caddy
+  #   restart: always
+  #   build:
+  #     context: ./xss-fileupload
 
-  xss_filewrite:
+  base_tag:
     depends_on:
     - caddy
     restart: always
     build:
-      context: ./xss-filewrite
-
-  xss_fileupload:
-    depends_on:
-    - caddy
-    restart: always
-    build:
-      context: ./xss-fileupload
-
-  meta_tag:
-    depends_on:
-    - caddy
-    restart: always
-    build:
-      context: ./meta-tag
+      context: ./base-tag
 
   gadgets:
     depends_on:
