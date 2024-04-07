@@ -7,7 +7,7 @@ const load = (content) => {
 }
 
 const load_data = async () => {
-    const jokes = await (await fetch('http://jokes.com:7031')).text();
+    const jokes = await (await fetch('http://jokes.demos')).text();
     load(jokes);
 };
 load_data();

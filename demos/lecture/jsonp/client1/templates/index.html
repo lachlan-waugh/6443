@@ -17,7 +17,7 @@
       <div id="jokes"></div>
 
       <script src="/load.js"></script>
-      <!-- <script src="http://jokes.com:7031/jsonp?q={{ query }}&callback=load"></script> -->
+      {% if jsonp %}<script src="http://jokes.demos/jsonp?callback=load"></script>{% endif %}
     </main>
   </body>
 </html>

@@ -16,5 +16,17 @@ def index():
     return resp
 
 
+@app.route('/jsonp', methods=['GET', 'POST'])
+def jsonp():
+    resp = make_response(
+        render_template('index.html', query=request.args.get('q'), jsonp=True)
+    )
+    resp.headers.set(
+        'Content-Security-Policy',
+        "script-src 'self' jokes.demos"
+    )
+    return resp
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000)
