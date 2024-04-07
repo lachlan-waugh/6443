@@ -1,0 +1,16 @@
+<h1>secure banking service</h1>
+<p>Hello, {{username}}! Your current balance is: <code>{{balance}}</code></p>
+<form action="/send" method="POST">
+  <fieldset>
+    <label>
+      receipient
+      <input type="text" name="to" placeholder="receipient"/>
+    </label>
+    <label>
+      amount
+      <input type="number" name="amount" placeholder="1000"/>
+    </label>
+    <input type="hidden" name="csrf" value="{{ token }}" />
+    <input type="submit" value="Transfer">
+  </fieldset>
+</form>
