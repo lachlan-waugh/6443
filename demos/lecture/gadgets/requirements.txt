@@ -1,2 +1,1 @@
-flask
-flask_talisman
+Flask==3.0.2
