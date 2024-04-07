@@ -1,3 +1,11 @@
+bank.{$SITE_DOMAIN}:80 {
+  reverse_proxy csrf_nonce:8000
+}
+
+csrf.{$SITE_DOMAIN}:80 {
+  reverse_proxy csrf_nonce:8001
+}
+
 jokes.{$SITE_DOMAIN}:80 {
   reverse_proxy jsonp_server:8000
 }
