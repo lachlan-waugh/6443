@@ -5,7 +5,6 @@ WORKDIR /app
 COPY requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
-ARG CHALLENGE
 COPY ./app/ .
 
 EXPOSE 8000
