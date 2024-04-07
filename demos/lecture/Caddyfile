@@ -1,0 +1,19 @@
+jokes.{$SITE_DOMAIN}:80 {
+  reverse_proxy jsonp_server:8000
+}
+
+jokelist.{$SITE_DOMAIN}:80 {
+  reverse_proxy jsonp_client1:8000
+}
+
+bestjoke.{$SITE_DOMAIN}:80 {
+  reverse_proxy jsonp_client2:8000
+}
+
+meta.{$SITE_DOMAIN}:80 {
+  reverse_proxy meta_tag:8000
+}
+
+headers.{$SITE_DOMAIN}:80 {
+  reverse_proxy response_splitting:8000
+}

@@ -1,0 +1,72 @@
+version: "3.11"
+
+services:
+  caddy:
+    image: caddy:alpine
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./.data:/data
+      - ./.config:/config
+    environment:
+      - SITE_DOMAIN=demos 
+
+  xss_waf:
+    depends_on:
+    - caddy
+    restart: always
+    build:
+      context: ./xss-waf
+
+  csrf_nonce:
+    depends_on:
+    - caddy
+    restart: always
+    build:
+      context: ./csrf-nonce
+
+  meta_tag:
+    depends_on:
+    - caddy
+    restart: always
+    build:
+      context: ./meta-tag
+
+  response_splitting:
+    depends_on:
+    - caddy
+    restart: always
+    build:
+      context: ./response_splitting
+
+  # jsonp
+  jsonp_server:
+    depends_on:
+    - caddy
+    restart: always
+    build:
+      context: ./jsonp
+      args:
+        CHALLENGE: server
+
+  jsonp_client1:
+    depends_on:
+    - caddy
+    restart: always
+    build:
+      context: ./jsonp
+      args:
+        CHALLENGE: client1
+
+  jsonp_client2:
+    depends_on:
+    - caddy
+    restart: always
+    build:
+      context: ./jsonp
+      args:
+        CHALLENGE: client2
+
