@@ -12,10 +12,9 @@
       <form method="GET">
         <input type="search" name="q" placeholder="search query" autocomplete="off" />
       </form>
-
       <h3>Showing all comments{% if query %} containing "{{ query }}"{% endif %}:</h3>
     </main>
-    <script src="/idk.js" nonce="{{nonce}}"></script>
+    {% if nonce %}<script src="/idk.js" nonce="{{nonce}}"></script>{% endif %}
   </body>
 </html>
 {% endautoescape %}
