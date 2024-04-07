@@ -1,8 +1,8 @@
 import express from 'express';
 import exphbr from 'express-handlebars';
 
-const HOST = 'localhost'
-const PORT = 8000
+const HOST = 'bank.demos'
+const PORT = 80
 
 const app = express();
 app.engine('html', exphbr.engine({
@@ -19,4 +19,4 @@ app.get('/post', (_, res) => res.render('post'));
 
 app.get('/form', (_, res) => res.render('form', {HOST: HOST, PORT: PORT}));
 
-app.listen(PORT + 1, () => console.log(`evil server listening @ ${HOST}:${PORT + 1}`));
+app.listen(8000, () => console.log(`evil server listening @ localhost:8000`));
