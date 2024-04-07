@@ -4,7 +4,8 @@
   <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.jade.min.css"/>
     <meta charset="utf-8">
-    <title>secure commenting service</title>
+    <title>secure commenting service: {{query}}</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none' script-src 'nonce-{{nonce}}'">
   </head>
   <body>
     <main class="container"> 
@@ -23,7 +24,6 @@
       </form>
 
       <script src="/helper.js" nonce="{{nonce}}"></script>
-      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js" nonce="{{nonce}}"></script> -->
     </main>
   </body>
 </html>

@@ -9,15 +9,11 @@ app.config['TITLE'] = 'Comments or somethn'
 @app.route('/', methods=['GET'])
 def home():
     nonce = b64encode(token_bytes(16)).decode()
-    res = make_response(
-        render_template('index.html', query=request.args.get('q'))
+    return render_template(
+        'index.html',
+        query=request.args.get('q'),
+        nonce=nonce
     )
-    res.headers.set(
-        'Content-Security-Policy',
-        f"object-src 'none' base-uri 'none' script-src 'nonce-{nonce}' 'strict-dynamic' 'unsafe-eval' 'cdnjs.cloudflare.com'"
-    )
-    return res
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7050)
