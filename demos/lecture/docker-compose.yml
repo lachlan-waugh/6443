@@ -75,12 +75,12 @@ services:
       args:
         CHALLENGE: client2
  
-  # xss_fileupload:
-  #   depends_on:
-  #   - caddy
-  #   restart: always
-  #   build:
-  #     context: ./xss-fileupload
+  xss_fileupload:
+    depends_on:
+    - caddy
+    restart: always
+    build:
+      context: ./xss-fileupload
 
   base_tag:
     depends_on:

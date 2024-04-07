@@ -34,7 +34,9 @@ bestjoke.{$SITE_DOMAIN}:80 {
   reverse_proxy jsonp_client2:8000
 }
 
-
+upload.{$SITE_DOMAIN}:80 {
+  reverse_proxy xss_fileupload:8000
+}
 
 based.{$SITE_DOMAIN}:80 {
   reverse_proxy base_tag:8000
