@@ -239,7 +239,17 @@ or in a tag
 {{% section %}}
 
 ### bypassing CSP
-TODO 
+ok lachlan but idc about protections I care about exploitation
+
+> ok
+
+---
+
+### how might you think to exploit it
+* maybe some kind of browser zeroday
+* hack...
+
+> nah just bad programming (again)
 
 ---
 
@@ -292,7 +302,7 @@ aka carriage-return line-feed injection
 
 &nbsp;
 
-<img src="assets/img/week08/response-splitting.png" style="scale: 200%" />
+<img src="/assets/img/week08/response-splitting.png" style="scale: 200%" />
 
 ---
 
