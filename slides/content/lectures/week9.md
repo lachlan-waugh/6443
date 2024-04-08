@@ -179,8 +179,8 @@ Supply a single-use 'nonce' value.
 ---
 
 ### demo
+* [bank_v0](http://bank_v0.demos)
 * [bank](http://bank.demos)
-* [bank_v2](http://bank_v2.demos)
 * [csrf](http://csrf.demos)
 
 {{% /section %}}
