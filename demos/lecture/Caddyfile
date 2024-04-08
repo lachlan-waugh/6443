@@ -6,8 +6,12 @@ bank.{$SITE_DOMAIN}:80 {
   reverse_proxy csrf_nonce:8000
 }
 
-csrf.{$SITE_DOMAIN}:80 {
+bank_v2.{$SITE_DOMAIN}:80 {
   reverse_proxy csrf_nonce:8001
+}
+
+csrf.{$SITE_DOMAIN}:80 {
+  reverse_proxy csrf_nonce:8002
 }
 
 meta.{$SITE_DOMAIN}:80 {

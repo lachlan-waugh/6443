@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "bun server.js & bun evil.js",
+    "start": "bun server-vulnerable.js & bun server.js & bun evil.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",

@@ -10,6 +10,13 @@ outputs: ["Reveal"]
 
 ---
 
+### pre-amble: reports
+* slides are up on webcms
+* demos are at [github.com/lachlan-waugh/6443](https://github.com/lachlan-waugh/6443)
+    * go into demos/lectures and theres setup instructiong
+
+---
+
 {{% section %}}
 
 ### Origin
@@ -62,12 +69,24 @@ site = <span style="color: #fffacd">private_domain</span> + <span style="color: 
 ## mitigating xss
 basic waf stuff
 
-* *sanitisation*: stripping out unsafe tags/attributes
-    * &lt;script&gt;alert(1)&lt;script&gt; &rarr; alert(1)  
-* *encoding*: escaping control characters
-    * \<\> &rarr; \&lt;\&gt;
-* *validation*: allow/block-listing of content
-    * block requests if you detect bad content
+### sanitisation
+stripping out unsafe tags/attributes
+
+> &lt;script&gt;alert(1)&lt;script&gt; &rarr; alert(1)
+
+---
+
+### encoding
+escaping control characters
+
+> \<\> &rarr; \&lt;\&gt;
+
+---
+
+### validation
+allow/block-listing of content
+
+> block requests if you detect bad content
 
 ---
 
@@ -161,6 +180,7 @@ Supply a single-use 'nonce' value.
 
 ### demo
 * [bank](http://bank.demos)
+* [bank_v2](http://bank_v2.demos)
 * [csrf](http://csrf.demos)
 
 {{% /section %}}
