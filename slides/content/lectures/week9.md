@@ -179,8 +179,8 @@ Supply a single-use 'nonce' value.
 ---
 
 ### demo
+* [bank_v0](http://bank_v0.demos)
 * [bank](http://bank.demos)
-* [bank_v2](http://bank_v2.demos)
 * [csrf](http://csrf.demos)
 
 {{% /section %}}
@@ -259,7 +259,17 @@ or in a tag
 {{% section %}}
 
 ### bypassing CSP
-TODO 
+ok lachlan but idc about protections I care about exploitation
+
+> ok
+
+---
+
+### how might you think to exploit it
+* maybe some kind of browser zeroday
+* hack...
+
+> nah just bad programming (again)
 
 ---
 
@@ -312,7 +322,7 @@ aka carriage-return line-feed injection
 
 &nbsp;
 
-<img src="assets/img/week08/response-splitting.png" style="scale: 200%" />
+<img src="/assets/img/week08/response-splitting.png" style="scale: 200%" />
 
 ---
 
