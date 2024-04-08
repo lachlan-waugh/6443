@@ -10,7 +10,7 @@
       amount
       <input type="number" name="amount" placeholder="1000"/>
     </label>
-    <input type="hidden" name="csrf" value="{{ token }}" />
+    {{#if token }}<input type="hidden" name="csrf" value="{{ token }}" />{{/if}}
     <input type="submit" value="Transfer">
   </fieldset>
 </form>

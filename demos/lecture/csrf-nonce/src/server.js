@@ -45,7 +45,7 @@ app.post('/login', (req, res) => {
 	});
 });
 
-app.get('/send', require_login, function(req, res) {
+app.get('/send', require_login, (req, res) => {
 	if (!tokens.includes(req.query.csrf)) {
     return res.status(403).send('CSRF detected I\'m calling the feds!!');
   }
@@ -67,4 +67,4 @@ app.post('/send', require_login, (req, res) => {
     : res.status(400).send(r.msg);
 });
 
-app.listen(8000, () => console.log('bank server listening @ localhost:8000'));
+app.listen(8001, () => console.log('bank server listening @ localhost:8001'));
