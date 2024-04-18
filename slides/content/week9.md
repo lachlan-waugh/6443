@@ -1,5 +1,5 @@
 ---
-title: "09: devsecops"
+title: "9: devsecops"
 layout: "bundle"
 outputs: ["Reveal"]
 ---
@@ -14,8 +14,32 @@ outputs: ["Reveal"]
 
 ---
 
-## My Experience
+{{% section %}}
+# Final exam
+* wednesday, ??nrd May
+* 3 hours (1pm - 4pm)
+* worth 50%
 
+---
+
+### whats in it
+* everything is assessable™
+* not just stuff from wargames
+* submit a short writeup explaination
+* there's also a shortish devsecops question
+
+---
+
+### how2hack 
+* my biggest tip is try not to stress out
+* *\+ practice, practice, practice*
+* start with recon before you write payloads
+
+{{% /section %}}
+
+---
+
+## My Experience
 How'd you find the course
 * What'd you like
 * What'd you dislike
@@ -29,29 +53,6 @@ How'd you find the course
 {{% section %}}
 
 &nbsp;
-
-### Waterfall :ocean: vs agile :runner:
-* Systematic/design vulnerabilities are much harder to solve than simple coding/logic errors.
-
-* This is exacerbated in the waterfall approach, as you don't really go back to the design phase.
-
----
-
-&nbsp;
-
-### Waterfall :ocean:
-* exponentially more `$$$` to fix bugs later into SDLC
-* we want to shift security left `<<<`
-
-![](/img/week09/sdlc.png)
-
----
-
-&nbsp;
-#### :computer: vms vs containers :whale:
-<img src="/img/week09/containers-vs-virtual-machines.jpg" style="scale: 90%"/>
-
----
 
 > CVEs
 
@@ -192,6 +193,92 @@ Common Vulnerability Enumerations
 ### Vulnerability in the package manager
 
 > I don't have an example :shrug:
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+## CI/CD
+keeping it secure
+
+* github actions ([ramble](https://github.com/lachlan-waugh/6443))
+* [pre-commit hooks](https://pre-commit.com/)
+* `.gitignore`
+* ~~[not this](https://github.com/mattdiamond/fuckitjs)~~
+
+---
+
+### what to keep secure
+* tokens
+* keys
+* `.env`
+* `.git`
+
+> basically just \~secrets\~
+
+---
+
+### dumb projects idk
+* [git-blame](https://github.com/jayphelps/git-blame-someone-else)
+* [hello-world.rs](https://github.com/mTvare6/hello-world.rs)
+* [logout4shell](https://github.com/Cybereason/Logout4Shell)
+* [nocode](https://github.com/kelseyhightower/nocode)
+* [printf-tac-toe](https://github.com/carlini/printf-tac-toe)
+* [printbf](https://github.com/HexHive/printbf)
+
+{{% /section %}}
+
+---
+
+## VPNs
+
+{{% section %}}
+
+Browsing vs SDN (site-to-site)
+
+![](/img/week10/sdn.png)
+
+---
+
+[Privacy](https://www.welivesecurity.com/2020/07/20/seven-vpn-services-leaked-data-20million-users-report/)
+
+> "providers who claim not to keep any logs of their users' online activities recently left 1.2 terabytes of private user data exposed" :thinking:
+
+{{% /section %}}
+
+---
+
+{{% section %}}
+
+## Privilege escalation
+what to do once you have RCE
+
+* can execute arbitrary commands, but we're executing them as a lower-level user (e.g. `www-data` or `Nobody`)
+* We want our commands to execute as root/admin/superuser
+
+---
+
+### How to privesc
+* world-writable /etc/passwd (wait it is useful?)
+* cronjob running as sudo
+* setuid binaries
+* commands run as root without password
+* vulnerabilities in the kernel itself (dirtycow?)
+
+---
+
+### Docker escape
+
+---
+
+### Useful resources
+
+* [linPEAS](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)
+* [CDK](https://github.com/cdk-team/CDK#installationdelivery)
+* [amicontained](https://github.com/genuinetools/amicontained)
+* [deepce](https://github.com/stealthcopter/deepce)
+* [grype](https://github.com/anchore/grype)
 
 {{% /section %}}
 
