@@ -184,7 +184,7 @@ the following attributes for cookies mean they are only sent:
 ## IDOR
 > Insecure Direct Object Reference
 
-![](/img/week03/idor.png)
+![](/assets/img/week3/idor.png)
 
 ---
 

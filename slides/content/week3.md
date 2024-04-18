@@ -93,13 +93,13 @@ read more [here](https://www.sailpoint.com/identity-library/what-are-the-differe
 ### Authentication
 weak passwords
 
-![](../assets/img/week3/password_meme.jpg)
+![](/assets/img/week3/password_meme.jpg)
 
 ---
 
 bruteforcing passwords ([seclists](https://github.com/danielmiessler/SecLists/Passwords/) again woo): Overly verbose error messages/information disclosure bad?
 
-![](/img/week3/password_taken_meme.jpg)
+![](/assets/img/week3/password_taken_meme.jpg)
 
 ---
 

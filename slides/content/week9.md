@@ -92,13 +92,13 @@ Common Vulnerability Enumerations
 ### who'd be dumb enough to...
 [me lol](https://github.com/lachlan-waugh/cloud-computing/blob/main/creds/pub-key.pem) (it's not a pub-key...)
 
-<img src="/img/week09/woops.png" style="scale: 70%"/>
+<img src="/assets/img/week9/woops.png" style="scale: 70%"/>
 
 ---
 
 ### top 10 images taken moments ~~before~~ after disaster
 
-![](/img/week09/cursed.png)
+![](/assets/img/week9/cursed.png)
 
 > maybe check your old projects to see if you've made similar dumb mistakes?
 
@@ -130,7 +130,7 @@ Common Vulnerability Enumerations
 
 #### [not doing this](https://github.com/MrMEEE/bumblebee-Old-and-abbandoned/issues/123)
 
-<img src="/img/week09/rmrfusr.png" style="scale: 90%"/>
+<img src="/assets/img/week9/rmrfusr.png" style="scale: 90%"/>
 
 {{% /section %}}
 
@@ -232,7 +232,7 @@ keeping it secure
 
 Browsing vs SDN (site-to-site)
 
-![](/img/week10/sdn.png)
+![](/assets/img/week10/sdn.png)
 
 ---
 
