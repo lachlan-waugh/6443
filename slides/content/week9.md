@@ -16,7 +16,7 @@ outputs: ["Reveal"]
 
 {{% section %}}
 # Final exam
-* saturday, 27th May
+* saturday, 27th april
 * 3 hours (1pm - 4pm)
 * worth 50%
 
