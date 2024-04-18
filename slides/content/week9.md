@@ -16,7 +16,7 @@ outputs: ["Reveal"]
 
 {{% section %}}
 # Final exam
-* wednesday, ??nrd May
+* saturday, 27th May
 * 3 hours (1pm - 4pm)
 * worth 50%
 
@@ -49,13 +49,9 @@ How'd you find the course
 
 ---
 
-## Dev~~Sec~~Ops
 {{% section %}}
 
-&nbsp;
-
-> CVEs
-
+### CVEs
 Common Vulnerability Enumerations
 
 > It's really important that the security community works together
@@ -64,8 +60,7 @@ Common Vulnerability Enumerations
 
 ---
 
-> Application Security Testing
-
+### Application Security Testing
 [SAST vs DAST tools](https://www.synopsys.com/blogs/software-security/sast-vs-dast-difference/)
 * *SAST*: full access to source-code (white box)
 * *DAST*: just have the application (black box)
