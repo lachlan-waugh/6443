@@ -4,15 +4,20 @@
 * week2 [slides](week2) [recording](https://youtu.be/LqnInRIUK-Q)
 * week3 [slides](week3) [recording](https://youtu.be/UJuSaoALCQo)
 * week4 [slides](week4) [recording](https://youtu.be/oV7IPbSR6hg)
-* week5 [slides](week5) ~~[recording](https://youtu.be/WXXR_9NI1Rk)~~
-* week7 [slides](week7) ~~[recording](https://youtu.be/RPGSFByujyM)~~
-* week8 [slides](week8) ~~[recording](https://youtu.be/hVTEYfB4cRo)~~
-* week9 [slides](week9) ~~[recording](https://youtu.be/dTEBBYgSTbU)~~
-* week10 [slides](week10) ~~[recording](https://youtu.be/YlqPga4WcQ4)~~
-* ~~[23T1 topic3 challenge walkthrough](https://youtu.be/tuofP6rkG0I)~~
-* ~~[23T1 topic4 challenge walkthrough](https://youtu.be/RncUBdjRfFc)~~
-* ~~[23T1 exam preparation help session](https://youtu.be/RtxUTukS7rM)~~
+* week5 [slides](week5) [recording](https://youtu.be/WXXR_9NI1Rk)
+* week7 [slides](week7) [recording](https://youtu.be/RPGSFByujyM)
+* week8 [slides](week8) [recording](https://youtu.be/hVTEYfB4cRo)
+* week9 [slides](week9) [recording](https://youtu.be/dTEBBYgSTbU)
+* week10 [slides](week10) [recording](https://youtu.be/YlqPga4WcQ4)
+* [23T1 topic3 challenge walkthrough](https://youtu.be/tuofP6rkG0I)
+* [23T1 topic4 challenge walkthrough](https://youtu.be/RncUBdjRfFc)
+* [23T1 exam preparation help session](https://youtu.be/RtxUTukS7rM)
 * [24T1 help session 1](https://youtu.be/viePWPfHw7E)
+
+<!-- 
+    maybe in future add a helper function that checks which videos
+    are private and cross them out? idk seems kinda annoying though
+-->
 
 &nbsp;
 
