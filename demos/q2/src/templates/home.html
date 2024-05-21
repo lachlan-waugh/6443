@@ -1,0 +1,21 @@
+{% extends 'template.html' %}
+
+{% block content %}
+	<div style="display:none; color:red" id="error-ctr">
+		<div id="error-msg">Error sending message!</div>
+	</div>
+	<p>Hello, {{ username }}!</p>
+	<p>Your current balance is: <code id="balance">{{ balance }}</code></p>
+	{% if has_flag %}COMP6443FINAL{B3ttEr_H@V_My_m0ney}{% endif %}
+
+	<p>Super secure payment system.</p>
+	<form id="form">
+		<label>User: <input id="to" type="text" name="to" value=""></label><br>
+		<label>Amount: <input id="amount" type="text" name="amount" value=""></label><br>
+		<button id="submit" type="submit">Submit</button>
+	</form>
+
+	<button id="report">Report to Admin</button>
+
+	<script src="/bank.js"></script>
+{% endblock %}
