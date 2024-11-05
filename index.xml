@@ -1,26 +1,532 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>COMP6[84]45 Slides</title><link>/</link><description>Recent content on COMP6[84]45 Slides</description><generator>Hugo</generator><language>en-au</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>1: intro</title><link>/week1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/week1/</guid><description>we&amp;rsquo;ll get started at 1[68]:05 recon &amp;amp; tooling 6[84]43 week1 good faith policy We expect a high standard of professionalism from you at all times while you are taking any of our courses. We expect all students to act in good faith at all times
-TLDR: Don&amp;rsquo;t be a jerk
-sec.edu.au/good-faith-policy
-&amp;gt; whoami Lachlan how to contact me lachlan.waugh@student.unsw.edu.au @melon on the SecSoc Discord @melon on the SecEdu Slack (kinda dead) places for course discussion course information &amp;gt; course discussion on webcms secso.</description></item><item><title>10: advanced stuff</title><link>/week10/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/week10/</guid><description>We&amp;rsquo;ll get started at 1[68]:05 Revision 6[84]43 week10 My Experience How&amp;rsquo;d you find the course
-What&amp;rsquo;d you like What&amp;rsquo;d you dislike What can be improved https://myexperience.unsw.edu.au
-TODO TODO</description></item><item><title>2: auth</title><link>/week2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/week2/</guid><description>We&amp;rsquo;ll get started at 1[68]:05 authorization &amp;amp; authentication 6[84]43 week2 admin stuff challenges how are you finding this week&amp;rsquo;s challenges? for each set of challenges, I&amp;rsquo;ll say which I think you should try this week: all of them lol there&amp;rsquo;s some flags online that are old, ignore them points don&amp;rsquo;t indicate difficulty walkthroughs present your solution for some of the challenges only the harder ones (maybe some of files/blog) Reports what to talk about vulnerability details proof of concept / steps to Reproduce impact !</description></item><item><title>3: iam groot</title><link>/week3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/week3/</guid><description>We&amp;rsquo;ll get started at 1[68]:05 identity and access management 6[84]43 week3 Challenges From now on, all challenges are worth marks. From next week, the challenges are more difficult! We&amp;rsquo;ll say which challenges are required What&amp;rsquo;s coming up? wk4+5: server-side injection SQLi, SSI, XXE, SSRF, SSTI, file uploads wk7+8: client-side injection XSS, JSONP, Clickjacking, CSRF due dates topic2 challenges: THIS SUNDAY 11:59pm midterm: week5 monday report: week5 sunday 11:59pm reports any questions</description></item><item><title>4: ssi</title><link>/week4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/week4/</guid><description>We&amp;rsquo;ll get started at 1[68]:05 server-side injection 6[84]43 week4 SSTI (did they gggo through this? idk) Shell injection, RCE and Reverse Shells Upcoming due dates? next week
-wed 6-7pm: mid-sem (10%) sun 11:59pm report01 (20%) topic03 challenges SQL Structured Query Language
-SQLite, PostgreSQL, MySQL, MSSQL Server Fingerprinting
-work out the flavour/version MySQL: Version() SQLite: sqlite_version() MSSQL: @@Version Finding the schema
-what tables exist, what do they look like? MySQL: information_schema.[tables|columns] SQLite: sqlite_[master|schema] MSSQL: SHOW TABLES; DESCRIBE &amp;lt;table_name&amp;gt; Queries &amp;gt;</description></item><item><title>5: serverside</title><link>/week5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/week5/</guid><description>We&amp;rsquo;ll get started at 1[68]:05 more server-side 6[84]43 week5 House cleaning Report groups If you aren&amp;rsquo;t in a group please let me know
-Midterm How&amp;rsquo;d you all find it (trivial enough?)
-Injection Bash Injection SSTI PHP Injection bash injection If you&amp;rsquo;re ever using os.system() (or similar) to call shell functions containing user input first of all, probably don&amp;rsquo;t second of all, it&amp;rsquo;s kinda vulnerable Demo SSTI (Server-side template injection) Templating engines (eg.</description></item><item><title>7: cs injection</title><link>/week7/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/week7/</guid><description>We&amp;rsquo;ll get started at 1[68]:05 client side injection 6[84]43 week7 house cleaning due dates most of the Topic04 challenges should be out these are due Week8 Sunday @ 11:59pm report groups the second report is out if you need a new group for the 2nd report, msg me. marks/feedback will be out at some point origin vs site origin https://www.example.com:80
-origin = scheme + host + port
-origin vs site site http://www.</description></item><item><title>8: clientside</title><link>/week8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/week8/</guid><description>we&amp;rsquo;ll get started at 1[68]:05 client-side protections 6[84]43 week8 house cleaning due dates the rest of the topic04 challenges should be out they&amp;rsquo;re due sunday week9. reports (general feedback) consider context when determining impact, not everything is critical. keep technical stuff out of impact/remediation. It should mostly be in steps to reproduce. mitigating xss basic waf stuff
-sanitisation: stripping out unsafe tags/attributes &amp;lt;script&amp;gt;alert(1)&amp;lt;script&amp;gt; → alert(1) encoding: escaping control characters &amp;lt;&amp;gt; → &amp;amp;lt;&amp;amp;gt; validation: allow/block-listing of content block requests if you detect bad content don&amp;rsquo;t use raw user input .</description></item><item><title>9: devsecops</title><link>/week9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/week9/</guid><description>We&amp;rsquo;ll get started at 1[68]:05 dev sec ops 6[84]43 week9 Final exam saturday, 27th april 3 hours (1pm - 4pm) worth 50% whats in it everything is assessable™ not just stuff from wargames submit a short writeup explaination there&amp;rsquo;s also a shortish devsecops question how2hack my biggest tip is try not to stress out + practice, practice, practice start with recon before you write payloads My Experience How&amp;rsquo;d you find the course</description></item><item><title>9: protections</title><link>/lectures/week9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/week9/</guid><description>client-side mitigations 6443 week9 pre-amble: reports slides are up on webcms demos are at github.com/lachlan-waugh/6443 go into demos/lectures and theres setup instructiong Origin https://www.example.com:80
-origin = scheme + host + port
-Site http://www.example.com:80
-https://api.example.com:443
-site = private_domain + public_suffix
-scheme, subdomain and port SOP (Same Origin Policy) blocks resource requests to/from an external site
-&amp;ldquo;external&amp;rdquo; is based on sop: only requests from the same origin are allowed to use the resources</description></item><item><title>Help</title><link>/help/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/help/</guid><description>DO COMP6447 DO COMP6447
-Exam suggestions don&amp;rsquo;t stress out seperate vulnerability from exploit have a good thought process vulnerability vs exploit theres more to the vulns than we cover in the challenges
-xss is more than just html injection sqli is more than just ' OR 1=1 # thought process it can be easy to go down a rabbit hole, dont do that
-think about what the application is doing try to do what the application expects, but in wierd ways note down what you&amp;rsquo;re doing, as you do them in case you change challenges also helpful for the writeup solving the challenge a lot of what we&amp;rsquo;re testing is if you can identify what type of vulnerability it is</description></item><item><title>x8: cs</title><link>/lectures/ext8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/ext8/</guid><description>We&amp;rsquo;ll get started at 18:05 client side attacks 6843 week8 overview how do browsers work? how can we exploit this mutation xss dom clobbering client-side js exploitation how do browsers work they render html, css, and js into the DOM
-you can think of them kinda like an interpreters or a couple of interpreters (js + html parser) read more here
-syntax errors what happens when a brower receives invalidly formatted content (js, html, css)?</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>COMP6[84]45 Slides</title><link>/</link><description>Recent content on COMP6[84]45 Slides</description><generator>Hugo</generator><language>en-au</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>1: intro</title><link>/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/1/</guid><description>&lt;h2 id="well-get-started-at-16805">we&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h1 id="recon--tooling">recon &amp;amp; tooling&lt;/h1>
+&lt;h3 id="68443-week1">6[84]43 week1&lt;/h3>
+&lt;hr>
+&lt;h2 id="good-faith-policy">good faith policy&lt;/h2>
+&lt;p>We expect a high standard of professionalism from you at all times while you are taking any of our courses. We expect all students to act in good faith at all times&lt;/p>
+&lt;p>&lt;em>TLDR: Don&amp;rsquo;t be a jerk&lt;/em>&lt;/p>
+&lt;p>&lt;a href="https://sec.edu.au/good-faith-policy">sec.edu.au/good-faith-policy&lt;/a>&lt;/p>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="-whoami">&amp;gt; whoami&lt;/h2>
+&lt;ul>
+&lt;li>Lachlan&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="how-to-contact-me">how to contact me&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="mailto:lachlan.waugh@student.unsw.edu.au">lachlan.waugh@student.unsw.edu.au&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">@melon&lt;/a> on the SecSoc Discord&lt;/li>
+&lt;li>&lt;a href="">@melon&lt;/a> on the SecEdu Slack (kinda dead)&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="places-for-course-discussion">places for course discussion&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://webcms3.cse.unsw.edu.au/COMP6443/24T1/resources/96261">course information &amp;gt; course discussion&lt;/a> on webcms&lt;/li>
+&lt;li>&lt;a href="https://secso.cc/discord">secso.cc/discord&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://seceduau.slack.com/signup">seceduau.slack.com/signup&lt;/a> &amp;gt; #cs6443 (kinda dead)&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="faq">faq&lt;/h2>
+&lt;ul>
+&lt;li>are tuts compulsory? no&lt;/li>
+&lt;li>are they recorded? maybe?&lt;/li>
+&lt;li>where are these resources? &lt;a href="https://waugh.zip/6443/">waugh.zip/6443/&lt;/a>&lt;/li>
+&lt;/ul>
+
+&lt;/section>
+&lt;hr>
+&lt;h2 id="-whoareu">&amp;gt; whoareu&lt;/h2>
+
+
+&lt;section data-shortcode-section>
+&lt;p>&lt;img src="./assets/img/week1/icebreaker.jpg" alt="">&lt;/p></description></item><item><title>10: advanced stuff</title><link>/10/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/10/</guid><description>&lt;h2 id="well-get-started-at-16805">We&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h1 id="revision">Revision&lt;/h1>
+&lt;h3 id="68443-week10">6[84]43 week10&lt;/h3>
+&lt;hr>
+&lt;h2 id="my-experience">My Experience&lt;/h2>
+&lt;p>How&amp;rsquo;d you find the course&lt;/p>
+&lt;ul>
+&lt;li>What&amp;rsquo;d you like&lt;/li>
+&lt;li>What&amp;rsquo;d you dislike&lt;/li>
+&lt;li>What can be improved&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>&lt;a href="https://myexperience.unsw.edu.au">https://myexperience.unsw.edu.au&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h3 id="todo">TODO&lt;/h3>
+&lt;p>TODO&lt;/p></description></item><item><title>2: auth</title><link>/2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/2/</guid><description>&lt;h2 id="well-get-started-at-16805">We&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h1 id="authorization--authentication">authorization &amp;amp; authentication&lt;/h1>
+&lt;h3 id="68443-week2">6[84]43 week2&lt;/h3>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="admin-stuff">admin stuff&lt;/h2>
+&lt;hr>
+&lt;h2 id="challenges">challenges&lt;/h2>
+&lt;ul>
+&lt;li>how are you finding this week&amp;rsquo;s challenges?&lt;/li>
+&lt;li>for each set of challenges, I&amp;rsquo;ll say which I think you should try
+&lt;ul>
+&lt;li>&lt;em>this week: all of them lol&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>there&amp;rsquo;s some flags online that are old, ignore them&lt;/li>
+&lt;li>points don&amp;rsquo;t indicate difficulty&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="walkthroughs">walkthroughs&lt;/h2>
+&lt;ul>
+&lt;li>present your solution for some of the challenges&lt;/li>
+&lt;li>only the harder ones (maybe some of files/blog)&lt;/li>
+&lt;/ul>
+
+&lt;/section>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="reports">Reports&lt;/h2>
+&lt;hr>
+&lt;h3 id="what-to-talk-about">what to talk about&lt;/h3>
+&lt;ul>
+&lt;li>vulnerability details&lt;/li>
+&lt;li>proof of concept / steps to Reproduce&lt;/li>
+&lt;li>&lt;strong>impact&lt;/strong> !important&lt;/li>
+&lt;li>remediation&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="really-consider-the-impact">Really consider the impact&lt;/h3>
+&lt;ul>
+&lt;li>Order the report based on how damaging the vulnerabilities are&lt;/li>
+&lt;li>Don&amp;rsquo;t just include things we&amp;rsquo;ve talked about in lectures/tuts, discuss general security issues you came across&lt;/li>
+&lt;li>Good explanation of the impact &lt;code>&amp;gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code> more flags&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="what-to-include">what to include&lt;/h3>
+&lt;blockquote>
+&lt;p>everything™!!&lt;/p></description></item><item><title>3: iam groot</title><link>/3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/3/</guid><description>&lt;h2 id="well-get-started-at-16805">We&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h1 id="identity-and-access-management">identity and access management&lt;/h1>
+&lt;h3 id="68443-week3">6[84]43 week3&lt;/h3>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="challenges">Challenges&lt;/h2>
+&lt;ul>
+&lt;li>From now on, all challenges are worth marks.&lt;/li>
+&lt;li>From next week, the challenges are more difficult!&lt;/li>
+&lt;li>We&amp;rsquo;ll say which challenges are required&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="whats-coming-up">What&amp;rsquo;s coming up?&lt;/h2>
+&lt;ul>
+&lt;li>wk4+5: server-side injection
+&lt;ul>
+&lt;li>SQLi, SSI, XXE, SSRF, SSTI, file uploads&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>wk7+8: client-side injection
+&lt;ul>
+&lt;li>XSS, JSONP, Clickjacking, CSRF&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="due-dates">due dates&lt;/h2>
+&lt;ul>
+&lt;li>topic2 challenges: THIS SUNDAY 11:59pm&lt;/li>
+&lt;li>midterm: week5 monday&lt;/li>
+&lt;li>report: week5 sunday 11:59pm&lt;/li>
+&lt;/ul>
+
+&lt;/section>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="reports">reports&lt;/h2>
+&lt;p>any questions&lt;/p></description></item><item><title>4: ssi</title><link>/4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/4/</guid><description>&lt;h2 id="well-get-started-at-16805">We&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h2 id="server-side-injection">server-side injection&lt;/h2>
+&lt;h3 id="68443-week4">6[84]43 week4&lt;/h3>
+&lt;hr>
+&lt;ul>
+&lt;li>SSTI (did they gggo through this? idk)&lt;/li>
+&lt;li>Shell injection, RCE and Reverse Shells&lt;/li>
+&lt;/ul>
+&lt;h2 id="upcoming-due-dates">Upcoming due dates?&lt;/h2>
+&lt;blockquote>
+&lt;p>next week&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>wed 6-7pm: mid-sem (10%)&lt;/li>
+&lt;li>sun 11:59pm
+&lt;ul>
+&lt;li>report01 (20%)&lt;/li>
+&lt;li>topic03 challenges&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="sql">SQL&lt;/h2>
+
+
+&lt;section data-shortcode-section>
+&lt;blockquote>
+&lt;p>Structured Query Language&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>SQLite, PostgreSQL, MySQL, MSSQL Server&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;blockquote>
+&lt;p>Fingerprinting&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>work out the flavour/version
+&lt;ul>
+&lt;li>&lt;strong>MySQL&lt;/strong>: &lt;code>Version()&lt;/code>&lt;/li>
+&lt;li>&lt;strong>SQLite&lt;/strong>: &lt;code>sqlite_version()&lt;/code>&lt;/li>
+&lt;li>&lt;strong>MSSQL&lt;/strong>: &lt;code>@@Version&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;blockquote>
+&lt;p>Finding the schema&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>what tables exist, what do they look like?
+&lt;ul>
+&lt;li>&lt;strong>MySQL&lt;/strong>: &lt;code>information_schema.[tables|columns]&lt;/code>&lt;/li>
+&lt;li>&lt;strong>SQLite&lt;/strong>: &lt;code>sqlite_[master|schema]&lt;/code>&lt;/li>
+&lt;li>&lt;strong>MSSQL&lt;/strong>: &lt;code>SHOW TABLES; DESCRIBE &amp;lt;table_name&amp;gt;&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;p>Queries &amp;gt;&lt;/p></description></item><item><title>5: serverside</title><link>/5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/5/</guid><description>&lt;h2 id="well-get-started-at-16805">We&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h1 id="more-server-side">more server-side&lt;/h1>
+&lt;h3 id="68443-week5">6[84]43 week5&lt;/h3>
+&lt;hr>
+&lt;h1 id="house-cleaning">House cleaning&lt;/h1>
+
+
+&lt;section data-shortcode-section>
+&lt;hr>
+&lt;h2 id="report-groups">Report groups&lt;/h2>
+&lt;blockquote>
+&lt;p>If you aren&amp;rsquo;t in a group please let me know&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h2 id="midterm">Midterm&lt;/h2>
+&lt;blockquote>
+&lt;p>How&amp;rsquo;d you all find it (trivial enough?)&lt;/p>
+&lt;/blockquote>
+
+&lt;/section>
+&lt;hr>
+&lt;h2 id="injection">Injection&lt;/h2>
+&lt;ul>
+&lt;li>Bash Injection&lt;/li>
+&lt;li>SSTI&lt;/li>
+&lt;li>PHP Injection&lt;/li>
+&lt;/ul>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="bash-injection">bash injection&lt;/h2>
+&lt;ul>
+&lt;li>If you&amp;rsquo;re ever using os.system() (or similar) to call shell functions containing user input
+&lt;ul>
+&lt;li>first of all, probably don&amp;rsquo;t&lt;/li>
+&lt;li>second of all, it&amp;rsquo;s kinda vulnerable&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="demohttpsgithubcomlachlan-waugh6443treemaindemosserver-side-injectionshell_injection">&lt;a href="https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/shell_injection">Demo&lt;/a>&lt;/h2>
+
+&lt;/section>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h3 id="ssti-server-side-template-injection">SSTI (Server-side template injection)&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Templating engines (eg. Jinja2, Pug) use templates to inject code and variables into static files&lt;/p></description></item><item><title>7: cs injection</title><link>/7/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/7/</guid><description>&lt;h2 id="well-get-started-at-16805">We&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h1 id="client-side-injection">client side injection&lt;/h1>
+&lt;h3 id="68443-week7">6[84]43 week7&lt;/h3>
+&lt;hr>
+&lt;h1 id="house-cleaning">house cleaning&lt;/h1>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="due-dates">due dates&lt;/h2>
+&lt;ul>
+&lt;li>most of the Topic04 challenges should be out&lt;/li>
+&lt;li>these are due Week8 Sunday @ 11:59pm&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="report-groups">report groups&lt;/h2>
+&lt;ul>
+&lt;li>the second report is out&lt;/li>
+&lt;li>if you need a new group for the 2nd report, msg me.&lt;/li>
+&lt;li>marks/feedback will be out at some point&lt;/li>
+&lt;/ul>
+
+&lt;/section>
+&lt;hr>
+&lt;h2 id="origin-vs-site">origin vs site&lt;/h2>
+&lt;h3 id="origin">origin&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #fffacd">www.example.com&lt;/span>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;/p>
+&lt;/blockquote>
+
+
+&lt;span class='fragment ' >&lt;p>origin = &lt;span style="color: #021691">scheme&lt;/span> + &lt;span style="color: #fffacd">host&lt;/span> + &lt;span style="color: #7FFFD4">port&lt;/span>&lt;/p></description></item><item><title>8: clientside</title><link>/8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/8/</guid><description>&lt;h2 id="well-get-started-at-16805">we&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h2 id="client-side-protections">client-side protections&lt;/h2>
+&lt;h3 id="68443-week8">6[84]43 week8&lt;/h3>
+&lt;hr>
+&lt;h1 id="house-cleaning">house cleaning&lt;/h1>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="due-dates">due dates&lt;/h2>
+&lt;ul>
+&lt;li>the rest of the topic04 challenges should be out&lt;/li>
+&lt;li>they&amp;rsquo;re due sunday week9.&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="reports-general-feedback">reports (general feedback)&lt;/h2>
+&lt;ul>
+&lt;li>consider context when determining impact, not everything is critical.&lt;/li>
+&lt;li>keep technical stuff out of impact/remediation. It should mostly be in steps to reproduce.&lt;/li>
+&lt;/ul>
+
+&lt;/section>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="mitigating-xss">mitigating xss&lt;/h2>
+&lt;p>basic waf stuff&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>sanitisation&lt;/em>: stripping out unsafe tags/attributes
+&lt;ul>
+&lt;li>&amp;lt;script&amp;gt;alert(1)&amp;lt;script&amp;gt; → alert(1)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;em>encoding&lt;/em>: escaping control characters
+&lt;ul>
+&lt;li>&amp;lt;&amp;gt; → &amp;amp;lt;&amp;amp;gt;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;em>validation&lt;/em>: allow/block-listing of content
+&lt;ul>
+&lt;li>block requests if you detect bad content&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="dont-use-raw-user-input">don&amp;rsquo;t use raw user input&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>.innerHTML&lt;/code> treats content as HTML (control)&lt;/p></description></item><item><title>9: devsecops</title><link>/9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/9/</guid><description>&lt;h2 id="well-get-started-at-16805">We&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h1 id="dev-sec-ops">dev sec ops&lt;/h1>
+&lt;h3 id="68443-week9">6[84]43 week9&lt;/h3>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h1 id="final-exam">Final exam&lt;/h1>
+&lt;ul>
+&lt;li>saturday, 27th april&lt;/li>
+&lt;li>3 hours (1pm - 4pm)&lt;/li>
+&lt;li>worth 50%&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="whats-in-it">whats in it&lt;/h3>
+&lt;ul>
+&lt;li>everything is assessable™&lt;/li>
+&lt;li>not just stuff from wargames&lt;/li>
+&lt;li>submit a short writeup explaination&lt;/li>
+&lt;li>there&amp;rsquo;s also a shortish devsecops question&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="how2hack">how2hack&lt;/h3>
+&lt;ul>
+&lt;li>my biggest tip is try not to stress out&lt;/li>
+&lt;li>&lt;em>+ practice, practice, practice&lt;/em>&lt;/li>
+&lt;li>start with recon before you write payloads&lt;/li>
+&lt;/ul>
+
+&lt;/section>
+&lt;hr>
+&lt;h2 id="my-experience">My Experience&lt;/h2>
+&lt;p>How&amp;rsquo;d you find the course&lt;/p></description></item><item><title>9: protections</title><link>/lectures/9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/9/</guid><description>&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h2 id="client-side-mitigations">client-side mitigations&lt;/h2>
+&lt;h3 id="6443-week9">6443 week9&lt;/h3>
+&lt;hr>
+&lt;h3 id="pre-amble-reports">pre-amble: reports&lt;/h3>
+&lt;ul>
+&lt;li>slides are up on webcms&lt;/li>
+&lt;li>demos are at &lt;a href="https://github.com/lachlan-waugh/6443">github.com/lachlan-waugh/6443&lt;/a>
+&lt;ul>
+&lt;li>go into demos/lectures and theres setup instructiong&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h3 id="origin">Origin&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #fffacd">www.example.com&lt;/span>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;/p>
+&lt;/blockquote>
+&lt;p>origin = &lt;span style="color: #021691">scheme&lt;/span> + &lt;span style="color: #fffacd">host&lt;/span> + &lt;span style="color: #7FFFD4">port&lt;/span>&lt;/p>
+&lt;hr>
+&lt;h3 id="site">Site&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;span style="color: #021691">http://&lt;/span>&lt;span style="color: #A52A2A">www.&lt;/span>&lt;u>&lt;span style="color: #fffacd">example&lt;/span>&lt;span style="color: #D2691E">.com&lt;/span>&lt;/u>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;br>
+&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #A52A2A">api.&lt;/span>&lt;u>&lt;span style="color: #fffacd">example&lt;/span>&lt;span style="color: #D2691E">.com&lt;/span>&lt;/u>&lt;span style="color: #7FFFD4">:443&lt;/span>&lt;/p>
+&lt;/blockquote>
+&lt;p>site = &lt;span style="color: #fffacd">private_domain&lt;/span> + &lt;span style="color: #D2691E">public_suffix&lt;/span>&lt;/p>
+&lt;ul>
+&lt;li>&lt;s>&lt;span style="color: #021691">scheme&lt;/span>, &lt;span style="color: #A52A2A">subdomain&lt;/span> and &lt;span style="color: #7FFFD4">port&lt;/span>&lt;/s>&lt;/li>
+&lt;/ul>
+
+&lt;/section>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="sop-same-origin-policy">SOP (Same Origin Policy)&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>blocks resource requests to/from an &lt;em>external&lt;/em> site&lt;/p></description></item><item><title>Help</title><link>/help/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/help/</guid><description>&lt;h3 id="do-comp6447">DO COMP6447&lt;/h3>
+&lt;p>DO COMP6447&lt;/p>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="exam">Exam&lt;/h2>
+&lt;hr>
+&lt;h3 id="suggestions">suggestions&lt;/h3>
+&lt;ul>
+&lt;li>don&amp;rsquo;t stress out&lt;/li>
+&lt;li>seperate vulnerability from exploit&lt;/li>
+&lt;li>have a good thought process&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="vulnerability-vs-exploit">vulnerability vs exploit&lt;/h3>
+&lt;p>theres more to the vulns than we cover in the challenges&lt;/p>
+&lt;ul>
+&lt;li>xss is more than just html injection&lt;/li>
+&lt;li>sqli is more than just &lt;code>' OR 1=1 #&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="thought-process">thought process&lt;/h3>
+&lt;p>it can be easy to go down a rabbit hole, dont do that&lt;/p>
+&lt;ul>
+&lt;li>think about what the application is doing&lt;/li>
+&lt;li>try to do what the application expects, but in wierd ways&lt;/li>
+&lt;li>note down what you&amp;rsquo;re doing, as you do them
+&lt;ul>
+&lt;li>in case you change challenges&lt;/li>
+&lt;li>also helpful for the writeup&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="solving-the-challenge">solving the challenge&lt;/h3>
+&lt;p>a lot of what we&amp;rsquo;re testing is if you can identify what type of vulnerability it is&lt;/p></description></item><item><title>x8: cs</title><link>/lectures/e8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/e8/</guid><description>&lt;h2 id="well-get-started-at-1805">We&amp;rsquo;ll get started at 18:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h2 id="client-side-attacks">client side attacks&lt;/h2>
+&lt;h3 id="6843-week8">6843 week8&lt;/h3>
+&lt;hr>
+&lt;h3 id="overview">overview&lt;/h3>
+&lt;ul>
+&lt;li>how do browsers work?&lt;/li>
+&lt;li>how can we exploit this
+&lt;ul>
+&lt;li>mutation xss&lt;/li>
+&lt;li>dom clobbering&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>client-side js exploitation&lt;/li>
+&lt;/ul>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h3 id="how-do-browsers-work">how do browsers work&lt;/h3>
+&lt;p>they render html, css, and js into the DOM&lt;/p>
+&lt;ul>
+&lt;li>you can think of them kinda like an interpreters&lt;/li>
+&lt;li>or a couple of interpreters (js + html parser)&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>read more &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">here&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h3 id="syntax-errors">syntax errors&lt;/h3>
+&lt;p>what happens when a brower receives invalidly formatted content (js, html, css)?&lt;/p></description></item></channel></rss>

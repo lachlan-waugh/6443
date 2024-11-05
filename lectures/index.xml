@@ -1,9 +1,79 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lectures on COMP6[84]45 Slides</title><link>/lectures/</link><description>Recent content in Lectures on COMP6[84]45 Slides</description><generator>Hugo</generator><language>en-au</language><atom:link href="/lectures/index.xml" rel="self" type="application/rss+xml"/><item><title>9: protections</title><link>/lectures/week9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/week9/</guid><description>client-side mitigations 6443 week9 pre-amble: reports slides are up on webcms demos are at github.com/lachlan-waugh/6443 go into demos/lectures and theres setup instructiong Origin https://www.example.com:80
-origin = scheme + host + port
-Site http://www.example.com:80
-https://api.example.com:443
-site = private_domain + public_suffix
-scheme, subdomain and port SOP (Same Origin Policy) blocks resource requests to/from an external site
-&amp;ldquo;external&amp;rdquo; is based on sop: only requests from the same origin are allowed to use the resources</description></item><item><title>x8: cs</title><link>/lectures/ext8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/ext8/</guid><description>We&amp;rsquo;ll get started at 18:05 client side attacks 6843 week8 overview how do browsers work? how can we exploit this mutation xss dom clobbering client-side js exploitation how do browsers work they render html, css, and js into the DOM
-you can think of them kinda like an interpreters or a couple of interpreters (js + html parser) read more here
-syntax errors what happens when a brower receives invalidly formatted content (js, html, css)?</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lectures on COMP6[84]45 Slides</title><link>/lectures/</link><description>Recent content in Lectures on COMP6[84]45 Slides</description><generator>Hugo</generator><language>en-au</language><atom:link href="/lectures/index.xml" rel="self" type="application/rss+xml"/><item><title>9: protections</title><link>/lectures/9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/9/</guid><description>&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h2 id="client-side-mitigations">client-side mitigations&lt;/h2>
+&lt;h3 id="6443-week9">6443 week9&lt;/h3>
+&lt;hr>
+&lt;h3 id="pre-amble-reports">pre-amble: reports&lt;/h3>
+&lt;ul>
+&lt;li>slides are up on webcms&lt;/li>
+&lt;li>demos are at &lt;a href="https://github.com/lachlan-waugh/6443">github.com/lachlan-waugh/6443&lt;/a>
+&lt;ul>
+&lt;li>go into demos/lectures and theres setup instructiong&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h3 id="origin">Origin&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #fffacd">www.example.com&lt;/span>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;/p>
+&lt;/blockquote>
+&lt;p>origin = &lt;span style="color: #021691">scheme&lt;/span> + &lt;span style="color: #fffacd">host&lt;/span> + &lt;span style="color: #7FFFD4">port&lt;/span>&lt;/p>
+&lt;hr>
+&lt;h3 id="site">Site&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;span style="color: #021691">http://&lt;/span>&lt;span style="color: #A52A2A">www.&lt;/span>&lt;u>&lt;span style="color: #fffacd">example&lt;/span>&lt;span style="color: #D2691E">.com&lt;/span>&lt;/u>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;br>
+&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #A52A2A">api.&lt;/span>&lt;u>&lt;span style="color: #fffacd">example&lt;/span>&lt;span style="color: #D2691E">.com&lt;/span>&lt;/u>&lt;span style="color: #7FFFD4">:443&lt;/span>&lt;/p>
+&lt;/blockquote>
+&lt;p>site = &lt;span style="color: #fffacd">private_domain&lt;/span> + &lt;span style="color: #D2691E">public_suffix&lt;/span>&lt;/p>
+&lt;ul>
+&lt;li>&lt;s>&lt;span style="color: #021691">scheme&lt;/span>, &lt;span style="color: #A52A2A">subdomain&lt;/span> and &lt;span style="color: #7FFFD4">port&lt;/span>&lt;/s>&lt;/li>
+&lt;/ul>
+
+&lt;/section>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="sop-same-origin-policy">SOP (Same Origin Policy)&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>blocks resource requests to/from an &lt;em>external&lt;/em> site&lt;/p></description></item><item><title>x8: cs</title><link>/lectures/e8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/e8/</guid><description>&lt;h2 id="well-get-started-at-1805">We&amp;rsquo;ll get started at 18:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h2 id="client-side-attacks">client side attacks&lt;/h2>
+&lt;h3 id="6843-week8">6843 week8&lt;/h3>
+&lt;hr>
+&lt;h3 id="overview">overview&lt;/h3>
+&lt;ul>
+&lt;li>how do browsers work?&lt;/li>
+&lt;li>how can we exploit this
+&lt;ul>
+&lt;li>mutation xss&lt;/li>
+&lt;li>dom clobbering&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>client-side js exploitation&lt;/li>
+&lt;/ul>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h3 id="how-do-browsers-work">how do browsers work&lt;/h3>
+&lt;p>they render html, css, and js into the DOM&lt;/p>
+&lt;ul>
+&lt;li>you can think of them kinda like an interpreters&lt;/li>
+&lt;li>or a couple of interpreters (js + html parser)&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>read more &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">here&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;hr>
+&lt;h3 id="syntax-errors">syntax errors&lt;/h3>
+&lt;p>what happens when a brower receives invalidly formatted content (js, html, css)?&lt;/p></description></item></channel></rss>
