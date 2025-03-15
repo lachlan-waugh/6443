@@ -1,0 +1,15 @@
+{% extends 'template.html' %}
+
+{% block content %}
+	<div style="display:none; color:red" id="error-ctr">
+		<div id="error-msg">Error sending message!</div>
+	</div>
+	<p>Secure super login system.</p>
+	<form id="form">
+		<label>Username: <input id="username" name="username" type="text" value="" autofocus></label><br>
+		<label>Password: <input id="password" name="password" type="password" value=""></label><br>
+		<button id="submit" type="submit">Login</button>
+	</form>
+
+	<script src="/auth.js"></script>
+{% endblock %}

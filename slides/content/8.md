@@ -235,7 +235,7 @@ load_data([1, 2, 3, 4, 5])
 
 &nbsp;
 
-<img src="../img/week08/response-splitting.png" style="scale: 200%" />
+<img src="/assets/img/week8/response-splitting.png" style="scale: 200%" />
 
 ---
 

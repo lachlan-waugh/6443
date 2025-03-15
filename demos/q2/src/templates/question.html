@@ -1,0 +1,13 @@
+{% extends 'template.html' %}
+
+{% block content %}
+
+  {% autoescape false %}
+  <h1>QuoccaQuestions, we'll answer any questions you have™</h1>
+  {% if question %}<p>Hmmm, "{{ question }}" is an interesting question, we'll get right on it!</p>{% endif %}
+  <form method="GET">
+      <textarea name='q' rows="3" placeholder="Gimme data, yum?"></textarea><br/>
+      <button type='submit'>ask</button>
+  </form>
+  {% endautoescape %}
+{% endblock %}

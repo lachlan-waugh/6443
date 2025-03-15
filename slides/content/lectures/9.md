@@ -322,7 +322,7 @@ aka carriage-return line-feed injection
 
 &nbsp;
 
-<img src="/assets/img/week08/response-splitting.png" style="scale: 200%" />
+<img src="/assets/img/week8/response-splitting.png" style="scale: 200%" />
 
 ---
 
