@@ -483,7 +483,83 @@
 &lt;/ul>
 &lt;hr>
 &lt;h3 id="solving-the-challenge">solving the challenge&lt;/h3>
-&lt;p>a lot of what we&amp;rsquo;re testing is if you can identify what type of vulnerability it is&lt;/p></description></item><item><title>x8: cs</title><link>/lectures/e8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/e8/</guid><description>&lt;h2 id="well-get-started-at-1805">We&amp;rsquo;ll get started at 18:05&lt;/h2>
+&lt;p>a lot of what we&amp;rsquo;re testing is if you can identify what type of vulnerability it is&lt;/p></description></item><item><title>x4 nosql/orm</title><link>/lectures/4e/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/4e/</guid><description>&lt;h2 id="well-get-started-at-2005-">We&amp;rsquo;ll get started at 20:05 (???)&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h2 id="further-database-exploitation">further database exploitation&lt;/h2>
+&lt;h3 id="6843-week4">6843 week4&lt;/h3>
+&lt;hr>
+&lt;h2 id="i-think-therefore-i-shill">I think therefore I shill&lt;/h2>
+&lt;ul>
+&lt;li>do COMP6447&lt;/li>
+&lt;li>use GCP&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="overview">overview&lt;/h3>
+&lt;ul>
+&lt;li>orm injection&lt;/li>
+&lt;li>nosql injection&lt;/li>
+&lt;/ul>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="orm">ORM&lt;/h2>
+&lt;ul>
+&lt;li>object-relational model&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="what-is-an-orm">what is an ORM&lt;/h3>
+&lt;ul>
+&lt;li>an abstraction&lt;/li>
+&lt;li>allows you to interact with a database as if they were a library&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="how-do-they-work">how do they work&lt;/h3>
+&lt;ul>
+&lt;li>you define models representing database tables&lt;/li>
+&lt;li>under the hood all of these function calls will just generate SQL queries for you&lt;/li>
+&lt;li>essentially just prepared statements lol, but more confusing&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="example">example&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>cursor &lt;span style="color:#f92672">=&lt;/span> sqlite3&lt;span style="color:#f92672">.&lt;/span>connect(&lt;span style="color:#e6db74">&amp;#34;example.db&amp;#34;&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>cursor()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cursor&lt;span style="color:#f92672">.&lt;/span>execute(&lt;span style="color:#e6db74">&amp;#34;SELECT * FROM users WHERE age &amp;gt; ?&amp;#34;&lt;/span>, (&lt;span style="color:#ae81ff">30&lt;/span>,))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rows &lt;span style="color:#f92672">=&lt;/span> cursor&lt;span style="color:#f92672">.&lt;/span>fetchall()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">User&lt;/span>(Base):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> __tablename__ &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;users&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> id &lt;span style="color:#f92672">=&lt;/span> Column(Integer, primary_key&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#66d9ef">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name &lt;span style="color:#f92672">=&lt;/span> Column(String)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> age &lt;span style="color:#f92672">=&lt;/span> Column(Integer)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>session &lt;span style="color:#f92672">=&lt;/span> sessionmaker(bind&lt;span style="color:#f92672">=&lt;/span>create_engine(&lt;span style="color:#e6db74">&amp;#34;sqlite:///example.db&amp;#34;&lt;/span>))()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>users &lt;span style="color:#f92672">=&lt;/span> session&lt;span style="color:#f92672">.&lt;/span>query(User)&lt;span style="color:#f92672">.&lt;/span>filter(User&lt;span style="color:#f92672">.&lt;/span>age &lt;span style="color:#f92672">&amp;gt;&lt;/span> &lt;span style="color:#ae81ff">30&lt;/span>)&lt;span style="color:#f92672">.&lt;/span>all()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/section>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="aside-abstraction-bad">aside: abstraction bad&lt;/h2>
+&lt;ul>
+&lt;li>there&amp;rsquo;s now so many layers of code between the programmer and the computer&lt;/li>
+&lt;/ul>
+
+&lt;/section>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h3 id="what-is-the-vulnerability-here">what is the vulnerability here&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>query &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">f&lt;/span>&lt;span style="color:#e6db74">&amp;#34;SELECT * FROM users WHERE id = &lt;/span>&lt;span style="color:#e6db74">{&lt;/span>user_input&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>session&lt;span style="color:#f92672">.&lt;/span>execute(query)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="how-to-fix">how to fix?&lt;/h3>
+&lt;p>yeah, basic sqli&lt;/p></description></item><item><title>x8: cs</title><link>/lectures/e8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/e8/</guid><description>&lt;h2 id="well-get-started-at-1805">We&amp;rsquo;ll get started at 18:05&lt;/h2>
 &lt;hr>
 
 &lt;section data-noprocess data-shortcode-slide
