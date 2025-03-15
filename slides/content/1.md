@@ -4,7 +4,7 @@ layout: "bundle"
 outputs: ["Reveal"]
 ---
 
-## we'll get started at 1[68]:05
+## we'll get started at 13:05
 
 ---
 
@@ -29,6 +29,7 @@ We expect a high standard of professionalism from you at all times while you are
 ## > whoami
 
 * Lachlan
+* Security Engineer @ Google
 
 ---
 
@@ -36,7 +37,6 @@ We expect a high standard of professionalism from you at all times while you are
 
 * lachlan.waugh@student.unsw.edu.au
 * [@melon]() on the SecSoc Discord
-* [@melon]() on the SecEdu Slack (kinda dead)
 
 ---
 
@@ -44,7 +44,6 @@ We expect a high standard of professionalism from you at all times while you are
 
 * [course information > course discussion](https://webcms3.cse.unsw.edu.au/COMP6443/24T1/resources/96261) on webcms
 * [secso.cc/discord](https://secso.cc/discord)
-* [seceduau.slack.com/signup](https://seceduau.slack.com/signup) > #cs6443 (kinda dead)
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "3: iam groot"
+title: "3: iam"
 layout: "bundle"
 outputs: ["Reveal"]
 ---
