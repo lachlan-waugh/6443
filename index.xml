@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>COMP6[84]45 Slides</title><link>/</link><description>Recent content on COMP6[84]45 Slides</description><generator>Hugo</generator><language>en-au</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>1: intro</title><link>/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/1/</guid><description>&lt;h2 id="well-get-started-at-16805">we&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>COMP6[84]45 Slides</title><link>/</link><description>Recent content on COMP6[84]45 Slides</description><generator>Hugo</generator><language>en-au</language><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>1: intro</title><link>/1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/1/</guid><description>&lt;h2 id="well-get-started-at-1305">we&amp;rsquo;ll get started at 13:05&lt;/h2>
 &lt;hr>
 
 &lt;section data-noprocess data-shortcode-slide
@@ -18,20 +18,19 @@
 &lt;h2 id="-whoami">&amp;gt; whoami&lt;/h2>
 &lt;ul>
 &lt;li>Lachlan&lt;/li>
+&lt;li>Security Engineer @ Google&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="how-to-contact-me">how to contact me&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="mailto:lachlan.waugh@student.unsw.edu.au">lachlan.waugh@student.unsw.edu.au&lt;/a>&lt;/li>
 &lt;li>&lt;a href="">@melon&lt;/a> on the SecSoc Discord&lt;/li>
-&lt;li>&lt;a href="">@melon&lt;/a> on the SecEdu Slack (kinda dead)&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="places-for-course-discussion">places for course discussion&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://webcms3.cse.unsw.edu.au/COMP6443/24T1/resources/96261">course information &amp;gt; course discussion&lt;/a> on webcms&lt;/li>
 &lt;li>&lt;a href="https://secso.cc/discord">secso.cc/discord&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://seceduau.slack.com/signup">seceduau.slack.com/signup&lt;/a> &amp;gt; #cs6443 (kinda dead)&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;h2 id="faq">faq&lt;/h2>
@@ -64,8 +63,7 @@
 &lt;li>What can be improved&lt;/li>
 &lt;/ul>
 &lt;blockquote>
-&lt;p>&lt;a href="https://myexperience.unsw.edu.au">https://myexperience.unsw.edu.au&lt;/a>&lt;/p>
-&lt;/blockquote>
+&lt;p>&lt;a href="https://myexperience.unsw.edu.au">https://myexperience.unsw.edu.au&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;hr>
 &lt;h3 id="todo">TODO&lt;/h3>
 &lt;p>TODO&lt;/p></description></item><item><title>2: auth</title><link>/2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/2/</guid><description>&lt;h2 id="well-get-started-at-16805">We&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
@@ -124,7 +122,7 @@
 &lt;hr>
 &lt;h3 id="what-to-include">what to include&lt;/h3>
 &lt;blockquote>
-&lt;p>everything™!!&lt;/p></description></item><item><title>3: iam groot</title><link>/3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/3/</guid><description>&lt;h2 id="well-get-started-at-16805">We&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
+&lt;p>everything™!!&lt;/p></description></item><item><title>3: iam</title><link>/3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/3/</guid><description>&lt;h2 id="well-get-started-at-16805">We&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
 &lt;hr>
 
 &lt;section data-noprocess data-shortcode-slide
@@ -185,8 +183,7 @@
 &lt;/ul>
 &lt;h2 id="upcoming-due-dates">Upcoming due dates?&lt;/h2>
 &lt;blockquote>
-&lt;p>next week&lt;/p>
-&lt;/blockquote>
+&lt;p>next week&lt;/p>&lt;/blockquote>
 &lt;ul>
 &lt;li>wed 6-7pm: mid-sem (10%)&lt;/li>
 &lt;li>sun 11:59pm
@@ -202,15 +199,13 @@
 
 &lt;section data-shortcode-section>
 &lt;blockquote>
-&lt;p>Structured Query Language&lt;/p>
-&lt;/blockquote>
+&lt;p>Structured Query Language&lt;/p>&lt;/blockquote>
 &lt;ul>
 &lt;li>SQLite, PostgreSQL, MySQL, MSSQL Server&lt;/li>
 &lt;/ul>
 &lt;hr>
 &lt;blockquote>
-&lt;p>Fingerprinting&lt;/p>
-&lt;/blockquote>
+&lt;p>Fingerprinting&lt;/p>&lt;/blockquote>
 &lt;ul>
 &lt;li>work out the flavour/version
 &lt;ul>
@@ -222,8 +217,7 @@
 &lt;/ul>
 &lt;hr>
 &lt;blockquote>
-&lt;p>Finding the schema&lt;/p>
-&lt;/blockquote>
+&lt;p>Finding the schema&lt;/p>&lt;/blockquote>
 &lt;ul>
 &lt;li>what tables exist, what do they look like?
 &lt;ul>
@@ -250,13 +244,11 @@
 &lt;hr>
 &lt;h2 id="report-groups">Report groups&lt;/h2>
 &lt;blockquote>
-&lt;p>If you aren&amp;rsquo;t in a group please let me know&lt;/p>
-&lt;/blockquote>
+&lt;p>If you aren&amp;rsquo;t in a group please let me know&lt;/p>&lt;/blockquote>
 &lt;hr>
 &lt;h2 id="midterm">Midterm&lt;/h2>
 &lt;blockquote>
-&lt;p>How&amp;rsquo;d you all find it (trivial enough?)&lt;/p>
-&lt;/blockquote>
+&lt;p>How&amp;rsquo;d you all find it (trivial enough?)&lt;/p>&lt;/blockquote>
 
 &lt;/section>
 &lt;hr>
@@ -280,7 +272,7 @@
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="demohttpsgithubcomlachlan-waugh6443treemaindemosserver-side-injectionshell_injection">&lt;a href="https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/shell_injection">Demo&lt;/a>&lt;/h2>
+&lt;h2 id="demo">&lt;a href="https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/shell_injection">Demo&lt;/a>&lt;/h2>
 
 &lt;/section>
 &lt;hr>
@@ -321,8 +313,7 @@
 &lt;h2 id="origin-vs-site">origin vs site&lt;/h2>
 &lt;h3 id="origin">origin&lt;/h3>
 &lt;blockquote>
-&lt;p>&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #fffacd">www.example.com&lt;/span>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;/p>
-&lt;/blockquote>
+&lt;p>&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #fffacd">www.example.com&lt;/span>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;/p>&lt;/blockquote>
 
 
 &lt;span class='fragment ' >&lt;p>origin = &lt;span style="color: #021691">scheme&lt;/span> + &lt;span style="color: #fffacd">host&lt;/span> + &lt;span style="color: #7FFFD4">port&lt;/span>&lt;/p></description></item><item><title>8: clientside</title><link>/8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/8/</guid><description>&lt;h2 id="well-get-started-at-16805">we&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
@@ -436,15 +427,13 @@
 &lt;section data-shortcode-section>
 &lt;h3 id="origin">Origin&lt;/h3>
 &lt;blockquote>
-&lt;p>&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #fffacd">www.example.com&lt;/span>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;/p>
-&lt;/blockquote>
+&lt;p>&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #fffacd">www.example.com&lt;/span>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;/p>&lt;/blockquote>
 &lt;p>origin = &lt;span style="color: #021691">scheme&lt;/span> + &lt;span style="color: #fffacd">host&lt;/span> + &lt;span style="color: #7FFFD4">port&lt;/span>&lt;/p>
 &lt;hr>
 &lt;h3 id="site">Site&lt;/h3>
 &lt;blockquote>
 &lt;p>&lt;span style="color: #021691">http://&lt;/span>&lt;span style="color: #A52A2A">www.&lt;/span>&lt;u>&lt;span style="color: #fffacd">example&lt;/span>&lt;span style="color: #D2691E">.com&lt;/span>&lt;/u>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;br>
-&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #A52A2A">api.&lt;/span>&lt;u>&lt;span style="color: #fffacd">example&lt;/span>&lt;span style="color: #D2691E">.com&lt;/span>&lt;/u>&lt;span style="color: #7FFFD4">:443&lt;/span>&lt;/p>
-&lt;/blockquote>
+&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #A52A2A">api.&lt;/span>&lt;u>&lt;span style="color: #fffacd">example&lt;/span>&lt;span style="color: #D2691E">.com&lt;/span>&lt;/u>&lt;span style="color: #7FFFD4">:443&lt;/span>&lt;/p>&lt;/blockquote>
 &lt;p>site = &lt;span style="color: #fffacd">private_domain&lt;/span> + &lt;span style="color: #D2691E">public_suffix&lt;/span>&lt;/p>
 &lt;ul>
 &lt;li>&lt;s>&lt;span style="color: #021691">scheme&lt;/span>, &lt;span style="color: #A52A2A">subdomain&lt;/span> and &lt;span style="color: #7FFFD4">port&lt;/span>&lt;/s>&lt;/li>
@@ -525,8 +514,7 @@
 &lt;li>or a couple of interpreters (js + html parser)&lt;/li>
 &lt;/ul>
 &lt;blockquote>
-&lt;p>read more &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">here&lt;/a>&lt;/p>
-&lt;/blockquote>
+&lt;p>read more &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">here&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;hr>
 &lt;h3 id="syntax-errors">syntax errors&lt;/h3>
 &lt;p>what happens when a brower receives invalidly formatted content (js, html, css)?&lt;/p></description></item></channel></rss>

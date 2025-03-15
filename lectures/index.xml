@@ -19,15 +19,13 @@
 &lt;section data-shortcode-section>
 &lt;h3 id="origin">Origin&lt;/h3>
 &lt;blockquote>
-&lt;p>&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #fffacd">www.example.com&lt;/span>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;/p>
-&lt;/blockquote>
+&lt;p>&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #fffacd">www.example.com&lt;/span>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;/p>&lt;/blockquote>
 &lt;p>origin = &lt;span style="color: #021691">scheme&lt;/span> + &lt;span style="color: #fffacd">host&lt;/span> + &lt;span style="color: #7FFFD4">port&lt;/span>&lt;/p>
 &lt;hr>
 &lt;h3 id="site">Site&lt;/h3>
 &lt;blockquote>
 &lt;p>&lt;span style="color: #021691">http://&lt;/span>&lt;span style="color: #A52A2A">www.&lt;/span>&lt;u>&lt;span style="color: #fffacd">example&lt;/span>&lt;span style="color: #D2691E">.com&lt;/span>&lt;/u>&lt;span style="color: #7FFFD4">:80&lt;/span>&lt;br>
-&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #A52A2A">api.&lt;/span>&lt;u>&lt;span style="color: #fffacd">example&lt;/span>&lt;span style="color: #D2691E">.com&lt;/span>&lt;/u>&lt;span style="color: #7FFFD4">:443&lt;/span>&lt;/p>
-&lt;/blockquote>
+&lt;span style="color: #021691">https://&lt;/span>&lt;span style="color: #A52A2A">api.&lt;/span>&lt;u>&lt;span style="color: #fffacd">example&lt;/span>&lt;span style="color: #D2691E">.com&lt;/span>&lt;/u>&lt;span style="color: #7FFFD4">:443&lt;/span>&lt;/p>&lt;/blockquote>
 &lt;p>site = &lt;span style="color: #fffacd">private_domain&lt;/span> + &lt;span style="color: #D2691E">public_suffix&lt;/span>&lt;/p>
 &lt;ul>
 &lt;li>&lt;s>&lt;span style="color: #021691">scheme&lt;/span>, &lt;span style="color: #A52A2A">subdomain&lt;/span> and &lt;span style="color: #7FFFD4">port&lt;/span>&lt;/s>&lt;/li>
@@ -72,8 +70,7 @@
 &lt;li>or a couple of interpreters (js + html parser)&lt;/li>
 &lt;/ul>
 &lt;blockquote>
-&lt;p>read more &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">here&lt;/a>&lt;/p>
-&lt;/blockquote>
+&lt;p>read more &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">here&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;hr>
 &lt;h3 id="syntax-errors">syntax errors&lt;/h3>
 &lt;p>what happens when a brower receives invalidly formatted content (js, html, css)?&lt;/p></description></item></channel></rss>
