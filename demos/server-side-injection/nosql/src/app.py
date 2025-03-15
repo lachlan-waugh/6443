@@ -1,14 +1,26 @@
-from flask import Blueprint, render_template, request, current_app, redirect
+from flask import Flask, render_template, request, current_app, redirect
+from db import Database
 
-views = Blueprint('views', __name__)
+
+app = Flask(
+    __name__,
+    template_folder='templates',
+    static_folder='static',
+    static_url_path=''
+)
+
+@app.before_first_request
+def init():
+    if 'DATABASE' not in app.config:
+        app.config['DATABASE'] = Database()
 
 
-@views.route('/')
+@app.route('/')
 def root():
     return redirect('/login')
 
 
-@views.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
         return render_template('login.html')
@@ -23,6 +35,10 @@ def login():
         password = request.form.get('password', 'None')
 
     if current_app.config['DATABASE'].auth(username, password):
-        return render_template('login.html', success='ehh I guess that\'s right COMP6443FINAL{waitButUserInputIsFineIfTheresNoSqlRight}')
+        return render_template('login.html', success='ehh I guess that\'s right COMP6443{not-a-real-flag}')
     else:
         return render_template('login.html', error='no lmao'), 400
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8000)
