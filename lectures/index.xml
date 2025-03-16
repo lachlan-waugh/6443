@@ -115,7 +115,22 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>session&lt;span style="color:#f92672">.&lt;/span>execute(query)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="how-to-fix">how to fix?&lt;/h3>
-&lt;p>yeah, basic sqli&lt;/p></description></item><item><title>x8: cs</title><link>/lectures/e8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/e8/</guid><description>&lt;h2 id="well-get-started-at-1805">We&amp;rsquo;ll get started at 18:05&lt;/h2>
+&lt;p>yeah, basic sqli&lt;/p></description></item><item><title>x5 deserialization</title><link>/lectures/5e/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/5e/</guid><description>&lt;h2 id="well-get-started-at-2005">We&amp;rsquo;ll get started at 20:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h2 id="deserialization">deserialization&lt;/h2>
+&lt;h3 id="6843-week5">6843 week5&lt;/h3>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h3 id="serialization">serialization&lt;/h3>
+&lt;hr>
+
+&lt;/section></description></item><item><title>x8: cs</title><link>/lectures/e8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/e8/</guid><description>&lt;h2 id="well-get-started-at-1805">We&amp;rsquo;ll get started at 18:05&lt;/h2>
 &lt;hr>
 
 &lt;section data-noprocess data-shortcode-slide
