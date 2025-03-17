@@ -571,10 +571,73 @@
 
 
 &lt;section data-shortcode-section>
-&lt;h3 id="serialization">serialization&lt;/h3>
+&lt;h2 id="serialization">serialization&lt;/h2>
+&lt;hr>
+&lt;h3 id="what-is-it">what is it?&lt;/h3>
+&lt;hr>
+&lt;h3 id="can-anyone-think-of-examples-of-serialization">can anyone think of examples of serialization&lt;/h3>
+&lt;hr>
 &lt;hr>
 
-&lt;/section></description></item><item><title>x8: cs</title><link>/lectures/e8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/e8/</guid><description>&lt;h2 id="well-get-started-at-1805">We&amp;rsquo;ll get started at 18:05&lt;/h2>
+&lt;/section>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;p>I turned myself into a&lt;/p>
+&lt;h2 id="python-pickle">python pickle&lt;/h2>
+&lt;hr>
+&lt;h3 id="heading">?&lt;/h3>
+&lt;hr>
+&lt;h3 id="demo">demo&lt;/h3>
+&lt;hr>
+&lt;h3 id="how-does-that-work">how does that work&lt;/h3>
+&lt;blockquote>
+&lt;p>To the &lt;a href="https://docs.python.org/2/library/pickle.html#pickling-and-unpickling-extension-types">docs&lt;/a>.&lt;/p>&lt;/blockquote>
+&lt;ul>
+&lt;li>Not every object will serialize well (&lt;a href="https://stackoverflow.com/a/19874769">e.g. file handles&lt;/a>).&lt;/li>
+&lt;li>This is the user&amp;rsquo;s way of specifying how to deserialize non-simple types.&lt;/li>
+&lt;/ul>
+
+&lt;/section>
+&lt;hr>
+
+
+&lt;section data-shortcode-section>
+&lt;h2 id="prototype-pollution">prototype pollution&lt;/h2>
+&lt;hr>
+&lt;h3 id="inheritance">inheritance&lt;/h3>
+&lt;ul>
+&lt;li>for compiled languages like java, relationships are well-defined at &lt;strong>compile time&lt;/strong>&lt;/li>
+&lt;li>for interpreted languages, these relationships must be able to change at &lt;strong>runtime&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="kinda-similar-to-mro-in-python">kinda similar to mro in python&lt;/h3>
+&lt;ul>
+&lt;li>javascript doesn&amp;rsquo;t have traditional class-based multiple inheritance&lt;/li>
+&lt;li>instead it has prototype chaining (&amp;amp; mixins)&lt;/li>
+&lt;li>&lt;strong>all objects lead back to the same prototype&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="how-are-attributes-resolved">how are attributes resolved?&lt;/h3>
+&lt;ol>
+&lt;li>own properties&lt;/li>
+&lt;li>its prototype (&amp;ldquo;parent&amp;rdquo;)&lt;/li>
+&lt;li>its prototypes prototype&lt;/li>
+&lt;li>so on
+similarly&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="how-to-exploit-this">how to exploit this?&lt;/h3>
+&lt;ul>
+&lt;li>what if we changed the prototype of one object&lt;/li>
+&lt;li>would it [ae]ffect others?&lt;/li>
+&lt;/ul>
+&lt;pre tabindex="0">&lt;code>Object.prototype.test = &amp;#34;This is dangerous!&amp;#34;;
+
+const obj = {};
+console.log(obj.test); // &amp;#34;This is dangerous!&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>what about:&lt;/p></description></item><item><title>x8: cs</title><link>/lectures/e8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/e8/</guid><description>&lt;h2 id="well-get-started-at-1805">We&amp;rsquo;ll get started at 18:05&lt;/h2>
 &lt;hr>
 
 &lt;section data-noprocess data-shortcode-slide
