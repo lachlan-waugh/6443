@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css" />
+    <title>QuoccaCorp</title>
+</head>
+
+<body>
+    <main class="container">
+        <nav>
+            <ul>
+                <li><strong>QuoccaCorp</strong></li>
+            </ul>
+            <ul>
+                <li><a href="/">home</a></li>
+            </ul>
+        </nav>
+
+        <pre class="pico-background-cyan-350"><code></code></pre>
+        <article class="pico-background-red-400" style="display: None;"></article>
+
+        <form>
+          <div class="grid">
+            <label>
+              First name
+              <input type="text" name="fname" placeholder="Text" aria-label="Text">
+            </label>
+
+            <label>
+              Last name
+              <input type="text" name="lname" placeholder="Text" aria-label="Text">
+            </label>
+          </div>
+
+          <div class="grid">
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email">
+            </label>
+
+            <label>
+              Password
+              <input type="password" name="password" placeholder="Password" aria-label="Password">
+            </label>
+          </div>
+
+          <select name="isAdmin" aria-label="Are you an admin?" required>
+            <option selected disabled value="">
+              Are you an admin?
+            </option>
+            <option disabled>True</option>
+            <option>False</option>
+          </select>
+
+          <input type="button" value="Update">
+        </form>
+    </main>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>
