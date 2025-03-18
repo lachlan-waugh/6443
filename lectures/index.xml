@@ -115,13 +115,13 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>session&lt;span style="color:#f92672">.&lt;/span>execute(query)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
 &lt;h3 id="how-to-fix">how to fix?&lt;/h3>
-&lt;p>yeah, basic sqli&lt;/p></description></item><item><title>x5 deserialization</title><link>/lectures/5e/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/5e/</guid><description>&lt;h2 id="well-get-started-at-2005">We&amp;rsquo;ll get started at 20:05&lt;/h2>
+&lt;p>yeah, basic sqli&lt;/p></description></item><item><title>x5 deserialization and pp</title><link>/lectures/5e/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/5e/</guid><description>&lt;h2 id="well-get-started-at-2005">We&amp;rsquo;ll get started at 20:05&lt;/h2>
 &lt;hr>
 
 &lt;section data-noprocess data-shortcode-slide
  class="center">
  
-&lt;h2 id="deserialization">deserialization&lt;/h2>
+&lt;h2 id="deserialization--prototype-pollution">deserialization &amp;amp;&amp;amp; prototype pollution&lt;/h2>
 &lt;h3 id="6843-week5">6843 week5&lt;/h3>
 &lt;hr>
 
@@ -129,71 +129,51 @@
 &lt;section data-shortcode-section>
 &lt;h2 id="serialization">serialization&lt;/h2>
 &lt;hr>
-&lt;h3 id="what-is-it">what is it?&lt;/h3>
+&lt;h3 id="what-is-serialization">what is serialization&lt;/h3>
+&lt;ul>
+&lt;li>converting an object&amp;rsquo;s state (data/structure) into a format that can be stored/transmitted.&lt;/li>
+&lt;li>relatively straight-forward for simple types (e.g. strings, numbers), not so much others.&lt;/li>
+&lt;li>all code is constantly serialized and stored in memory.&lt;/li>
+&lt;/ul>
 &lt;hr>
 &lt;h3 id="can-anyone-think-of-examples-of-serialization">can anyone think of examples of serialization&lt;/h3>
+&lt;ul>
+&lt;li>writing data to files
+&lt;ul>
+&lt;li>csv&lt;/li>
+&lt;li>json&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>storing stuff in a database&lt;/li>
+&lt;li>sending data over a network&lt;/li>
+&lt;li>a webserver receiving traffic&lt;/li>
+&lt;li>protobufs!!1&lt;/li>
+&lt;/ul>
 &lt;hr>
-&lt;hr>
+&lt;h3 id="is-this-exploitable">is this exploitable&lt;/h3>
+&lt;ul>
+&lt;li>not necessarily that dangerous&lt;/li>
+&lt;li>this is control &amp;gt; data&lt;/li>
+&lt;li>you&amp;rsquo;re turning structures into some format&lt;/li>
+&lt;/ul>
 
 &lt;/section>
 &lt;hr>
 
 
 &lt;section data-shortcode-section>
-&lt;p>I turned myself into a&lt;/p>
-&lt;h2 id="python-pickle">python pickle&lt;/h2>
+&lt;h2 id="deserialization">deserialization&lt;/h2>
 &lt;hr>
-&lt;h3 id="heading">?&lt;/h3>
+&lt;h3 id="what-is-it">what is it&lt;/h3>
+&lt;ul>
+&lt;li>as expected, the opposite of serialization&lt;/li>
+&lt;li>turning serialized data (e.g. a string) back into code/data structures/objects&lt;/li>
+&lt;li>this is data &amp;gt; control&lt;/li>
+&lt;/ul>
 &lt;hr>
-&lt;h3 id="demo">demo&lt;/h3>
-&lt;hr>
-&lt;h3 id="how-does-that-work">how does that work&lt;/h3>
+&lt;h3 id="type-confusion">type confusion&lt;/h3>
 &lt;blockquote>
-&lt;p>To the &lt;a href="https://docs.python.org/2/library/pickle.html#pickling-and-unpickling-extension-types">docs&lt;/a>.&lt;/p>&lt;/blockquote>
-&lt;ul>
-&lt;li>Not every object will serialize well (&lt;a href="https://stackoverflow.com/a/19874769">e.g. file handles&lt;/a>).&lt;/li>
-&lt;li>This is the user&amp;rsquo;s way of specifying how to deserialize non-simple types.&lt;/li>
-&lt;/ul>
-
-&lt;/section>
-&lt;hr>
-
-
-&lt;section data-shortcode-section>
-&lt;h2 id="prototype-pollution">prototype pollution&lt;/h2>
-&lt;hr>
-&lt;h3 id="inheritance">inheritance&lt;/h3>
-&lt;ul>
-&lt;li>for compiled languages like java, relationships are well-defined at &lt;strong>compile time&lt;/strong>&lt;/li>
-&lt;li>for interpreted languages, these relationships must be able to change at &lt;strong>runtime&lt;/strong>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="kinda-similar-to-mro-in-python">kinda similar to mro in python&lt;/h3>
-&lt;ul>
-&lt;li>javascript doesn&amp;rsquo;t have traditional class-based multiple inheritance&lt;/li>
-&lt;li>instead it has prototype chaining (&amp;amp; mixins)&lt;/li>
-&lt;li>&lt;strong>all objects lead back to the same prototype&lt;/strong>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="how-are-attributes-resolved">how are attributes resolved?&lt;/h3>
-&lt;ol>
-&lt;li>own properties&lt;/li>
-&lt;li>its prototype (&amp;ldquo;parent&amp;rdquo;)&lt;/li>
-&lt;li>its prototypes prototype&lt;/li>
-&lt;li>so on
-similarly&lt;/li>
-&lt;/ol>
-&lt;hr>
-&lt;h3 id="how-to-exploit-this">how to exploit this?&lt;/h3>
-&lt;ul>
-&lt;li>what if we changed the prototype of one object&lt;/li>
-&lt;li>would it [ae]ffect others?&lt;/li>
-&lt;/ul>
-&lt;pre tabindex="0">&lt;code>Object.prototype.test = &amp;#34;This is dangerous!&amp;#34;;
-
-const obj = {};
-console.log(obj.test); // &amp;#34;This is dangerous!&amp;#34;
-&lt;/code>&lt;/pre>&lt;p>what about:&lt;/p></description></item><item><title>x8: cs</title><link>/lectures/e8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/e8/</guid><description>&lt;h2 id="well-get-started-at-1805">We&amp;rsquo;ll get started at 18:05&lt;/h2>
+&lt;p>when a program misinterprets the type of data its being provided&lt;/p></description></item><item><title>x8: cs</title><link>/lectures/e8/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/e8/</guid><description>&lt;h2 id="well-get-started-at-1805">We&amp;rsquo;ll get started at 18:05&lt;/h2>
 &lt;hr>
 
 &lt;section data-noprocess data-shortcode-slide
