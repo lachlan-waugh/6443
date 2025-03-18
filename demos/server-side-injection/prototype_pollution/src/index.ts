@@ -20,12 +20,11 @@ let user: User = {
 };
 
 app.get('/', (_, res: Response) => res.sendFile(__dirname + '/site/index.html'));
+app.get('/whoami', (_, res: Response) => res.json({ user }));
 app.get('/script.js', (_, res: Response) => res.sendFile(__dirname + '/site/script.js'));
 
 app.post('/update', (req: Request, res: Response) => {
   const data: Partial<User> = req.body;
-
-  console.log(req.body);
 
   // Ensure the user doesn't change themselves to admin
   for (const attr in data) {
@@ -35,12 +34,8 @@ app.post('/update', (req: Request, res: Response) => {
   }
 
   user = Object.assign({}, user, data);
-  console.log(`user: ${user}`);
+  console.log(`Debug - user is now: ${user}`);
   res.json({ message: 'User updated', user: user, admin: user.isAdmin });
-});
-
-app.get('/whoami', (_, res: Response) => {
-  res.json({ ...user });
 });
 
 app.listen(3001, () => console.log('Server running on http://localhost:3001'));

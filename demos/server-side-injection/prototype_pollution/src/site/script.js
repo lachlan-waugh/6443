@@ -1,9 +1,12 @@
-window.onload = async () => {
+const load_user = async () => {
   let data = await (await fetch('/whoami')).json();
   let box = document.querySelector('code')
   box.innerText = JSON.stringify(data.user, undefined, 2);
   box.style.display = 'block';
 }
+
+window.onload = load_user
+window.setInterval(load_user, 1000)
 
 document.querySelector('input[type=button]').addEventListener('click', async (e) => {
   e.preventDefault();
@@ -32,4 +35,5 @@ document.querySelector('input[type=button]').addEventListener('click', async (e)
   let data = await response.json();
   box.innerText = data.message
   box.style.display = 'block';
+  load_user();
 });
