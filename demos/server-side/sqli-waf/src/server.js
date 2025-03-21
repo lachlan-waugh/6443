@@ -1,5 +1,5 @@
 import express from 'express';
-import cookieParser from 'cookie-parser'; 
+import cookieParser from 'cookie-parser';
 import execute from './database.js';
 import fs from 'fs';
 
@@ -11,7 +11,7 @@ app.use(cookieParser());
 const SECRET = "SECRET_PASSWORD_123";
 
 app.get('/', (req, res) => {
-    // if (!req.cookies.token) return res.redirect('/login');
+    if (!req.cookies.token) return res.redirect('/login');
 
     const [ user, pass, secret ] = atob(req.cookies.token).split(':');
 
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     }
 });
 
-app.get('/login', (_, res) => res.end(fs.readFileSync('./site/login.html')));
+app.get('/login', (_, res) => res.sendFile(__dirname + '/site/login.html'));
 
 app.post('/login', (req, res) => {
     const { user, pass, method } = req.body;
@@ -48,7 +48,7 @@ app.post('/login', (req, res) => {
             : res;
         }
     }[method]() : { success: false, data: 'nah man' };
- 
+
     if (result.success) {
         // TEN LAYERS OF eNcRyPtIoN
         res.end(JSON.stringify({ success: true, data: btoa(`${result.data.user}:${result.data.pass}:${SECRET}`) }));
