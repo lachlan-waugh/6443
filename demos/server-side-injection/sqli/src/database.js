@@ -1,4 +1,4 @@
-import sqlite from 'better-sqlite3';
+import sqlite from 'sqlite3';
 
 let db;
 
