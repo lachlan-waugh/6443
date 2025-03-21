@@ -4,3 +4,5 @@
 * **put in the IP and PORT printed by ngrok**, but your local ones
 * grab the command it tells you (maybe missing `.io` due to length), run it on the victim
 * ezpz shell tyvm
+
+* Just use the bash_injection demo to do this
