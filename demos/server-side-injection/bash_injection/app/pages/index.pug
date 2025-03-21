@@ -1,16 +1,16 @@
-html 
+html
   head
     link(rel='stylesheet', type='text/css', href='https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css')
     title="melon's super secure web app 2.0"
 
   body
     main(class='container')
-      h1="melon's super secure web app 2.0"  
+      h1="melon's super secure web app 2.0"
       p="what folder would you like to see?"
 
-      form(action="/" method="GET") 
-        input(type="text" name="folder") 
+      form(action="/" method="GET")
+        input(type="text" name="folder")
         button(type="submit") Submit
 
-      code 
+      code
         pre #{output}
