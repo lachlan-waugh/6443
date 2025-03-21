@@ -228,7 +228,7 @@
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;p>Queries &amp;gt;&lt;/p></description></item><item><title>5: serverside</title><link>/5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/5/</guid><description>&lt;h2 id="well-get-started-at-16805">We&amp;rsquo;ll get started at 1[68]:05&lt;/h2>
+&lt;p>Queries &amp;gt;&lt;/p></description></item><item><title>5: serverside</title><link>/5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/5/</guid><description>&lt;h2 id="well-get-started-at-1305">We&amp;rsquo;ll get started at 13:05&lt;/h2>
 &lt;hr>
 
 &lt;section data-noprocess data-shortcode-slide
@@ -254,7 +254,7 @@
 &lt;hr>
 &lt;h2 id="injection">Injection&lt;/h2>
 &lt;ul>
-&lt;li>Bash Injection&lt;/li>
+&lt;li>Command Injection&lt;/li>
 &lt;li>SSTI&lt;/li>
 &lt;li>PHP Injection&lt;/li>
 &lt;/ul>
@@ -272,7 +272,11 @@
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="demo">&lt;a href="https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/shell_injection">Demo&lt;/a>&lt;/h2>
+&lt;h3 id="demo">&lt;a href="https://github.com/lachlan-waugh/6443/tree/main/demos/server-side-injection/bash_injection">Demo&lt;/a>&lt;/h3>
+&lt;hr>
+&lt;h3 id="reverse-shells">Reverse shells&lt;/h3>
+&lt;hr>
+&lt;h3 id="stabilizing-your-shell">Stabilizing your shell&lt;/h3>
 
 &lt;/section>
 &lt;hr>
