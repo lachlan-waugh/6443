@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css" />
+    <title>QuoccaCorp Images</title>
+</head>
+
+<body>
+    <main class="container">
+        <nav>
+            <ul>
+                <li><strong>QuoccaCorp Images</strong></li>
+            </ul>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+
+        {% if error %}
+          <article class="pico-background-red-400">
+            {{ error }}
+          </article>
+        {% endif %}
+
+      <form method="POST">
+          <fieldset role="group">
+            <input
+              type="text"
+              name="url"
+              placeholder="Choose an image"
+            />
+            <input type="submit" value="Upload" />
+          </fieldset>
+        </form>
+
+        <img src="img/{{ file }}.png" alt="Profile Picture"/>
+    </main>
+
+    <script src="/js/profile.js"></script>
+</body>
+
+</html>

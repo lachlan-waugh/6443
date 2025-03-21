@@ -1,13 +1,12 @@
-FROM ubuntu:latest
+FROM python:3.12-alpine
 
-RUN apt-get update && apt-get install -y python3 python3-pip
-
-# Copy files over
 WORKDIR /app
+
+COPY requirements.txt /app
+RUN pip install -r requirements.txt && rm requirements.txt
+
 COPY . .
-RUN python3 -m pip install flask requests uuid
-RUN chmod +x "run.sh"
 
 EXPOSE 5000
 
-ENTRYPOINT [ "./run.sh" ]
+ENTRYPOINT [ "sh", "./run.sh" ]
