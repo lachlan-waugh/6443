@@ -13,7 +13,7 @@ def main():
 @app.route('/js/<id>.js', methods=['GET'])
 def js(id):
     res = make_response(render_template('template.js', email=id))
-    res.headers['Content-Type'] = 'text/javascript' 
+    res.headers['Content-Type'] = 'text/javascript'
     return res
 
 

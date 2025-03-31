@@ -10,42 +10,42 @@ services:
       - ./.data:/data
       - ./.config:/config
     environment:
-      - SITE_DOMAIN=demos 
+      - SITE_DOMAIN=demos
 
   xss_waf:
     depends_on:
     - caddy
     restart: always
     build:
-      context: ./xss-waf
+      context: ../client-side-injection/xss-waf
 
   csrf_nonce:
     depends_on:
     - caddy
     restart: always
     build:
-      context: ./csrf-nonce
+      context: ../client-side-injection/csrf-nonce
 
   meta_tag:
     depends_on:
     - caddy
     restart: always
     build:
-      context: ./meta-tag
+      context: ../client-side-injection/meta-tag
 
   response_splitting:
     depends_on:
     - caddy
     restart: always
     build:
-      context: ./response_splitting
+      context: ../client-side-injection/response_splitting
 
   xss_filewrite:
     depends_on:
     - caddy
     restart: always
     build:
-      context: ./xss-filewrite
+      context: ../client-side-injection/xss-filewrite
 
   # jsonp
   jsonp_server:
@@ -53,7 +53,7 @@ services:
     - caddy
     restart: always
     build:
-      context: ./jsonp
+      context: ../client-side-injection/jsonp
       args:
         CHALLENGE: server
 
@@ -62,7 +62,7 @@ services:
     - caddy
     restart: always
     build:
-      context: ./jsonp
+      context: ../client-side-injection/jsonp
       args:
         CHALLENGE: client1
 
@@ -71,27 +71,27 @@ services:
     - caddy
     restart: always
     build:
-      context: ./jsonp
+      context: ../client-side-injection/jsonp
       args:
         CHALLENGE: client2
- 
+
   xss_fileupload:
     depends_on:
     - caddy
     restart: always
     build:
-      context: ./xss-fileupload
+      context: ../client-side-injection/xss-fileupload
 
   base_tag:
     depends_on:
     - caddy
     restart: always
     build:
-      context: ./base-tag
+      context: ../client-side-injection/base-tag
 
   gadgets:
     depends_on:
     - caddy
     restart: always
     build:
-      context: ./gadgets
+      context: ../client-side-injection/gadgets
