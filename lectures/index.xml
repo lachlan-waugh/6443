@@ -173,7 +173,36 @@
 &lt;hr>
 &lt;h3 id="type-confusion">type confusion&lt;/h3>
 &lt;blockquote>
-&lt;p>when a program misinterprets the type of data its being provided&lt;/p></description></item><item><title>x8: cs</title><link>/lectures/8e/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/8e/</guid><description>&lt;h2 id="well-get-started-at-1805">We&amp;rsquo;ll get started at 18:05&lt;/h2>
+&lt;p>when a program misinterprets the type of data its being provided&lt;/p></description></item><item><title>x7 dom-based xss</title><link>/lectures/7e/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/7e/</guid><description>&lt;h2 id="well-get-started-at-2005">We&amp;rsquo;ll get started at 20:05&lt;/h2>
+&lt;hr>
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center">
+ 
+&lt;h2 id="dom-based-xss">dom-based xss&lt;/h2>
+&lt;h3 id="6843-week7">6843 week7&lt;/h3>
+&lt;hr>
+&lt;h3 id="dom-based-xss-1">dom-based xss&lt;/h3>
+&lt;p>&lt;a href="www.webappsec.org/projects/articles/071105.html">XSS of a third kind&lt;/a>&lt;/p>
+&lt;hr>
+&lt;h3 id="quick-recap">quick recap&lt;/h3>
+&lt;ul>
+&lt;li>reflected xss - non-persistent xss&lt;/li>
+&lt;li>stored xss - persistent xss&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>what are some strategies you&amp;rsquo;ve talked about to mitigate these?&lt;/p>&lt;/blockquote>
+&lt;hr>
+&lt;h3 id="dom-based">dom-based&lt;/h3>
+&lt;p>the exploitation exists solely in the DOM&lt;/p>
+&lt;ul>
+&lt;li>this means the payloads, never hit the server&lt;/li>
+&lt;li>it&amp;rsquo;s moreso an issue of how client-side code parses input&lt;/li>
+&lt;li>what issues can this cause?&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="quick-note">quick note&lt;/h3>
+&lt;p>what is the difference between reflected and dom-based&lt;/p></description></item><item><title>x8: more bypasses</title><link>/lectures/8e/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/8e/</guid><description>&lt;h2 id="well-get-started-at-1805">We&amp;rsquo;ll get started at 18:05&lt;/h2>
 &lt;hr>
 
 &lt;section data-noprocess data-shortcode-slide
@@ -181,6 +210,14 @@
  
 &lt;h2 id="client-side-attacks">client side attacks&lt;/h2>
 &lt;h3 id="6843-week8">6843 week8&lt;/h3>
+&lt;hr>
+&lt;h3 id="firstly">firstly&lt;/h3>
+&lt;ul>
+&lt;li>waugh.zip/6443/lectures/4e&lt;/li>
+&lt;li>waugh.zip/6443/lectures/5e&lt;/li>
+&lt;li>waugh.zip/6443/lectures/7e&lt;/li>
+&lt;li>waugh.zip/6443/lectures/8e&lt;/li>
+&lt;/ul>
 &lt;hr>
 &lt;h3 id="overview">overview&lt;/h3>
 &lt;ul>
@@ -191,6 +228,7 @@
 &lt;li>dom clobbering&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>script gadgets&lt;/li>
 &lt;li>client-side js exploitation&lt;/li>
 &lt;/ul>
 &lt;hr>
@@ -204,7 +242,4 @@
 &lt;li>or a couple of interpreters (js + html parser)&lt;/li>
 &lt;/ul>
 &lt;blockquote>
-&lt;p>read more &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">here&lt;/a>&lt;/p>&lt;/blockquote>
-&lt;hr>
-&lt;h3 id="syntax-errors">syntax errors&lt;/h3>
-&lt;p>what happens when a brower receives invalidly formatted content (js, html, css)?&lt;/p></description></item></channel></rss>
+&lt;p>read more &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">here&lt;/a>&lt;/p></description></item></channel></rss>

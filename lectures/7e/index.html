@@ -1,0 +1,73 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>x7 dom-based xss</title>
+<meta name=apple-mobile-web-app-capable content="yes"><meta name=apple-mobile-web-app-status-bar-style content="black-translucent"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><link rel=stylesheet href=../../reveal-js/css/reset.css><link rel=stylesheet href=../../reveal-js/css/reveal.css><link rel=stylesheet href=../../reveal-js/css/theme/black.css id=theme><link rel=stylesheet href=../../highlight-js/default.min.css></head><body><div class=reveal><div class=slides><section><h2 id=well-get-started-at-2005>We&rsquo;ll get started at 20:05</h2></section><section data-noprocess data-shortcode-slide class=center><h2 id=dom-based-xss>dom-based xss</h2><h3 id=6843-week7>6843 week7</h3></section><section><h3 id=dom-based-xss-1>dom-based xss</h3><p><a href=www.webappsec.org/projects/articles/071105.html>XSS of a third kind</a></p></section><section><h3 id=quick-recap>quick recap</h3><ul><li>reflected xss - non-persistent xss</li><li>stored xss - persistent xss</li></ul><blockquote><p>what are some strategies you&rsquo;ve talked about to mitigate these?</p></blockquote></section><section><h3 id=dom-based>dom-based</h3><p>the exploitation exists solely in the DOM</p><ul><li>this means the payloads, never hit the server</li><li>it&rsquo;s moreso an issue of how client-side code parses input</li><li>what issues can this cause?</li></ul></section><section><h3 id=quick-note>quick note</h3><p>what is the difference between reflected and dom-based</p><ul><li>reflected: user input is reflected in the response returned from the server</li><li>dom-based: the input never hits the server, and the vulnerability exists in the client-side</li></ul></section><section><section data-shortcode-section><h2 id=what-is-the-dom>what is the DOM</h2><p><strong>D</strong>ocument <strong>O</strong>bject <strong>M</strong>odel</p></section><section><blockquote><p>why is what you see in inspect element (ctrl + shift + i) different to when you look at page source (ctrl + u)</p></blockquote></section><section><h3 id=how-do-browsers-work>how do browsers work</h3><ul><li>originally, that html document is just a text</li><li>browsers are just html/css/js interpreters<ul><li>originally browsers were the only js interpreters (v8, spidermonkey)</li><li>nodejs is a js runtime built to work outside of a browsers</li></ul></li></ul></section><section><h3 id=how-does-it-interpret>how does it interpret?</h3><ul><li>the browser is a heirarchical tree, where each element (tag) is a node.</li><li>each node is an object</li><li>root nodes, child nodes, text nodes</li></ul></section><section><h3 id=example>Example</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=nohighlight data-noescape><span style=display:flex><span><span style=color:#75715e>&lt;!DOCTYPE html&gt;</span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>html</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>head</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>title</span>&gt;My Page&lt;/<span style=color:#f92672>title</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>head</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>body</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>h1</span>&gt;Hello, World!&lt;/<span style=color:#f92672>h1</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>p</span>&gt;This is a paragraph.&lt;/<span style=color:#f92672>p</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>body</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>html</span>&gt;
+</span></span></code></pre></div><pre tabindex=0><code>Document
+ ├─ &lt;html&gt;
+ │   ├─ &lt;head&gt;
+ │   │   ├─ &lt;title&gt;My Page&lt;/title&gt;
+ │   ├─ &lt;body&gt;
+ │       ├─ &lt;h1&gt;Hello, World!&lt;/h1&gt;
+ │       ├─ &lt;p&gt;This is a paragraph.&lt;/p&gt;
+</code></pre></section><section><h3 id=another-thing-to-note>another thing to note</h3><ul><li>browsers are really smart</li><li>web programmers aren&rsquo;t</li><li>often browsers will interpret broken code (mxss?)</li><li>sometimes the dom won&rsquo;t exactly match the html</li></ul><blockquote><p>can you think of any other reasons why?</p></blockquote></section><section><h3 id=defense>defense</h3><p>why could this inconsistency be difficult if you were trying to detect xss?</p></section><section><pre tabindex=0><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;DOM Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        Hello
+        &lt;span&gt;World&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;ul&gt;
+        &lt;li&gt;Item 1&lt;/li&gt;
+        &lt;li&gt;Item 2
+    &lt;/ul&gt;
+
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Cell 1&lt;/td&gt;
+            &lt;td&gt;Cell 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><pre tabindex=0><code>#document
+└── html
+    ├── head
+    │   └── title (&#34;DOM Example&#34;)
+    ├── body
+    │   ├── div
+    │   │   ├── (text) &#34;Hello&#34;  ← Text node preserved
+    │   │   ├── span
+    │   │   │   └── (text) &#34;World&#34;
+    │   ├── ul
+    │   │   ├── li (&#34;Item 1&#34;)
+    │   │   ├── li (&#34;Item 2&#34;)  ← The browser automatically closes the missing `&lt;/li&gt;`
+    │   ├── table
+    │   │   ├── tbody  ← Auto-inserted by the browser
+    │   │   │   ├── tr
+    │   │   │   │   ├── td (&#34;Cell 1&#34;)
+    │   │   │   │   ├── td (&#34;Cell 2&#34;)
+</code></pre></section><section><h3 id=what-more-can-you-do>what more can you do</h3><p>create elements</p><pre tabindex=0><code>let newParagraph = document.createElement(&#34;p&#34;);
+newParagraph.textContent = &#34;This is a new paragraph.&#34;;
+document.body.appendChild(newParagraph);
+</code></pre><p>handle events</p><pre tabindex=0><code>heading.addEventListener(&#34;click&#34;, function() {
+  alert(&#34;Heading clicked!&#34;);
+});
+</code></pre><p>blah blah blah</p><blockquote><p>you can run code</p></blockquote></section><section></section></section><section><section data-shortcode-section></section><section><h3 id=when-is-it-vulnerable>When is it vulnerable?</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=nohighlight data-noescape><span style=display:flex><span><span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> window.<span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>search</span>.<span style=color:#a6e22e>substring</span>(<span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34;=&#34;</span>)[<span style=color:#ae81ff>1</span>];
+</span></span><span style=display:flex><span><span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>referrer</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> window.<span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>hash</span>.<span style=color:#a6e22e>substring</span>(<span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>div</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>localStorage</span>.<span style=color:#a6e22e>getItem</span>(<span style=color:#e6db74>&#34;userComment&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>iframe</span>.<span style=color:#a6e22e>src</span> <span style=color:#f92672>=</span> window.<span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>hash</span>.<span style=color:#a6e22e>substring</span>(<span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>userInput</span> <span style=color:#f92672>=</span> window.<span style=color:#a6e22e>location</span>.<span style=color:#a6e22e>search</span>.<span style=color:#a6e22e>substring</span>(<span style=color:#ae81ff>1</span>).<span style=color:#a6e22e>split</span>(<span style=color:#e6db74>&#34;=&#34;</span>)[<span style=color:#ae81ff>1</span>];
+</span></span><span style=display:flex><span>eval(<span style=color:#e6db74>&#34;document.write(&#39;&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>userInput</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;&#39;)&#34;</span>);
+</span></span></code></pre></div></section></section><section></section></div></div><script type=text/javascript src=../../reveal-hugo/object-assign.js></script><a href=../../reveal-js/css/print/ id=print-location style=display:none></a><script type=text/javascript>var printLocationElement=document.getElementById("print-location"),link=document.createElement("link");link.rel="stylesheet",link.type="text/css",link.href=printLocationElement.href+(window.location.search.match(/print-pdf/gi)?"pdf.css":"paper.css"),document.getElementsByTagName("head")[0].appendChild(link)</script><script type=application/json id=reveal-hugo-site-params>null</script><script type=application/json id=reveal-hugo-page-params>null</script><script src=../../reveal-js/js/reveal.js></script><script type=text/javascript>function camelize(e){return e&&Object.keys(e).forEach(function(t){newK=t.replace(/(_\w)/g,function(e){return e[1].toUpperCase()}),newK!=t&&(e[newK]=e[t],delete e[t])}),e}var revealHugoDefaults={center:!0,controls:!0,history:!0,progress:!0,transition:"slide"},revealHugoSiteParams=JSON.parse(document.getElementById("reveal-hugo-site-params").innerHTML),revealHugoPageParams=JSON.parse(document.getElementById("reveal-hugo-page-params").innerHTML),options=Object.assign({},camelize(revealHugoDefaults),camelize(revealHugoSiteParams),camelize(revealHugoPageParams));Reveal.initialize(options)</script><script type=text/javascript src=../../reveal-js/plugin/markdown/marked.js></script><script type=text/javascript src=../../reveal-js/plugin/markdown/markdown.js></script><script type=text/javascript src=../../reveal-js/plugin/highlight/highlight.js></script><script type=text/javascript src=../../reveal-js/plugin/zoom-js/zoom.js></script><script type=text/javascript src=../../reveal-js/plugin/notes/notes.js></script></body></html>
