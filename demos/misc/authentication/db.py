@@ -1,7 +1,8 @@
 users = [
 	{ 'username': 'user1', 'password': 'password' },
 	{ 'username': 'melon', 'password': 'xd123' },
-	{ 'username': 'admin', 'password': 'admin' }
+	{ 'username': 'admin', 'password': 'admin' },
+	{ 'username': 'hackme', 'password': 'nonono' },
 ]
 
 def auth(username, password):
