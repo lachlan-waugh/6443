@@ -323,9 +323,6 @@ export default function App() {
             <p className="mt-1 text-gray-500">
               We couldn't find anything matching "{searchQuery}". Try adjusting your search.
             </p>
-            <p className="mt-4 text-sm font-bold text-red-500">
-              Security Lesson: The search is also vulnerable to SQLi! Check the console to see your query break.
-            </p>
             <button
               onClick={() => setSearchQuery('')}
               className="mt-6 text-blue-600 font-medium hover:text-blue-800"
@@ -422,11 +419,8 @@ function LoginScreen({ onLogin }) {
         </div>
 
         <div className="bg-gray-50 px-8 py-4 border-t border-gray-100 space-y-3">
-          <p className="text-xs text-center text-gray-600">
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-2 text-xs text-blue-700">
             <strong>Normal Login:</strong> User: <code className="bg-gray-200 px-1 rounded">shopper</code> Pass: <code className="bg-gray-200 px-1 rounded">password123</code>
-          </p>
-          <div className="bg-red-50 border-l-4 border-red-500 p-2 text-xs text-red-700">
-            <strong>Security Lesson:</strong> This form uses an unprotected SQL engine. Try logging in as 'admin' by exploiting the query string!
           </div>
         </div>
       </div>
