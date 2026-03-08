@@ -403,7 +403,7 @@ function LoginScreen({ onLogin }) {
               <input
                 type="text" // Changed to text so students can see their payload easily
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors font-mono text-sm"
-                placeholder="Enter password (or SQL payload)"
+                placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
