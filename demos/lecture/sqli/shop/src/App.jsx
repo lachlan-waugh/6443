@@ -90,6 +90,27 @@ export default function App() {
           (7, 'Portable Bluetooth Speaker', 55.00, 'Audio', 'Waterproof, rugged speaker with deep bass.'),
           (8, 'Smart Coffee Maker', 120.00, 'Home', 'Brew your morning coffee using your smartphone.')
         `);
+
+        window.alasql('DROP TABLE IF EXISTS information_schema_tables');
+        window.alasql('CREATE TABLE information_schema_tables (table_schema STRING, table_name STRING)');
+        window.alasql(`INSERT INTO information_schema_tables VALUES
+          ('public', 'users'),
+          ('public', 'products')
+        `);
+
+        // Mock the 'columns' table
+        window.alasql('DROP TABLE IF EXISTS information_schema_columns');
+        window.alasql('CREATE TABLE information_schema_columns (table_name STRING, column_name STRING, data_type STRING)');
+        window.alasql(`INSERT INTO information_schema_columns VALUES
+          ('users', 'username', 'STRING'),
+          ('users', 'password', 'STRING'),
+          ('products', 'id', 'INT'),
+          ('products', 'name', 'STRING'),
+          ('products', 'price', 'NUMBER'),
+          ('products', 'category', 'STRING'),
+          ('products', 'description', 'STRING')
+        `);
+
         setDbReady(true);
       } catch (err) {
         console.error("Failed to initialize DB:", err);
@@ -118,9 +139,14 @@ export default function App() {
       }
 
       // VULNERABLE TO SQL INJECTION: Direct string concatenation
-      const query = `SELECT * FROM products WHERE name LIKE '%${searchQuery}%' OR description LIKE '%${searchQuery}%' OR category LIKE '%${searchQuery}%'`;
+      let query = `SELECT * FROM products WHERE name LIKE '%${searchQuery}%' OR description LIKE '%${searchQuery}%' OR category LIKE '%${searchQuery}%'`;
 
       console.log(`Executing Search SQL:\nSELECT * FROM products WHERE name LIKE '%[ ${searchQuery} ]%' OR description LIKE '%[ ${searchQuery} ]%' OR category LIKE '%[ ${searchQuery} ]%'`);
+
+      // Rewrite the query as we can't have a table name with a . in it? idk
+      query = query
+        .replace(/information_schema\.tables/gi, 'information_schema_tables')
+        .replace(/information_schema\.columns/gi, 'information_schema_columns');
 
       const result = window.alasql(query);
       return { data: result, error: null };
