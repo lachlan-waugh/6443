@@ -39,17 +39,26 @@ jobs:
 
       - name: build demos
         run: |
+          # Debug: List the directory to ensure we see the folders
+          echo "Checking directory structure..."
+          ls -R demos/lectures/sqli
+
           for demo in cookie shop waf; do
+            echo "--------------------------"
             echo "Building demo: $demo"
-            cd demos/lectures/sqli/$demo
-            bun install
-            bun run build
-            # Ensure the target directory exists in our staging area
-            mkdir -p ../../../../out/demos/$demo
-            # Move the build output (assuming 'dist' or 'build') to staging
-            # Check your specific framework's output folder (usually 'dist' or 'build')
-            cp -r dist/* ../../../../out/demos/$demo/
-            cd ../../../../
+
+            # Using ( ) creates a subshell so we don't get lost in directories
+            (
+              cd demos/lectures/sqli/$demo || { echo "Directory $demo not found"; exit 1; }
+              bun install
+              bun run build
+
+              # Ensure the target directory exists in our 'out' folder
+              mkdir -p ../../../../out/demos/$demo
+
+              # Copy build output. Adjust 'dist' if your build folder is named 'build' or '.output'
+              cp -r dist/* ../../../../out/demos/$demo/
+            )
           done
 
       - name: deploy
