@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lectures on COMP6[84]45 Slides</title><link>/lectures/</link><description>Recent content in Lectures on COMP6[84]45 Slides</description><generator>Hugo</generator><language>en-au</language><atom:link href="/lectures/index.xml" rel="self" type="application/rss+xml"/><item><title>4: sqli</title><link>/lectures/4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/4/</guid><description>&lt;section data-noprocess data-shortcode-slide
  class="center"&gt;
  
-&lt;h2 id="server-side-injection"&gt;server-side injection&lt;/h2&gt;
+&lt;h2 id="sqli"&gt;sqli&lt;/h2&gt;
 &lt;h3 id="6443-week4"&gt;6443 week4&lt;/h3&gt;
 &lt;hr&gt;
 &lt;h1 id="whoami"&gt;whoami&lt;/h1&gt;
