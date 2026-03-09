@@ -8,7 +8,7 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-exclude:
+include:
   - demos
 keep_files:
   - demos
