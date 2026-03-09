@@ -8,3 +8,7 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+exclude:
+  - demos
+  - reveal-js
+  - reveal-hugo
