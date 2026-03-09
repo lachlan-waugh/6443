@@ -18,16 +18,43 @@ jobs:
       - name: get hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
+          hugo-version: '0.155.0'
           extended: true
 
-      - name: build
+      - name: setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: build slides
         working-directory: slides
         run: hugo --gc --minify --cleanDestinationDir -d public
 
+
+      - name: prepare staging
+        run: |
+          mkdir out
+          mv slides/public/* out/
+          mkdir -p out/demos name:dd build demos
+
+      - name: build demos
+        run: |
+          for demo in cookie shop waf; do
+            echo "Building demo: $demo"
+            cd demos/lectures/sqli/$demo
+            bun install
+            bun run build
+            # Ensure the target directory exists in our staging area
+            mkdir -p ../../../../out/demos/$demo
+            # Move the build output (assuming 'dist' or 'build') to staging
+            # Check your specific framework's output folder (usually 'dist' or 'build')
+            cp -r dist/* ../../../../out/demos/$demo/
+            cd ../../../../
+          done
+
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
-        with: 
+        with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: pages
           publish_dir: ./slides/public
