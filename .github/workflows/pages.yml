@@ -39,17 +39,14 @@ jobs:
 
       - name: build demos
         run: |
+          OUT_DIR=$(pwd)/out
           for demo in cookie shop waf; do
-            echo "Building demo: $demo"
             cd demos/lecture/sqli/$demo
             bun install
             bun run build --base=./
-            # Ensure the target directory exists in our staging area
-            mkdir -p ../../../../out/demos/$demo
-            # Move the build output (assuming 'dist' or 'build') to staging
-            # Check your specific framework's output folder (usually 'dist' or 'build')
-            cp -r dist/* ../../../../out/demos/$demo/
-            cd ../../../../
+            mkdir -p $OUT_DIR/demos/$demo
+            cp -r dist/* $OUT_DIR/demos/$demo/
+            cd $GITHUB_WORKSPACE
           done
 
       - name: deploy
