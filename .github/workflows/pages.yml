@@ -41,7 +41,7 @@ jobs:
         run: |
           # Debug: List the directory to ensure we see the folders
           echo "Checking directory structure..."
-          ls -R demos/lectures/sqli
+          ls -R
 
           for demo in cookie shop waf; do
             echo "--------------------------"
