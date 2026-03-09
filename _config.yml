@@ -12,3 +12,5 @@ exclude:
   - demos
   - reveal-js
   - reveal-hugo
+keep_files:
+  - demos
