@@ -1,4 +1,4 @@
 # sqli
-* [shop](demos/shop)
-* [cookie](demos/cookie)
-* [waf](demos/waf)
+* [shop](shop)
+* [cookie](cookie)
+* [waf](waf)
