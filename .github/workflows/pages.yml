@@ -44,7 +44,7 @@ jobs:
             echo "Building demo: $demo"
             cd demos/lecture/sqli/$demo
             bun install
-            bun run build
+            bun run build --base=/6443/demos/$demo/
             # Ensure the target directory exists in our staging area
             mkdir -p ../../../../out/demos/$demo
             # Move the build output (assuming 'dist' or 'build') to staging
