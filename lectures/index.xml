@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lectures on COMP6[84]45 Slides</title><link>/lectures/</link><description>Recent content in Lectures on COMP6[84]45 Slides</description><generator>Hugo</generator><language>en-au</language><atom:link href="/lectures/index.xml" rel="self" type="application/rss+xml"/><item><title>4: sqli</title><link>/lectures/4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/4/</guid><description>&lt;section data-noprocess data-shortcode-slide
+ class="center"&gt;
+ 
+&lt;h2 id="server-side-injection"&gt;server-side injection&lt;/h2&gt;
+&lt;h3 id="6443-week4"&gt;6443 week4&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h1 id="whoami"&gt;whoami&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Lachlan&lt;/li&gt;
+&lt;li&gt;Tutor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id="an-aside"&gt;An aside&lt;/h1&gt;
+&lt;p&gt;learn more than the vulnerability, learn the underlying technology&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;also do &amp;gt;&amp;gt;&amp;gt;6447&amp;lt;&amp;lt;&amp;lt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id="sql"&gt;SQL&lt;/h2&gt;
+
+
+&lt;section data-shortcode-section&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Structured Query Language&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;SQLite, PostgreSQL, MySQL, MSSQL Server&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="queries"&gt;Queries&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;SELECT &amp;lt;column&amp;gt; FROM &amp;lt;table&amp;gt;;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;INSERT INTO table VALUES (a, b);&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;UPDATE table SET ... = ...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;&lt;code&gt;DELETE FROM table ...&lt;/code&gt;&lt;/del&gt; (&lt;em&gt;pls dont&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-- a comment (also #)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;SELECT * FROM table WHERE &amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;col = ...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;col &amp;gt; ...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;col &amp;lt; ...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;col &amp;lt;&amp;gt; ...	#&lt;/code&gt; not equals (!=)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;col LIKE ...	#&lt;/code&gt; regexp
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;_&lt;/code&gt; &lt;code&gt;(.)&lt;/code&gt; and &lt;code&gt;%&lt;/code&gt; &lt;code&gt;(.*)&lt;/code&gt; are wildcards&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="unions"&gt;UNIONs&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;SELECT user, pass FROM users UNION SELECT title, author FROM blogs&lt;/code&gt;&lt;/p&gt;</description></item><item><title>9: protections</title><link>/lectures/9/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/9/</guid><description>&lt;section data-noprocess data-shortcode-slide
+ class="center"&gt;
+ 
+&lt;h2 id="client-side-mitigations"&gt;client-side mitigations&lt;/h2&gt;
+&lt;h3 id="6443-week9"&gt;6443 week9&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="pre-amble-reports"&gt;pre-amble: reports&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;slides are up on webcms&lt;/li&gt;
+&lt;li&gt;demos are at &lt;a href="https://github.com/lachlan-waugh/6443"&gt;github.com/lachlan-waugh/6443&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;go into demos/lectures and theres setup instructiong&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+
+&lt;section data-shortcode-section&gt;
+&lt;h3 id="origin"&gt;Origin&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span style="color: #021691"&gt;https://&lt;/span&gt;&lt;span style="color: #fffacd"&gt;www.example.com&lt;/span&gt;&lt;span style="color: #7FFFD4"&gt;:80&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;origin = &lt;span style="color: #021691"&gt;scheme&lt;/span&gt; + &lt;span style="color: #fffacd"&gt;host&lt;/span&gt; + &lt;span style="color: #7FFFD4"&gt;port&lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="site"&gt;Site&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span style="color: #021691"&gt;http://&lt;/span&gt;&lt;span style="color: #A52A2A"&gt;www.&lt;/span&gt;&lt;u&gt;&lt;span style="color: #fffacd"&gt;example&lt;/span&gt;&lt;span style="color: #D2691E"&gt;.com&lt;/span&gt;&lt;/u&gt;&lt;span style="color: #7FFFD4"&gt;:80&lt;/span&gt;&lt;br&gt;
+&lt;span style="color: #021691"&gt;https://&lt;/span&gt;&lt;span style="color: #A52A2A"&gt;api.&lt;/span&gt;&lt;u&gt;&lt;span style="color: #fffacd"&gt;example&lt;/span&gt;&lt;span style="color: #D2691E"&gt;.com&lt;/span&gt;&lt;/u&gt;&lt;span style="color: #7FFFD4"&gt;:443&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;site = &lt;span style="color: #fffacd"&gt;private_domain&lt;/span&gt; + &lt;span style="color: #D2691E"&gt;public_suffix&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;s&gt;&lt;span style="color: #021691"&gt;scheme&lt;/span&gt;, &lt;span style="color: #A52A2A"&gt;subdomain&lt;/span&gt; and &lt;span style="color: #7FFFD4"&gt;port&lt;/span&gt;&lt;/s&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/section&gt;
+&lt;hr&gt;
+
+
+&lt;section data-shortcode-section&gt;
+&lt;h2 id="sop-same-origin-policy"&gt;SOP (Same Origin Policy)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;blocks resource requests to/from an &lt;em&gt;external&lt;/em&gt; site&lt;/p&gt;</description></item><item><title>x4 nosql/orm</title><link>/lectures/4e/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/4e/</guid><description>&lt;h2 id="well-get-started-at-2005-"&gt;We&amp;rsquo;ll get started at 20:05 (???)&lt;/h2&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center"&gt;
+ 
+&lt;h2 id="further-database-exploitation"&gt;further database exploitation&lt;/h2&gt;
+&lt;h3 id="6843-week4"&gt;6843 week4&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id="i-think-therefore-i-shill"&gt;I think therefore I shill&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;do COMP6447&lt;/li&gt;
+&lt;li&gt;use GCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="overview"&gt;overview&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;orm injection&lt;/li&gt;
+&lt;li&gt;nosql injection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+
+&lt;section data-shortcode-section&gt;
+&lt;h2 id="orm"&gt;ORM&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;object-relational model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="what-is-an-orm"&gt;what is an ORM&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;an abstraction&lt;/li&gt;
+&lt;li&gt;allows you to interact with a database as if they were a library&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="how-do-they-work"&gt;how do they work&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;you define models representing database tables&lt;/li&gt;
+&lt;li&gt;under the hood all of these function calls will just generate SQL queries for you&lt;/li&gt;
+&lt;li&gt;essentially just prepared statements lol, but more confusing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="example"&gt;example&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cursor &lt;span style="color:#f92672"&gt;=&lt;/span&gt; sqlite3&lt;span style="color:#f92672"&gt;.&lt;/span&gt;connect(&lt;span style="color:#e6db74"&gt;&amp;#34;example.db&amp;#34;&lt;/span&gt;)&lt;span style="color:#f92672"&gt;.&lt;/span&gt;cursor()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cursor&lt;span style="color:#f92672"&gt;.&lt;/span&gt;execute(&lt;span style="color:#e6db74"&gt;&amp;#34;SELECT * FROM users WHERE age &amp;gt; ?&amp;#34;&lt;/span&gt;, (&lt;span style="color:#ae81ff"&gt;30&lt;/span&gt;,))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rows &lt;span style="color:#f92672"&gt;=&lt;/span&gt; cursor&lt;span style="color:#f92672"&gt;.&lt;/span&gt;fetchall()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;User&lt;/span&gt;(Base):
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; __tablename__ &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;users&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; id &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Column(Integer, primary_key&lt;span style="color:#f92672"&gt;=&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;True&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; name &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Column(String)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; age &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Column(Integer)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;session &lt;span style="color:#f92672"&gt;=&lt;/span&gt; sessionmaker(bind&lt;span style="color:#f92672"&gt;=&lt;/span&gt;create_engine(&lt;span style="color:#e6db74"&gt;&amp;#34;sqlite:///example.db&amp;#34;&lt;/span&gt;))()
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;users &lt;span style="color:#f92672"&gt;=&lt;/span&gt; session&lt;span style="color:#f92672"&gt;.&lt;/span&gt;query(User)&lt;span style="color:#f92672"&gt;.&lt;/span&gt;filter(User&lt;span style="color:#f92672"&gt;.&lt;/span&gt;age &lt;span style="color:#f92672"&gt;&amp;gt;&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;30&lt;/span&gt;)&lt;span style="color:#f92672"&gt;.&lt;/span&gt;all()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+
+
+&lt;section data-shortcode-section&gt;
+&lt;h2 id="aside-abstraction-bad"&gt;aside: abstraction bad&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;there&amp;rsquo;s now so many layers of code between the programmer and the computer&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/section&gt;
+&lt;hr&gt;
+
+
+&lt;section data-shortcode-section&gt;
+&lt;h3 id="what-is-the-vulnerability-here"&gt;what is the vulnerability here&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;query &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;f&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;SELECT * FROM users WHERE id = &lt;/span&gt;&lt;span style="color:#e6db74"&gt;{&lt;/span&gt;user_input&lt;span style="color:#e6db74"&gt;}&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;session&lt;span style="color:#f92672"&gt;.&lt;/span&gt;execute(query)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id="how-to-fix"&gt;how to fix?&lt;/h3&gt;
+&lt;p&gt;yeah, basic sqli&lt;/p&gt;</description></item><item><title>x5 deserialization and pp</title><link>/lectures/5e/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/5e/</guid><description>&lt;h2 id="well-get-started-at-2005"&gt;We&amp;rsquo;ll get started at 20:05&lt;/h2&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center"&gt;
+ 
+&lt;h2 id="deserialization--prototype-pollution"&gt;deserialization &amp;amp;&amp;amp; prototype pollution&lt;/h2&gt;
+&lt;h3 id="6843-week5"&gt;6843 week5&lt;/h3&gt;
+&lt;hr&gt;
+
+
+&lt;section data-shortcode-section&gt;
+&lt;h2 id="serialization"&gt;serialization&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="what-is-serialization"&gt;what is serialization&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;converting an object&amp;rsquo;s state (data/structure) into a format that can be stored/transmitted.&lt;/li&gt;
+&lt;li&gt;relatively straight-forward for simple types (e.g. strings, numbers), not so much others.&lt;/li&gt;
+&lt;li&gt;all code is constantly serialized &amp;amp; stored in memory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="can-anyone-think-of-examples-of-serialization"&gt;can anyone think of examples of serialization&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;writing data to files
+&lt;ul&gt;
+&lt;li&gt;csv&lt;/li&gt;
+&lt;li&gt;json&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;storing stuff in a database&lt;/li&gt;
+&lt;li&gt;sending data over a network&lt;/li&gt;
+&lt;li&gt;a webserver receiving traffic&lt;/li&gt;
+&lt;li&gt;protobufs!!1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="is-this-exploitable"&gt;is this exploitable&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;not necessarily that dangerous&lt;/li&gt;
+&lt;li&gt;this is control &amp;gt; data&lt;/li&gt;
+&lt;li&gt;you&amp;rsquo;re turning structures into some format&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/section&gt;
+&lt;hr&gt;
+
+
+&lt;section data-shortcode-section&gt;
+&lt;h2 id="deserialization"&gt;deserialization&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="what-is-it"&gt;what is it&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;as expected, the opposite of serialization&lt;/li&gt;
+&lt;li&gt;turning serialized data (e.g. a string) back into code/data structures/objects&lt;/li&gt;
+&lt;li&gt;this is data &amp;gt; control&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="type-confusion"&gt;type confusion&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;when a program misinterprets the type of data its being provided&lt;/p&gt;</description></item><item><title>x7 dom-based xss</title><link>/lectures/7e/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/7e/</guid><description>&lt;h2 id="well-get-started-at-2005"&gt;We&amp;rsquo;ll get started at 20:05&lt;/h2&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center"&gt;
+ 
+&lt;h2 id="dom-based-xss"&gt;dom-based xss&lt;/h2&gt;
+&lt;h3 id="6843-week7"&gt;6843 week7&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="dom-based-xss-1"&gt;dom-based xss&lt;/h3&gt;
+&lt;p&gt;&lt;a href="www.webappsec.org/projects/articles/071105.html"&gt;XSS of a third kind&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="quick-recap"&gt;quick recap&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;reflected xss - non-persistent xss&lt;/li&gt;
+&lt;li&gt;stored xss - persistent xss&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;what are some strategies you&amp;rsquo;ve talked about to mitigate these?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h3 id="dom-based"&gt;dom-based&lt;/h3&gt;
+&lt;p&gt;the exploitation exists solely in the DOM&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;this means the payloads, never hit the server&lt;/li&gt;
+&lt;li&gt;it&amp;rsquo;s moreso an issue of how client-side code parses input&lt;/li&gt;
+&lt;li&gt;what issues can this cause?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="quick-note"&gt;quick note&lt;/h3&gt;
+&lt;p&gt;what is the difference between reflected and dom-based&lt;/p&gt;</description></item><item><title>x8: more bypasses</title><link>/lectures/8e/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/lectures/8e/</guid><description>&lt;h2 id="well-get-started-at-1805"&gt;We&amp;rsquo;ll get started at 18:05&lt;/h2&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+ class="center"&gt;
+ 
+&lt;h2 id="client-side-attacks"&gt;client side attacks&lt;/h2&gt;
+&lt;h3 id="6843-week8"&gt;6843 week8&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="firstly"&gt;firstly&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;waugh.zip/6443/lectures/4e&lt;/li&gt;
+&lt;li&gt;waugh.zip/6443/lectures/5e&lt;/li&gt;
+&lt;li&gt;waugh.zip/6443/lectures/7e&lt;/li&gt;
+&lt;li&gt;waugh.zip/6443/lectures/8e&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="overview"&gt;overview&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;how do browsers work?&lt;/li&gt;
+&lt;li&gt;how can we exploit this
+&lt;ul&gt;
+&lt;li&gt;mutation xss&lt;/li&gt;
+&lt;li&gt;dom clobbering&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;script gadgets&lt;/li&gt;
+&lt;li&gt;client-side js exploitation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+
+&lt;section data-shortcode-section&gt;
+&lt;h3 id="how-do-browsers-work"&gt;how do browsers work&lt;/h3&gt;
+&lt;p&gt;they render html, css, and js into the DOM&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;you can think of them kinda like an interpreters&lt;/li&gt;
+&lt;li&gt;or a couple of interpreters (js + html parser)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;read more &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction"&gt;here&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>
