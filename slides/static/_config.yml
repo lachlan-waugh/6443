@@ -10,7 +10,6 @@ markup:
       unsafe: true
 exclude:
   - demos
-  - reveal-js
-  - reveal-hugo
 keep_files:
   - demos
+  - assets
