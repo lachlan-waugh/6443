@@ -33,8 +33,9 @@ jobs:
 
       - name: prepare staging
         run: |
-          mkdir out
+          mkdir -p out
           mv slides/public/* out/
+          rm out/index.html
           mkdir -p out/demos name:dd build demos
 
       - name: build demos
